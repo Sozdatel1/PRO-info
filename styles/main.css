@@ -26,7 +26,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   text-align: right;
 }
 .fireflies-containerr {
-  position: fixed; /* или absolute, если нужен внутри определёного блока */
+  position: fixed; /* или absolute, если нужен внутри определёного блка */
   top: 0;
   left: 0;
   width: 100%;
