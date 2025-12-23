@@ -74,8 +74,11 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     background-color: #e0f45c00;
     color: #000;
     font-family: "Rubik Gemstones", system-ui;
+    transition: transform 0.3s ease;
     
 }
+
+
 
 .dropdown-menu li a {
     display: block;
@@ -84,10 +87,14 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     padding: 14px 16px;
     text-decoration: none; /* Убираем подчеркивание сылок */
     font-family: "Rubik Gemstones", system-ui;
+     transition: transform 0.3s ease;
 }
 
 .dropdown-menu li a:hover:not(.active) {
     background-color: #fcfa86;
+     transform: scale(1.1);
+    transition: transform 0.2s ease;
+    transform: scale(1.1);
 }
 
 /* Стили для выпадающего меню */
@@ -165,7 +172,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
 }
 .card {
   padding: 20px;
-  box-shadow: 0 4px 8px rgb(0, 242, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
   border-radius: 10px;
   background-color: #fff;
 }    
@@ -272,7 +279,17 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   color: #000;
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(255, 0, 0, 0);
+  transition: transform 0.3s ease; /* плавный переход для transform */
+
 }
+.card-grid-one:hover {
+  transform: scale(1.1);
+  transition: transform 0.9s ease;
+  transform: scale(1.1);
+}
+
+ 
+
     
 
 .container-fact {
@@ -358,7 +375,8 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   .card-grid-one {
     max-width: 20px;
     max-width: 100%;
-    flex: 1 1 100%;
+    flex: 1 1 100%; grid-template-columns: 1fr;
+
   
   }
   .cards-grid {
