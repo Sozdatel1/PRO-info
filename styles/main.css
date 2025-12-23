@@ -56,6 +56,10 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     background-color: #b254e400;
     color: #00a6ff;
 }
+.video {
+  text-align: right !important;
+  margin: 200;
+}
 
 
 
