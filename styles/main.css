@@ -246,6 +246,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     color: #00a9f2 
 }  
 .content-one {
+   font-size: 23px !important;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Times, serif, sans-serif;
     text-align: left;
     margin-bottom: 20px; /* отступ снизу между абзацами */
@@ -257,8 +258,9 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     background-color: #696f1b00;
     color:#7c7c7c;
 }
-#content-one-novosty {
+.content-one-novosty {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Times, serif, sans-serif;
+    font-size: 160px !important;
     text-align: left;
     text-indent: 20px;
     margin-bottom: 20px; /* отступ снизу между абзацами */
@@ -269,7 +271,8 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     text-align: center;
     box-sizing: border-box;
     background-color: #696f1b00;
-    color:#666666    
+    color:#666666  ; 
+    line-height: 9; 
 } 
 .card-grid-one {
   display: grid;
