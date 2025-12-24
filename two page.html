@@ -63,25 +63,7 @@
     <li><a href="why.html">Что это?</a></li>
     </ul>
 </nav>
-   <?php
-// Здесь вставляем PHP-код для получения и отображения новостей
-$rssUrl = 'https://rg.ru/tema/obshestvo/kosmos';
-
-// Загружаем RSS-канал
-$xml = simplexml_load_file($rssUrl);
-
-if ($xml !== false) {
-    foreach ($xml->channel->item as $item) {
-        echo '<div class="news-card">';
-        echo '<h3><a href="' . htmlspecialchars((string)$item->link) . '" target="_blank">' . htmlspecialchars((string)$item->title) . '</a></h3>';
-        echo '<p>' . htmlspecialchars((string)$item->description) . '</p>';
-        echo '<small>' . htmlspecialchars((string)$item->pubDate) . '</small>';
-        echo '</div>';
-    }
-} else {
-    echo 'Не удалось загрузить новости.';
-}
-?>
+  
     <div class="container-one"><h3>Новейшие новости:</h3>
     <div class="content-one">
         <p id ="content-one-novosty"> На сегодняшний день в Европе странствует вирус гриппа, так называемый штамм гриппа H3N2. С начала декабря зарегистрировано более 23 тыс. случаев заражения. Грипп А (H3N2) протекает с классическими для этого заболевания симптомами, которые не отличаются от характерных признаков, вызываемых обычным вирусом гриппа. Среди них:</p><ul>
