@@ -71,6 +71,18 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   text-align: right !important;
   margin: 200;
 }
+.logo {
+  transition: transform 0.9s ease;
+    position: relative;          /* Нужно для позиционирования подсказки */
+            display: inline-block;
+}
+
+.logo:hover {
+  background-color: #00e5ff70 !important;
+   transition: transform 0.3s ease;
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
 
 
 
