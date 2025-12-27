@@ -438,7 +438,7 @@ img {
   overflow-wrap: break-word;  /* современный аналог */
   word-break: break-word;     /* также помогает переносить длинные слова */
   white-space: normal;        
-  padding: 3px; /* уменьшенные отступы */
+  padding: 3px; /* уменьшенные отст */
   }
 .logo {
   display: none;
