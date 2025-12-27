@@ -52,6 +52,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
              
         }
         
+        
 .header-content h1, .header-content p {
             margin: 1;
         }
@@ -81,11 +82,12 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     background-color: #ffffffc8;
     overflow: hidden;
     font-family: "Rubik Gemstones", system-ui;
+    padding: 0px 0px 0px 8px;
 }
 
 .dropdown-menu li {
     float: left; /* Размещаем пункты меню горизонтально */
-    background-color: #e0f45c00;
+    background-color: #f45c5c00;
     color: #000;
     font-family: "Rubik Gemstones", system-ui;
     transition: transform 0.3s ease;
