@@ -384,7 +384,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width: 90%;
   margin: 0 auto;
-  padding: 100px 0px 0px 0px;
+  padding: 100px 20px 20px 20px;
   text-align: center;
   color: #4f4f4f;
   max-width: 950px;
@@ -397,7 +397,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
 }
 
 .footer {
-     display: flex;
+    display: flex;
     align-items: center;
     justify-content: center; /* Центрирует содержимое внутри flex-контейнера */
     gap: 80px;
@@ -475,8 +475,24 @@ img {
 .logo {
   display: none;
 }
-
-
+.container-glavnaya {
+  padding: 200px 0px 0px 0px;
+}
+.container {
+  padding: 200px 0px 0px 0px;
+}
+.container-fact {
+  padding: 200px 0px 0px 0px;
+}
+.container-one {
+  padding: 200px 0px 0px 0px;
+}
+.container-second {
+  padding: 200px 0px 0px 0px;
+}
+.school {
+  padding: 200px 0px 0px 0px;
+}
 
 
 }
