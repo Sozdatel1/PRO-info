@@ -6,6 +6,7 @@ body {
     font-family: "Rubik Gemstones", system-ui;
     margin: 0;
    
+   
 }
 a, button, .clickable,  img, .fireflies-containerr, td {
     cursor: url('/img/cursor-perchatka.png') 0 0, pointer !important;
@@ -46,11 +47,16 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   z-index: 9999;
 }
 .header-content {
+               position: fixed;
             display: flex;
-            align-items: center; /* Выравнивает элементы по вертикали по центру */
-            gap: 15px; /* Добавляет немного пространства между картинкой и текстом */
-             
-        }
+              align-items: center; /* Выравнивает элементы по вертикали по центру */
+             gap: 15px;/* Добавляет немного пространства между картинкой и текстом */
+            background-color: #fcfbbde1;
+            box-shadow: #000;
+            
+         
+          }   #ffffffdb
+        
         
         
 .header-content h1, .header-content p {
@@ -74,14 +80,16 @@ a, button, .clickable,  img, .fireflies-containerr, td {
 .logo {
   transition: transform 0.9s ease;
     position: relative;          /* Нужно для позиционирования подсказки */
-            display: inline-block;
+    display: inline-block;
+    background-color: #ffffff00;
+    
 }
 
 .logo:hover {
   background-color: #00e5ff70 !important;
-   transition: transform 0.3s ease;
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
 }
 
 
@@ -91,10 +99,11 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     list-style-type: none; /* Убираем маркеры списка */
     margin: 0;
     padding: 0;
-    background-color: #ffffffc8;
+    background-color: #ffffff00;
     overflow: hidden;
     font-family: "Rubik Gemstones", system-ui;
-    padding: 0px 0px 0px 8px;
+    padding: 0px 0px 0px 0px;
+    box-shadow: #0400ff;
 }
 
 .dropdown-menu li {
@@ -112,7 +121,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     display: block;
     color: rgb(0, 200, 255);
     text-align: center;
-    padding: 14px 16px;
+    padding: 22px 16px;
     text-decoration: none; /* Убираем подчеркивание сылок */
     font-family: "Rubik Gemstones", system-ui;
      transition: transform 0.3s ease;
@@ -123,6 +132,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
      transform: scale(1.1);
     transition: transform 0.2s ease;
     transform: scale(1.1);
+
 }
 
 /* Стили для выпадающего меню */
@@ -169,7 +179,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
-    padding: 20px;
+    padding: 100px 0px 0px 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #ffffffdb;
@@ -263,7 +273,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
-    padding: 20px;
+    padding: 100px 0px 0px 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #ffffffdb;
@@ -327,7 +337,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
-    padding: 20px;
+    padding: 100px 0px 0px 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #ffffffdb;
@@ -338,7 +348,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
-    padding: 20px;
+    padding: 100px 0px 0px 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #ffffffdb;
@@ -363,7 +373,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
     width: 90%;
     max-width: 1000px;
     margin:0 auto ;          /* Центрирует контейнер по горизонтали */
-    padding: 20px;
+    padding: 100px 0px 0px 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #ffffffdb;
@@ -374,7 +384,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width: 90%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 100px 0px 0px 0px;
   text-align: center;
   color: #4f4f4f;
   max-width: 950px;
@@ -387,11 +397,33 @@ a, button, .clickable,  img, .fireflies-containerr, td {
 }
 
 .footer {
+     display: flex;
+    align-items: center;
+    justify-content: center; /* Центрирует содержимое внутри flex-контейнера */
+    gap: 80px;
+    
+    /* Исправление прокрутки: */
+    width: 100%;
+    box-sizing: border-box;  /* Включает границы (border) в общую ширину 100% */
+    
     background-color: #ffffffae;
     color: #0400ff;
-    padding: 20px;
-    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 10px;  
     }
+.footer a {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px !important;
+    text-decoration: none;
+    color: #ff0000;
+    background-color: #018ad900;
+   
+    
+}
+.footer a:hover {
+  background-color: #fefefe2d;
+}
 img {
   max-width: 100%;
 }    
