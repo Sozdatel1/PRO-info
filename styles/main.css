@@ -36,7 +36,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   pointer-events: none; /* чтобы клики проходили сквозь огоньки */
   z-index: 9999; /* выше, чем у остального контента */
   margin: 20;
-  bottom:0 ;             /* внизу */
+  bottom: 0 ;             /* внизу */
   left: 0;   
   text-align: center;
 }
