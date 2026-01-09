@@ -29,7 +29,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   padding: 20px;
   width: 90%; /* Задайте нужную ширину */
   margin: 0 auto;
-  flex-wrap: wrap; /* Чтобы лампочки переносились на новую строку, если не помещаются */
+  flex-wrap: wrap; /* Чтобы лампочки переносилис на новую строку, если не помещаются */
   padding: 0px 0px 0px ;
   z-index: 1;
 }
