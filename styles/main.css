@@ -20,7 +20,8 @@ a, button, .clickable,  img, .fireflies-containerr, td {
 .new-year {
   position: fixed;
   display: flex;
-  padding: 80px 0px 0px 0px;
+  padding: 71px 0px 0px 0px;
+  z-index: 1000000;
 }
 .light-bulbs {
   position: relative;
@@ -181,6 +182,9 @@ a, button, .clickable,  img, .fireflies-containerr, td {
 
 .dropdown-menu li a:hover:not(.active) {
     background-color: #fcfa86;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
     
 
 }
@@ -268,7 +272,7 @@ a, button, .clickable,  img, .fireflies-containerr, td {
   transition: transform 0.3s ease;
 }
 .cards-grid a:hover {
-  background-color: #ffe60050;
+  background-color: #ffe60028;
   border-radius: 50%;
   transform: scale(1.1);
   transition: transform 0.5s ease;
@@ -636,28 +640,28 @@ img {
   display: none;
 }
 .container-glavnaya {
-  padding: 250px 0px 0px 0px;
+  padding: 260px 0px 0px 0px;
 }
 .container {
   padding: 300px 0px 0px 0px;
 }
 .container-fact {
-  padding: 250px 0px 0px 0px;
+  padding: 260px 0px 0px 0px;
 }
 .container-one {
-  padding: 250px 0px 0px 0px;
+  padding: 260px 0px 0px 0px;
 }
 .container-second {
-  padding: 250px 0px 0px 0px;
+  padding: 260px 0px 0px 0px;
 }
 .school {
-  padding: 250px 0px 0px 0px;
+  padding: 260px 0px 0px 0px;
 }
 .container-holiday {
-  padding: 250px 0px 0px 0px;
+  padding: 260px 0px 0px 0px;
 }
 .container-why {
-  padding: 250px 0px 0px 0px;
+  padding: 260px 0px 0px 0px;
 }
 .light-bulbs {
    padding: 73px 0px 0px 0px;
