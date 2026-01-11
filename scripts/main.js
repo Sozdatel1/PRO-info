@@ -100,3 +100,18 @@ window.addEventListener('load', function() {
       document.getElementById('cookieAlert').style.display = 'block';
     }, 3000);
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const factElement = document.getElementById('weekly-fact'); // Элемент, куда вы хотите вставить факт
+    const apiUrl = 'Factroom.ru'; // Замените на реальный адрес API
+
+    fetch(apiUrl)
+        .then(response => response.json()) // Преобразуем ответ в формат JSON
+        .then(data => {
+            // Вставляем полученный факт в ваш HTML-элемент
+            factElement.textContent = data.fact; // Или data.text, зависит от API
+        })
+        .catch(error => {
+            console.error('Ошибка при получении факта:', error);
+            factElement.textContent = 'К сожалению, сегодня фактов нет.';
+        });
+});
