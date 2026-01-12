@@ -63,63 +63,63 @@ function checkHoliday() {
 // Запускаем при загрузке страницы
 window.onload = checkHoliday;
 
-const facts = {
+// const facts = {
 
-"01-12": "Осьминоги имеют три сердца!",
-"01-13": "Осьминоги имеют три сердца!",
-"01-14": "Осьминоги имеют три сердца!",
-"01-15": "Осьминоги имеют три сердца!",
-"01-16": "Осьминоги имеют три сердца!",
-"01-17": "Осьминоги имеют три сердца!",
-"01-18": "Осьминоги имеют три сердца!",
-"01-19": "Осьминоги имеют три сердца!",
-"01-20": "",
-// "01-21":
-// "01-22":
-// "01-23":
-// "01-24":
-// "01-25":
-// "01-26":
-// "01-27":
-// "01-28":
-// "01-29":
-// "01-30":
-// "01-31":
-// "02-01":
-// "02-02":
-// "02-03":
-// "02-04":
-// "02-05":
-// "02-06":
-// "02-07":
-// "02-08":
-// "02-09":
-// "02-10":
-// "02-11":
-// "02-12":
-};
+// "01-12": "Осьминоги имеют три сердца!",
+// "01-13": "Осьминоги имеют три сердца!",
+// "01-14": "Осьминоги имеют три сердца!",
+// "01-15": "Осьминоги имеют три сердца!",
+// "01-16": "Осьминоги имеют три сердца!",
+// "01-17": "Осьминоги имеют три сердца!",
+// "01-18": "Осьминоги имеют три сердца!",
+// "01-19": "Осьминоги имеют три сердца!",
+// "01-20": "",
+// // "01-21":
+// // "01-22":
+// // "01-23":
+// // "01-24":
+// // "01-25":
+// // "01-26":
+// // "01-27":
+// // "01-28":
+// // "01-29":
+// // "01-30":
+// // "01-31":
+// // "02-01":
+// // "02-02":
+// // "02-03":
+// // "02-04":
+// // "02-05":
+// // "02-06":
+// // "02-07":
+// // "02-08":
+// // "02-09":
+// // "02-10":
+// // "02-11":
+// // "02-12":
+// };
 
-function checkFact() {
-  const today = new Date();
-  const month = today.getMonth() + 1; // Месяцы с 1
-  const day = today.getDate();
+// function checkFact() {
+//   const today = new Date();
+//   const month = today.getMonth() + 1; // Месяцы с 1
+//   const day = today.getDate();
 
-  const dateKey = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-  const factsName = facts[dateKey];
-  const displayDiv = document.getElementById('fact');
+//   const dateKey = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+//   const factsName = facts[dateKey];
+//   const displayDiv = document.getElementById('fact');
 
-  if (displayDiv) {
-    if (factsName) {
-      displayDiv.innerHTML = `<h2>Факт недели: ${factsName}</h2>`;
-    } else {
-      displayDiv.innerHTML = `<h2>На сегодня факта нет</h2>`;
-    }
-  }
-}
+//   if (displayDiv) {
+//     if (factsName) {
+//       displayDiv.innerHTML = `<h2>Факт недели: ${factsName}</h2>`;
+//     } else {
+//       displayDiv.innerHTML = `<h2>На сегодня факта нет</h2>`;
+//     }
+//   }
+// }
 
-// Запускаем при загрузке страницы
-window.onload = checkFact;
-const snowContainer = document.getElementById('snow');
+// // Запускаем при загрузке страницы
+// window.onload = checkFact;
+// const snowContainer = document.getElementById('snow');
 
 function createSnowflake() {
   const snowflake = document.createElement('div');
