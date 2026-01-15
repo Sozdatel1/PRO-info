@@ -198,26 +198,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-function updateDaysToVacation() {
-    // Укажите дату начала каникул (ГГГГ, ММ (от 0 до 11), ДД)
-    // Январь - 0, Февраль - 1 и так далее.
-    const vacationDate = new Date(2026, 6, 1); // Пример: 23 марта 2026
+function updateVacationCountdown() {
+    // Укажите дату начала каникул: Год, Месяц (0-11), Число, Часы, Минуты
+    const vacationDate = new Date(2026, 6, 1, 0, 0); // 23 марта 2026, 09:00
     const now = new Date();
-    
-    // Считаем разницу в миллисекундах
     const diff = vacationDate - now;
-    
-    const displayElement = document.getElementById('vacation-timer');
+
+    const timerElement = document.getElementById('vacation-timer');
 
     if (diff > 0) {
-        const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-        displayElement.innerText = `До летних каникул осталось: ${days} ${getNoun(days, 'день', 'дня', 'дней')}`;
+        // Расчет единиц времени
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+        // Формируем строку с правильными окончаниями
+        const dText = days + " " + getNoun(days, 'день', 'дня', 'дней');
+        const hText = hours + " " + getNoun(hours, 'час', 'часа', 'часов');
+        const mText = minutes + " " + getNoun(minutes, 'минута', 'минуты', 'минут');
+
+        timerElement.innerHTML = `До летних каникул: <span>${dText}, ${hText}, ${mText}</span>`;
     } else {
-        displayElement.innerText = "Ура! Каникулы начались!";
+        timerElement.innerText = "Каникулы уже идут!";
     }
 }
 
-// Функция для правильного склонения слова "день"
+// Функция для склонения слов
 function getNoun(number, one, two, five) {
     let n = Math.abs(number);
     n %= 100;
@@ -228,4 +234,6 @@ function getNoun(number, one, two, five) {
     return five;
 }
 
-updateDaysToVacation();
+// Запускаем каждую секунду (1000 мс)
+setInterval(updateVacationCountdown, 1000);
+updateVacationCountdown(); // Инициализация сразу
