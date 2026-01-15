@@ -198,3 +198,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+function updateDaysToVacation() {
+    // Укажите дату начала каникул (ГГГГ, ММ (от 0 до 11), ДД)
+    // Январь - 0, Февраль - 1 и так далее.
+    const vacationDate = new Date(2026, 6, 1); // Пример: 23 марта 2026
+    const now = new Date();
+    
+    // Считаем разницу в миллисекундах
+    const diff = vacationDate - now;
+    
+    const displayElement = document.getElementById('vacation-timer');
+
+    if (diff > 0) {
+        const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        displayElement.innerText = `До летних каникул осталось: ${days} ${getNoun(days, 'день', 'дня', 'дней')}`;
+    } else {
+        displayElement.innerText = "Ура! Каникулы начались!";
+    }
+}
+
+// Функция для правильного склонения слова "день"
+function getNoun(number, one, two, five) {
+    let n = Math.abs(number);
+    n %= 100;
+    if (n >= 5 && n <= 20) return five;
+    n %= 10;
+    if (n === 1) return one;
+    if (n >= 2 && n <= 4) return two;
+    return five;
+}
+
+updateDaysToVacation();
