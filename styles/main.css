@@ -8,7 +8,7 @@ body {
     background: linear-gradient(-4500000deg, #eeff00, #000000, #fff700, #76edff5f);
     background-size: 700% 400%;
     /* animation: gradientAnimation 15s ease infinite; */
-       background-attachment: fixed; 
+    background-attachment: fixed; 
     min-height: 100vh;
     padding: 0px;
     margin: 0;
@@ -25,7 +25,8 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
 }
 .new-year {
   position: fixed;
-  display: flex;
+  /* display: flex; */
+  display: none;
   padding: 71px 0px 0px 0px;
   z-index: 1000000;
 }
@@ -108,7 +109,7 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
   /* background-color: hsla(0, 0%, 60%, .14); */
   background-color: hsla(62, 100%, 50%, 0.1);
   backdrop-filter: blur(10px); 
-
+  width: 100%;
   transition: transform 0.6s ease;
   /* animation: hideHeader linear both;
   animation-timeline: scroll();
@@ -132,7 +133,137 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
 } */
 .header--hidden {
     transform: translateY(-109%);
-}        
+}   
+body.menu-open { 
+    overflow: hidden; 
+    touch-action: none; /* Предотвращает скролл на тачскринах */
+}
+
+/* Стили бургера */
+.menu-toggle {
+    display: none; /* Скрыт на ПК */
+    position: relative;
+    width: 50px; 
+    height: 50px;
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    z-index: 1100; /* Поднимаем выше меню */
+    padding: 0;
+}
+
+.menu-toggle span,
+.menu-toggle span::before, 
+.menu-toggle span::after {
+    content: ""; 
+    position: absolute; 
+    width: 45px;
+    height: 4px; /* Толщина увеличена */
+    background: #333; 
+    transition: all 0.3s ease-in-out; 
+    left: 2.5px; /* Центрируем 45px внутри 50px */
+    border-radius: 2px;
+}
+
+/* Исправленная опечатка в селекторе и позиция центральной линии */
+.menu-toggle span {
+    left: 30%;
+    top: 50%;
+    transform: translateY(-50%, -50%);
+}
+.menu-toggle span::before, 
+.menu-toggle span::after {
+left: 0;
+}
+
+/* Расстояние между палочками увеличено для больших размеров */
+.menu-toggle span::before { top: -14px; }
+.menu-toggle span::after { top: 14px; }
+
+/* Анимация в крестик (is-active) */
+.menu-toggle.is-active span { 
+    background: transparent; 
+}
+
+.menu-toggle.is-active span::before { 
+    transform: rotate(45deg); 
+    top: 0; 
+}
+
+.menu-toggle.is-active span::after { 
+    transform: rotate(-45deg); 
+    top: 0; /* Изменено с bottom: 0 для точности перекрестия */
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .menu-toggle { 
+        display: block; 
+    }
+
+    .dropdown-menu {
+        position: fixed;
+        top: 0; 
+        left: 0; 
+        width: 100vw; /* Используем vw для полной ширины */
+        height: 100dvh; /* Dynamic VH для мобильных браузеров 2026 */
+        background: #fff; 
+        z-index: 1000;
+        transform: translateX(-100%); 
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding-top: 80px; 
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .dropdown-menu.is-open { 
+        transform: translateX(0); 
+    }
+
+    .dropdown-menu ul { 
+        display: flex; 
+        flex-direction: column; 
+         align-items: center;
+        padding: 20px; 
+        margin: 0;
+        list-style: none;
+         text-align: center;
+    }
+
+    /* Раскрытие подразделов */
+    .dropdown-content {
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.1s ease-out;
+        background: #f9f9f9; 
+        left: 80px;
+        list-style: none; 
+        padding-left: 0;
+    }
+
+    .dropdown.is-expanded .dropdown-content {
+        max-height: 500px; /* Увеличено, чтобы контент не обрезался */
+    }
+
+    .dropdown-link-wrapper { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%;
+    }
+
+    /* Треугольник убран по вашему запросу */
+    .submenu-arrow::after { 
+        content: none; 
+    }
+    
+    .submenu-arrow { 
+        background: none; 
+        border: none; 
+        padding: 10px; 
+        transition: 0.3s; 
+    }
+}     
         
         
 .header-content h1, .header-content p {
@@ -159,7 +290,7 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
     display: inline-block;
     background-color: #ffffff00;
   margin: 0px;
-  padding: 0;
+  padding: 5px;
     
 }
 
@@ -169,7 +300,7 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
   transform: scale(1.05);
   transition: transform 0.5s ease;
   border-radius: 50px;
-  padding: 0px;
+  padding: 5px;
   margin: 0px;
 }
 
@@ -699,28 +830,28 @@ img {
   margin: 0;
 }
 .container-glavnaya {
-  padding: 260px 0px 0px 0px;
+  padding: 30px 0px 0px 0px;
 }
 .container {
-  padding: 300px 0px 0px 0px;
+  padding: 30px 0px 0px 0px;
 }
 .container-fact {
-  padding: 260px 0px 0px 0px;
+  padding: 60px 0px 0px 0px;
 }
 .container-one {
-  padding: 260px 0px 0px 0px;
+  padding: 60px 0px 0px 0px;
 }
 .container-second {
-  padding: 260px 0px 0px 0px;
+  padding: 60px 0px 0px 0px;
 }
 .school {
-  padding: 260px 0px 0px 0px;
+  padding: 60px 0px 0px 0px;
 }
 .container-holiday {
-  padding: 260px 0px 0px 0px;
+  padding: 60px 0px 0px 0px;
 }
 .container-why {
-  padding: 260px 0px 0px 0px;
+  padding: 60px 0px 0px 0px;
 }
 .light-bulbs {
    padding: 73px 0px 0px 0px;

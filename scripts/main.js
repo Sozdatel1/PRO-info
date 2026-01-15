@@ -63,93 +63,37 @@ function checkHoliday() {
 // Запускаем при загрузке страницы
 window.onload = checkHoliday;
 
-// const facts = {
+// const snowContainer = document.getElementById('snow');
 
-// "01-12": "Осьминоги имеют три сердца!",
-// "01-13": "Осьминоги имеют три сердца!",
-// "01-14": "Осьминоги имеют три сердца!",
-// "01-15": "Осьминоги имеют три сердца!",
-// "01-16": "Осьминоги имеют три сердца!",
-// "01-17": "Осьминоги имеют три сердца!",
-// "01-18": "Осьминоги имеют три сердца!",
-// "01-19": "Осьминоги имеют три сердца!",
-// "01-20": "",
-// // "01-21":
-// // "01-22":
-// // "01-23":
-// // "01-24":
-// // "01-25":
-// // "01-26":
-// // "01-27":
-// // "01-28":
-// // "01-29":
-// // "01-30":
-// // "01-31":
-// // "02-01":
-// // "02-02":
-// // "02-03":
-// // "02-04":
-// // "02-05":
-// // "02-06":
-// // "02-07":
-// // "02-08":
-// // "02-09":
-// // "02-10":
-// // "02-11":
-// // "02-12":
-// };
+// function createSnowflake() {
+//   const snowflake = document.createElement('div');
+//   snowflake.className = 'snowflake';
 
-// function checkFact() {
-//   const today = new Date();
-//   const month = today.getMonth() + 1; // Месяцы с 1
-//   const day = today.getDate();
+//   // Устанавливаем случайный начальный горизонтальный смещающий эффект
+//   const size = Math.random() * 4 + 4; // Размер снежинки
+//   snowflake.style.width = size + 'px';
+//   snowflake.style.height = size + 'px';
 
-//   const dateKey = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-//   const factsName = facts[dateKey];
-//   const displayDiv = document.getElementById('fact');
+//   // Начальная позиция по горизонтали
+//   snowflake.style.left = Math.random() * 100 + '%';
 
-//   if (displayDiv) {
-//     if (factsName) {
-//       displayDiv.innerHTML = `<h2>Факт недели: ${factsName}</h2>`;
-//     } else {
-//       displayDiv.innerHTML = `<h2>На сегодня факта нет</h2>`;
-//     }
-//   }
+//   // Продолжительность падения
+//   const duration = Math.random() * 10 + 10; // от 10 до 20 секунд
+//   snowflake.style.animationDuration = duration + 's';
+
+//   // Начальная задержка, чтобы снежинки не падали одновременно
+//   snowflake.style.animationDelay = Math.random() * 5 + 's';
+
+//   snowContainer.appendChild(snowflake);
+
+//   // Удаляем снежинку после окончания анимации
+//   setTimeout(() => {
+//     snowflake.remove();
+//   }, duration * 1000);
 // }
 
-// // Запускаем при загрузке страницы
-// window.onload = checkFact;
-const snowContainer = document.getElementById('snow');
-
-function createSnowflake() {
-  const snowflake = document.createElement('div');
-  snowflake.className = 'snowflake';
-
-  // Устанавливаем случайный начальный горизонтальный смещающий эффект
-  const size = Math.random() * 4 + 4; // Размер снежинки
-  snowflake.style.width = size + 'px';
-  snowflake.style.height = size + 'px';
-
-  // Начальная позиция по горизонтали
-  snowflake.style.left = Math.random() * 100 + '%';
-
-  // Продолжительность падения
-  const duration = Math.random() * 10 + 10; // от 10 до 20 секунд
-  snowflake.style.animationDuration = duration + 's';
-
-  // Начальная задержка, чтобы снежинки не падали одновременно
-  snowflake.style.animationDelay = Math.random() * 5 + 's';
-
-  snowContainer.appendChild(snowflake);
-
-  // Удаляем снежинку после окончания анимации
-  setTimeout(() => {
-    snowflake.remove();
-  }, duration * 1000);
-}
-
-// Создавать снежинки регулярно
-setInterval(createSnowflake, 30);
+// // Создавать снежинки регулярно
+// setInterval(createSnowflake, 30);
 
 window.addEventListener('load', function() {
     setTimeout(function() {
@@ -181,4 +125,76 @@ document.addEventListener('DOMContentLoaded', () => {
         // Запоминаем позицию для следующего шага
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }, { passive: true }); // passive: true повышает плавность скролла
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.getElementById('menuToggle');
+    const menu = document.getElementById('headerNav');
+    const body = document.body;
+
+    /**
+     * 1. ГЛАВНОЕ МЕНЮ (БУРГЕР)
+     * Реализует логику toggleNav: открытие полноэкранного меню
+     * и блокировку прокрутки сайта.
+     */
+    if (burger && menu) {
+        burger.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle('is-open');
+            burger.classList.toggle('is-active');
+            
+            // Блокировка скролла body (как в оригинальном коде Добродела)
+            if (isOpen) {
+                body.classList.add('menu-open');
+                body.style.overflow = 'hidden';
+            } else {
+                body.classList.remove('menu-open');
+                body.style.overflow = '';
+            }
+        });
+    }
+
+    /**
+     * 2. ПОДМЕНЮ (РАЗДЕЛЫ, РАЗРАБОТЧИК)
+     * Открывает вложенные списки при клике на всю область пункта.
+     */
+    const dropdownWrappers = document.querySelectorAll('.dropdown-link-wrapper');
+
+    dropdownWrappers.forEach(wrapper => {
+        wrapper.addEventListener('click', (e) => {
+            // Предотвращаем переход по ссылке #, чтобы сработало только раскрытие
+            e.preventDefault();
+            
+            const parent = wrapper.closest('.dropdown');
+            
+            if (parent) {
+                // Закрываем другие открытые подменю для экономии места на экране
+                document.querySelectorAll('.dropdown').forEach(item => {
+                    if (item !== parent) {
+                        item.classList.remove('is-expanded');
+                    }
+                });
+
+                // Переключаем состояние текущего подменю
+                parent.classList.toggle('is-expanded');
+            }
+        });
+    });
+
+    /**
+     * 3. АВТО-ЗАКРЫТИЕ ПРИ ПЕРЕХОДЕ
+     * Если кликнули на конечную ссылку (внутри подменю или обычную),
+     * закрываем полноэкранное меню.
+     */
+    const navLinks = document.querySelectorAll('.dropdown-menu a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Если у ссылки нет подменю (это конечная страница)
+            if (!link.closest('.dropdown-link-wrapper')) {
+                menu.classList.remove('is-open');
+                if (burger) burger.classList.remove('is-active');
+                body.classList.remove('menu-open');
+                body.style.overflow = '';
+            }
+        });
+    });
 });

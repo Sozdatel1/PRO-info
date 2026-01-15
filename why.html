@@ -16,43 +16,54 @@
 
   <div id="snow"></div>
 <body>
-  <div class="header-content">
-    <div class ="logo"><a href="index.html"><img src="img/Летнее лого идеальное-Photoroom.png" alt="10" width="250"></a>
+  <header class="header-content">
+    <div class="logo">
+        <a href="index.html">
+            <img src="img/Летнее лого идеальное-Photoroom.png" alt="Cursor.io" width="250">
+        </a>
     </div>
-    <nav class="dropdown-menu">
-      <ul>
-        <!-- <li><a href="index.html">Главная</a></li> -->
-        <li><a href="index.html"><img src="/img/images (1)-Photoroom.png" width="21"></a></li>
-        <li class="dropdown">
-          <a href="#">Разделы</a>
-          <ul class="dropdown-content">
-            <li><a href="two page.html">О самом главном</a></li>
-            <li><a href="second.html">Про новый год</a></li>
-            <li><a href="school.html">Расписание</a></li>
-            <!-- <li><a href="page3.html">Пусто</a></li>
-            <li><a href="page3.html">Пусто</a></li>
-            <li><a href="page3.html">Пусто</a></li>
-            <li><a href="page3.html">Пусто</a></li>
-            <li><a href="page3.html">Пусто</a></li>
-            <li><a href="page3.html">Пусто</a></li> -->
-          </ul>
-        </li>    
-        <li><a href="holiday.html">Праздник дня</a></li>
-        <li><a href="fact.html">Факт недели</a></li>
-    
-        <li class="dropdown">        
-          <a href="#">Разработчик</a>
-          <ul class="dropdown-content">
-            <li><a href="https://lichess.org/@/shahmati23">Lichess</a></li>
-            <li><a href="https://github.com/Sozdatel1">Github</a></li>
-            <li><a href="https://github.com/Sozdatel1/Sozdatel1.github.io">Исходный код</a></li>
-          </ul>
-        </li>    
-        <li><a href="why.html">Что это?</a></li>
-      </ul>
+
+    <!-- Кнопка бургер (появится на мобилках) -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+        <span></span>
+    </button>
+
+    <nav class="dropdown-menu" id="headerNav">
+        <ul>
+            <li><a href="index.html"><img src="/img/images (1)-Photoroom.png" width="21"></a></li>
+            
+            <li class="dropdown">
+                <div class="dropdown-link-wrapper">
+                    <a href="#">Разделы</a>
+                   
+                </div>
+                <ul class="dropdown-content">
+                    <li><a href="two page.html">О самом главном</a></li>
+                    <li><a href="second.html">Про новый год</a></li>
+                    <li><a href="school.html">Расписание</a></li>
+                </ul>
+            </li>
+
+            <li><a href="holiday.html">Праздник дня</a></li>
+            <li><a href="fact.html">Факт недели</a></li>
+
+            <li class="dropdown">
+                <div class="dropdown-link-wrapper">
+                    <a href="#">Разработчик</a>
+                    
+                </div>
+                <ul class="dropdown-content">
+                    <li><a href="https://lichess.org/@/shahmati23">Lichess</a></li>
+                    <li><a href="https://github.com/Sozdatel1">Github</a></li>
+                    <li><a href="https://github.com/Sozdatel1/Sozdatel1.github.io">Исходный код</a></li>
+                </ul>
+            </li>
+            <li><a href="why.html">Что это?</a></li>
+        </ul>
     </nav>
-    <img src="/img/ezgif.com-effects.gif" width="40" alt="С Новым годом!">
-  </div>
+    
+    <img src="/img/ezgif.com-effects.gif" class="header-gif" width="40">
+</header>
   <div class ="new-year">
       <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
       <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на первой позиции"  width="150">
