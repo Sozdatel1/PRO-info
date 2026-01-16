@@ -465,11 +465,13 @@ left: 0;
 
 .cards-grid {
   display: grid;
-  width: 90%;
+  width: 80%;
   grid-template-columns: repeat(2, 1fr); /* две равные колонки */
-  gap: 50px; 
+  gap: 40px; 
+  text-align: left;
   margin: 0 auto; /* центрирование */
-  box-shadow: 0 4px 8px rgba(1, 242, 255, 0);
+  box-shadow: 0 4px 8px rgba(0, 242, 255, 0);
+  border-radius: 50px;
   background-color: #ffffff00;
 }
 .cards-grid a {
@@ -478,16 +480,17 @@ left: 0;
   transition: transform 0.3s ease;
 }
 .cards-grid a:hover {
-  background-color: #ffe60028;
-  border-radius: 50px;
-  transform: scale(1.1);
+  background-color: #ffe600;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(107, 107, 107, 0.479); 
+  /* transform: scale(1.1);
   transition: transform 0.5s ease;
-  transform: scale(1.1);
+  transform: scale(1.1); */
 
 }
 .card-grid-table {
   display: grid;
-  width: 90%;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr); /* две равные колонки */
   gap: 50px; 
   margin: 0 auto; /* центрирование */
@@ -496,6 +499,7 @@ left: 0;
 }
 .card-grid-table img {
   left: 0;
+  
 }
 .notification {
     display: none; /* скрываем изначально */

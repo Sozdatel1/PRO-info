@@ -237,3 +237,27 @@ function getNoun(number, one, two, five) {
 // Запускаем каждую секунду (1000 мс)
 setInterval(updateVacationCountdown, 1000);
 updateVacationCountdown(); // Инициализация сразу
+function startHeaderSystem() {
+    // 1. Таймер до 1 июня 2026
+    const targetDate = new Date('June 1, 2026 00:00:00').getTime();
+
+    function updateTime() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById('summer-timer').innerText = `${d}д. ${h}ч. ${m}м.`;
+    }
+
+    setInterval(updateTime, 60000);
+    updateTime();
+
+    // 2. Резервный метод погоды (если API не работают)
+    // Если через 2 секунды погода не подгрузится, останется значение по умолчанию
+    // Можно заменить "1" на текущую температуру в Дубне вручную, если сеть блокирует всё
+}
+
+document.addEventListener('DOMContentLoaded', startHeaderSystem);
