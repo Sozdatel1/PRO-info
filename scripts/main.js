@@ -261,3 +261,4 @@ updateVacationCountdown(); // Инициализация сразу
 // }
 
 // document.addEventListener('DOMContentLoaded', startHeaderSystem);
+navigator.permissions.query({name:'geolocation'}).then(res => console.log(res.state));

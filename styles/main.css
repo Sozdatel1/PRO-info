@@ -26,6 +26,9 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
   padding: 71px 0px 0px 0px;
   z-index: 1000000;
 }
+.pogoda {
+  text-decoration: none;
+}
 .ms-informer-script {
   background-color: #0044ff;
   text-decoration: none;
@@ -240,7 +243,8 @@ left: 0;
     align-items: center;
     gap: 5px; /* Расстояние между картинкой и текстом */
     background-color: #fffb02;
-    padding: 0px;
+    border: 2px solid #0077ff;
+    padding: 5px;
     border-radius: 50px;
     margin: 0px 0px 0px 30px;
 }
@@ -450,7 +454,11 @@ left: 0;
   overflow: hidden;
   z-index: 9999;
 }
-
+.carta {
+  padding: 80px 0px 0px 0px;
+  width: 100%;
+  height: 100%;
+}
 .snowflake {
   position: absolute;
   top: -10px;
@@ -551,5 +559,8 @@ img {
 }
 #vacation-timer {
   margin: 0px 0px 0px 0px;
+}
+.pogoda {
+  max-width: 100%;
 }
 }
