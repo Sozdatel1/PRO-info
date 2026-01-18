@@ -261,4 +261,18 @@ updateVacationCountdown(); // Инициализация сразу
 // }
 
 // document.addEventListener('DOMContentLoaded', startHeaderSystem);
-navigator.permissions.query({name:'geolocation'}).then(res => console.log(res.state));
+// Инициализация Swiper
+const swiper = new Swiper('.my-slider', {
+  loop: true,
+  speed: 1000,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  effect: 'slide',
+});
+

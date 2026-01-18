@@ -39,6 +39,7 @@
   left: 0;
   
 }
+
 @media (max-width: 800px) {
 .cards-grid {
     max-width: 300px;

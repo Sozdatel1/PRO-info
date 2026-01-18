@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/content.css">
     <link rel="stylesheet" href="styles/cards-glavnaya.css">
+    <link rel="stylesheet" href="./swiper-bundle.min.css" />
     <link rel="icon" href="img/kursor.png" type="image/png">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,7 +113,7 @@
     <div class="container-glavnaya">
       <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A51b851f0abedb25dacd141e0e1f3a706cb0fc3b3d1c7e36f16e250cf6b2a0980&amp;width=100%25&amp;height=352&amp;lang=ru_RU&amp;scroll=true"></script> -->
 
-      <div style="width: 90%; margin: 50px auto; padding: 10px 0px 10px 0px; text-align: center; box-shadow: 0 4px 8px rgb(53, 212, 239); border-radius: 30px; color: #000; font-family: 'Times New Roman', Times, serif; background: linear-gradient(to bottom, #59e9ff 21%,#4de3fa 49%,#4bfbf2 77%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;"><h1>&#128075;Добро пожаловать на сайт!&#128075;</h1>  
+      <div style="width: 90%; margin: 50px auto; padding: 10px 0px 10px 0px; text-align: center; box-shadow: 0 10px 30px  rgb(160, 160, 160); border-radius: 30px; color: #000; border: 2px solid  #000 ;font-family: 'Times New Roman', Times, serif; background: linear-gradient(to bottom, #59e9ff 21%,#4de3fa 49%,#4bfbf2 77%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;"><h1>&#128075;Добро пожаловать на сайт!&#128075;</h1>  
 <h1>Узнайте для себя что-нибудь новое за 5 минут!</h1>
 <h2>Здесь вас ждёт:</h2>
         
@@ -122,7 +123,7 @@
 ; color: #0088ffe1;  text-decoration: none; ">
         <h1>Узнайте что-нибудь новое за 5 минут!<br> Здесь вас ждёт:</h1>
         </div> -->
-    <div class="content-glavnaya">
+    <di class="content-glavnaya">
     <div class="gov-service-container">
     <div class="main-title">Быстрый обзор сайта:</div>
 
@@ -165,17 +166,33 @@
             </div>
         </div>
     </div>
-
-    <!-- Нижняя часть с переключателем режимов -->
-    
 </div>
+    <div class="swiper my-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background: linear-gradient(to right, #e0f7fa, #007bff);">
+          <div class="content">
+            
+            <h1>Погода на сегодня</h1>
+            <a id="ms-informer-link-df0429a3f4b16f3017fa3d566df31475" class="ms-informer-link" href="https://www.meteoservice.ru/weather/overview/dubna">Погода в Дубне</a>
+      <script class="ms-informer-script" src="https://www.meteoservice.ru/informer/script/df0429a3f4b16f3017fa3d566df31475"></script>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background: linear-gradient(to right, #00ff08, #4caf50);">
+          <div class="content"><h1>Последняя новость </h1></div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
 
+    <!-- Подключаем локальный скрипт Swiper -->
+    <script src="./swiper-bundle.min.js"></script>
 
       
-  <p></p>     
-<div class="gov-service-container">
+    <p></p>     
+
+  <div class="ramka">
     
-<h2 style="text-align: center; margin-top: 15px;color: #00b7ff; margin: 30px 0px 0px 0px;">Информация о вкладках</h2>
+<h2 style="text-align: center; margin-top: 15px; color: #00b7ff; margin: 30px 0px 0px 0px;">Информация о вкладках</h2>
 <table class="fancy-table" id="infoTable" style="width: 100%; border-collapse: collapse;  cursor: pointer;">
   <thead>
     <tr>
@@ -197,7 +214,7 @@
       <td>В этой вкладке вы можете посмотреть праздник, который отмечают сегодня.</td>
     </tr>
   </tbody>
-</table></div>
+</table></div></di>
     <!-- <div style="max-width: 900px; margin: 20px auto; padding: 20px; box-shadow: 0 4px 8px rgba(0, 217, 255, 0.479); border-radius: 10px; background: linear-gradient(to bottom, #59e9ff 21%,#27e2ff 49%,#59fff7 77%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 ;"><h1>Добро пожаловать на сайт!</h1>  
         <p>Всюду вас ждут яркие тона и не менне яркие факты!</p>
@@ -224,6 +241,7 @@
     </button>
   </div>
     <script src="/scripts/main.js"></script>
+      
 </body>
 
 </html>
