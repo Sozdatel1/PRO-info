@@ -29,6 +29,9 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
 .pogoda {
   text-decoration: none;
 }
+.pogoda-mobile {
+  display: none;
+}
 .ms-informer-script {
   background-color: #0044ff;
   text-decoration: none;
@@ -668,8 +671,12 @@ img {
   margin: 0px 0px 0px 0px;
 }
 .pogoda {
-  max-width: 100%;
+  display: none;
 }
+.pogoda-mobile {
+  display: block;
+}
+
   /* .swiper {
     height: auto;
     min-height: 400px;
