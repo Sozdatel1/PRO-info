@@ -264,7 +264,7 @@ updateVacationCountdown(); // Инициализация сразу
 // Инициализация Swiper
 const swiper = new Swiper('.my-slider', {
   loop: true,
-  speed: 1000,
+  speed: 500,
   autoplay: {
     delay: 4000,
     disableOnInteraction: false,
@@ -273,6 +273,19 @@ const swiper = new Swiper('.my-slider', {
     el: '.swiper-pagination',
     clickable: true,
   },
-  effect: 'slide',
+    // Настройки адаптивности
+  breakpoints: {
+    // Если экран шире 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    // Если экран шире 1024px
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 0
+    }
+  }
+    // effect: 'slide',
 });
 

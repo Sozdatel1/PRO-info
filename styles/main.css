@@ -205,47 +205,96 @@ left: 0;
 .header-content h1, .header-content p {
            margin: 0px;
         }
-/* Ваши стили для слайдера */
 .swiper {
   width: 100%;
-  height: 900px;
-  height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 20px;
+  height: 500px; /* Установите нужную высоту */
+  background-color: #00aeff14; 
+  border-radius: 50px;
+  margin: 30px auto;
 }
 
-.swiper-slide {
-  font-family: Arial, sans-serif;
+/* Стили для обоих контейнеров контента */
+.content-slide-one, 
+.content-slide-two {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: rgb(0, 0, 0);
-  text-align: center;
+  justify-content: space-around; /* Распределяет элементы с отступом от краев */
+  
+  width: 90%;            /* Занимает 90% ширины, оставляя 5% синей полосы по бокам */
+  height: 80%;           /* Оставляет синюю полосу сверху и снизу */
+  margin: auto;          /* Центрирует белый блок в синем слайде */
+  
+  padding: 20px;         /* Внутренний защитный отступ от краев белого блока */
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 15px;
 }
 
-.content {
+.text-block {
+  flex: 1;
+  padding-right: 20px;   /* Отступ справа от текста до картинки */
+  text-align: left;
+}
+
+.text-block h1 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.main-img {
+  max-width: 45%;        /* Картинка не больше половины блока */
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Специально для виджета погоды, чтобы не лип */
+.weather-widget {
   width: 100%;
-  gap: 100px;
-  display: flex;
-  padding: 0px 0px 0px 80px;
-  background-color: rgba(255, 255, 255, 0.563);
-  align-items: center !important;
-  text-align: center;
-  border-radius: 5px;
+  overflow: hidden;
 }
 
-.content h2 { margin: 0 0 10px 0; font-size: 1.5rem; }
-.content p { margin: 0 0 15px 0; font-size: 1rem; }
-.content button {
-  background: #ffc107;
-  color: #333;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .content-slide-one, 
+  .content-slide-two {
+    flex-direction: column; /* Элементы в колонку */
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    min-height: 90%;
+  }
+
+  .text-block {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .main-img {
+    max-width: 80%;
+  }
 }
+
+/* Специально для контейнера с таймером */
+#vacation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ 
+  gap: 10px;
+}
+.text-block {
+  flex: 1;               /* Позволяет тексту занимать свободное место */
+  max-width: 80%;        /* Но не более половины слайда */
+  text-align: left!important;      /* Или center, если хотите по центру */
+  padding:  0px 10px;       /* Дополнительный отступ, чтобы буквы не касались краев */
+}
+#vacation-timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+
 
 #text {
     font-family: Verdana, Geneva, Tahoma, Times, serif, Arial, sans-serif;
@@ -266,7 +315,7 @@ left: 0;
     border: 2px solid #0000008f;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.258);
     font-family: Arial, sans-serif;
-    margin: auto;
+    margin: 20px auto;
     max-width: 90%;
     text-decoration: none !important;
 }
@@ -621,13 +670,9 @@ img {
 .pogoda {
   max-width: 100%;
 }
-  .swiper {
-  width: 100%;
-  height: 900px;
-  height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 20px;
+  /* .swiper {
+    height: auto;
+    min-height: 400px;
 }
 
 .swiper-slide {
@@ -640,14 +685,11 @@ img {
 }
 
 .content {
-  width: 100%;
-  gap: 0px;
+  flex-direction: column;
+  gap: 15px;
   display: flex;
-  padding: 0px 0px 0px 0px;
-  background-color: rgba(255, 255, 255, 0.563);
-  align-items: center !important;
-  text-align: center;
-  border-radius: 5px;
+  padding: 10px;
+  
 }
 
 .content h1 { 
@@ -663,5 +705,5 @@ img {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-}
+} */
 }
