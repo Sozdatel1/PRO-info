@@ -65,13 +65,14 @@
 } 
 .container-fact {
     width: 90%;
+    font-size: 20px;
     max-width: 1000px;
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
     padding: 100px 20px 20px 20px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #ffffffdb;
-    color:#fa0303
+    color:#434460
 }
 .container-second {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Times, serif, Arial, sans-serif, sans-serif;
