@@ -209,10 +209,12 @@ left: 0;
            margin: 0px;
         }
 .swiper {
-  width: 100%;
+  width: 93%;
   height: 500px; /* Установите нужную высоту */
   background-color: #00aeff14; 
+  border: 2px solid #00000087;
   border-radius: 50px;
+  
   margin: 30px auto;
 }
 
@@ -225,22 +227,22 @@ left: 0;
   
   width: 90%;            /* Занимает 90% ширины, оставляя 5% синей полосы по бокам */
   height: 80%;           /* Оставляет синюю полосу сверху и снизу */
-  margin: auto;          /* Центрирует белый блок в синем слайде */
+  margin: 0 auto;          /* Центрирует белый блок в синем слайде */
   
-  padding: 20px;         /* Внутренний защитный отступ от краев белого блока */
+  padding: 37px 0px 0px 0px;         /* Внутренний защитный отступ от краев белого блока */
   background-color: rgba(255, 255, 255, 0);
   border-radius: 15px;
 }
 
 .text-block {
-  flex: 1;
-  padding-right: 20px;   /* Отступ справа от текста до картинки */
-  text-align: left;
+
+  padding-right: 0px;   /* Отступ справа от текста до картинки */
+  text-align: center;
 }
 
 .text-block h1 {
-  margin-bottom: 15px;
-  font-size: 24px;
+  margin: 0 auto;
+  font-size: 10px;
 }
 
 .main-img {
@@ -251,51 +253,87 @@ left: 0;
 
 /* Специально для виджета погоды, чтобы не лип */
 .weather-widget {
-  width: 100%;
+  width: 90%;
   overflow: hidden;
 }
-
+#vacation-timer {
+    font-weight: bold;
+    font-size: 40px ;
+    color: #0044ff;
+    background-color: #31300e00;
+    border-radius: 50px;
+    padding: 0px;
+    font-family: sans-serif;
+ 
+}
+#vacation-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Расстояние между картинкой и текстом */
+    background-color: #fffb02;
+    font-size: 60px !important;
+    border: 2px solid #0077ff;
+    padding: 0px;
+    border-radius: 50px;
+    margin: 0px 0px 0px 0px;
+}
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
+  .swiper {
+    height: 300px;
+  }
+  
   .content-slide-one, 
   .content-slide-two {
-    flex-direction: column; /* Элементы в колонку */
+    display: block;
+    /* flex-direction: column; Элементы в колонку */
     justify-content: center;
     text-align: center;
     height: auto;
+    width: 97%;
     min-height: 90%;
   }
-
+  .content-slide-two img {
+    width: 130px;
+  }
   .text-block {
-    padding-right: 0;
-    margin-bottom: 20px;
+    padding-right: 0px ; 
+    margin: 0 auto;
   }
 
   .main-img {
     max-width: 80%;
   }
-}
+
 
 /* Специально для контейнера с таймером */
 #vacation-container {
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 10px;
  
   gap: 10px;
 }
 .text-block {
   flex: 1;               /* Позволяет тексту занимать свободное место */
-  max-width: 80%;        /* Но не более половины слайда */
-  text-align: left!important;      /* Или center, если хотите по центру */
-  padding:  0px 10px;       /* Дополнительный отступ, чтобы буквы не касались краев */
+  max-width: 100%;  
+  width: 100%;      /* Но не более половины слайда */
+  text-align: center !important;      /* Или center, если хотите по центру */
+  padding:  0px;       /* Дополнительный отступ, чтобы буквы не касались краев */
 }
 #vacation-timer {
-  font-size: 1.5rem;
+  font-size: 20px !important;
   font-weight: bold;
-  color: #2e7d32;
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+  color: #2e3a7d;
 }
+}
+
 
 
 
@@ -311,14 +349,14 @@ left: 0;
     color: #00a6ff;
 }
 .ramka {
-    width: 95%; /* Общая ширина блока */
+    width: 90%; /* Общая ширина блока */
     background: #fff;
     padding: 15px;
     border-radius: 24px;
     border: 2px solid #0000008f;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.258);
     font-family: Arial, sans-serif;
-    margin: 20px auto;
+    margin: 0px auto;
     max-width: 90%;
     text-decoration: none !important;
 }
@@ -335,27 +373,7 @@ left: 0;
   padding: 5px;
     
 }
-#vacation-timer {
-    font-weight: bold;
-    font-size: 30px;
-    color: #0044ff;
-    background-color: #31300e00;
-    border-radius: 50px;
-    padding: 0px;
-    font-family: sans-serif;
- 
-}
-#vacation-container {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Расстояние между картинкой и текстом */
-    background-color: #fffb02;
-    font-size: 60px;
-    border: 2px solid #0077ff;
-    padding: 5px;
-    border-radius: 50px;
-    margin: 0px 0px 0px 30px;
-}
+
 
 #vacation-icon {
     width: 28px;  /* Размер иконки */

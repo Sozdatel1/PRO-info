@@ -266,7 +266,7 @@ const swiper = new Swiper('.my-slider', {
   loop: true,
   speed: 500,
   autoplay: {
-    delay: 4000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
