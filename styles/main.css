@@ -213,6 +213,7 @@ left: 0;
   height: 500px; /* Установите нужную высоту */
   background-color: #84defa22; 
   border: 2px solid #00000087;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.348);
   border-radius: 24px;
   
   margin: 30px auto;

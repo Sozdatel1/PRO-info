@@ -7,6 +7,7 @@
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #ffffffdb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.384);
     /* Пример "свежего" градиента 2026 */
     color: #03a3ff;
 
@@ -66,6 +67,7 @@
 .container-fact {
     width: 90%;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
     max-width: 1000px;
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
     padding: 100px 20px 20px 20px;
@@ -88,11 +90,11 @@
     
 }
 .content-second {
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     width: 90%;
     max-width: 1000px;
     margin:0 auto ;          /* Центрирует контейнер по горизонтали */
-    padding: 20px;
+    padding: 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #696f1b00;
@@ -111,7 +113,7 @@
     color:#00a9f2
 }
 .content-why {
-  font-family: 'Times New Roman', Times, serif, sans-serif;
+   
     width: 90%;
     max-width: 1000px;
     margin: 0 auto ;          /* Центрирует контейнер по горизонтали */
@@ -214,13 +216,27 @@
   padding: 30px 0px 0px 0px;
 }
 .container-fact {
-  padding: 70px 0px 0px 0px;
+  padding: 70px 10px 10px 10px;
+ 
+
+}
+.container-fact p {
+  font-size: 17px;
+  text-align: left;
+  
+}
+.container-fact h1 {
+  font-size: 20px;
+  
 }
 .container-one {
   padding: 70px 0px 0px 0px;
 }
 .container-second {
   padding: 70px 0px 0px 0px;
+}
+.content-second {
+  font-size: 14px;
 }
 .school {
   padding: 67px 0px 0px 0px;
@@ -230,6 +246,11 @@
 }
 .container-why {
   padding: 70px 0px 0px 0px;
+  
+}
+.content-why {
+  text-align: left;
+  font-size: 12px;
 }
 
 }

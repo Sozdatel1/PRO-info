@@ -205,7 +205,7 @@ function updateVacationCountdown() {
     const diff = vacationDate - now;
 
     const timerElement = document.getElementById('vacation-timer');
-
+        if (!timerElement) return; 
     if (diff > 0) {
         // Расчет единиц времени
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -260,7 +260,7 @@ updateVacationCountdown(); // Инициализация сразу
 //     // Можно заменить "1" на текущую температуру в Дубне вручную, если сеть блокирует всё
 // }
 
-// document.addEventListener('DOMContentLoaded', startHeaderSystem);
+
 // Инициализация Swiper
 const swiper = new Swiper('.my-slider', {
   loop: true,
