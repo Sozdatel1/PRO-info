@@ -227,7 +227,7 @@ left: 0;
   justify-content: space-around; /* Распределяет элементы с отступом от краев */
   
   width: 90%;            /* Занимает 90% ширины, оставляя 5% синей полосы по бокам */
-  height: 80%;           /* Оставляет синюю полосу сверху и снизу */
+  height: 80%;         
   margin: 0 auto;          /* Центрирует белый блок в синем слайде */
   
   padding: 37px 0px 0px 0px;         /* Внутренний защитный отступ от краев белого блока */
@@ -453,10 +453,10 @@ left: 0;
 .dropdown-menu li a:hover:not(.active) {
     background-color: #fcfa86;
     border-radius: 50px;
-    transform: scale(1.1);
+    /* transform: scale(1.0);
     transition: transform 0.3s ease;
-    transform: scale(1.1);
-    
+    transform: scale(1.0);
+     */
 
 }
 
