@@ -4,9 +4,13 @@ html {
     height: 100%;
 }
 body { 
-    background: linear-gradient(-4500000deg, #eeff00, #000000, #fff700, #76edff5f);
-    background-size: 700% 400%;
+    /* background: linear-gradient(-4500000deg, #eeff00, #000000, #fff700, #76edff5f);
+    background-size: 700% 400%; */
+    background-image: url("/img/Background/images.jfif");
     /* animation: gradientAnimation 15s ease infinite; */
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-position: center;  
     background-attachment: fixed; 
     min-height: 100vh;
     padding: 0px;
@@ -17,6 +21,8 @@ body {
 a, button, .clickable,  img, .fireflies-containerr, td, th {
     cursor: url('/img/cursor-perchatka.png') 0 0, pointer !important;
 }
+
+
 /* 1. Общая ширина скроллбара */
 ::-webkit-scrollbar {
     width: 20px; /* Увеличили в два раза */
@@ -49,9 +55,9 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
     background: #0011ff; /* Переход в неоновый розовый */
     box-shadow: 
         inset 0 0 10px #ffffff,
-        0 0 20px #03fffb, 
-        0 0 40px #ff00ff;
-    cursor: pointer;
+        0 0 20px #0307ff, 
+        0 0 40px #2c25ff;
+      cursor: pointer;
 }
 
 /* 5. Когда вы тянете скроллбар (активное состояние) */
@@ -59,7 +65,7 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
     background: #ffb300; /* Ярко-зеленый неон при нажатии */
      box-shadow: 
         inset 0 0 10px #ffffff,      /* Внутренний блик для объема */
-        0 0 15px #e5ff00,            /* Основное свечение */
+        0 0 15px #fbff00,            /* Основное свечение */
         0 0 30px #fff700;            /* Дальнее рассеивание */
 }
 
@@ -255,7 +261,7 @@ left: 0;
 .swiper {
   width: 93%;
   height: 500px; /* Установите нужную высоту */
-  background-color: #84defa22; 
+  background-color: #ffffff; 
   border: 2px solid #00000087;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.348);
   border-radius: 24px;
@@ -477,7 +483,7 @@ left: 0;
 .dropdown-menu li a {
     display: flex;
     align-items: center; 
-    color: rgb(0, 100, 143);
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 24px 16px;
     margin: 0px 0px 0px 0px;

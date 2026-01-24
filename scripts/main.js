@@ -289,3 +289,7 @@ const swiper = new Swiper('.my-slider', {
     // effect: 'slide',
 });
 
+ const btn = document.getElementById('toggle-theme');
+  btn.onclick = () => {
+    document.body.classList.toggle('dark-theme');
+  }

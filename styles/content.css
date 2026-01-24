@@ -1,13 +1,16 @@
 .container-glavnaya {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Times, serif, Arial, sans-serif, sans-serif;
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
     padding: 100px 0px 10px 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
-    background-color: #ffffffdb;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.384);
+    /* background-color: #ffffffdb !important; */
+     background-color: hsla(0, 0%, 100%, 0);
+  backdrop-filter: blur(0px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+    border: 1px solid #37373700;
     /* Пример "свежего" градиента 2026 */
     color: #03a3ff;
 
@@ -16,7 +19,7 @@
 .content-glavnaya {
     font-family: 'Times New Roman', Times, serif, sans-serif;
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin:0 auto ;          /* Центрирует контейнер по горизонтали */
     padding: 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
@@ -32,7 +35,7 @@
     padding: 100px 0px 0px 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
-    background-color: #ffffffdb;
+    background-color: #fffffff4;
     color: #00a9f2 
 }  
 .content-one {
