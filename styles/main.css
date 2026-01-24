@@ -18,7 +18,6 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
     cursor: url('/img/cursor-perchatka.png') 0 0, pointer !important;
 }
 
-
 .new-year {
   position: fixed;
   /* display: flex; */
