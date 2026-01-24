@@ -64,6 +64,23 @@
     color:#666666  ; 
     line-height: 9; 
 } 
+.progress-container {
+    position: fixed; /* Фиксируем сверху */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Сделайте чуть толще для теста */
+    background: rgba(200, 200, 200, 0.2); /* Еле заметный фон */
+    z-index: 9999; /* Выводим на самый передний план */
+}
+
+.progress-bar {
+    height: 100%;
+    background: #04AA6D; /* Яркий цвет */
+    width: 0%; /* Начальная ширина */
+    transition: width 0.1s ease-out; /* Плавность */
+}
+
 .container-fact {
     width: 90%;
     font-size: 20px;

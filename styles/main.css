@@ -17,6 +17,51 @@ body {
 a, button, .clickable,  img, .fireflies-containerr, td, th {
     cursor: url('/img/cursor-perchatka.png') 0 0, pointer !important;
 }
+/* 1. Общая ширина скроллбара */
+::-webkit-scrollbar {
+    width: 20px; /* Увеличили в два раза */
+    background: #12121200; /* Фон дорожки */
+    
+}
+
+/* 2. Дорожка, по которой движется ползунок */
+::-webkit-scrollbar-track {
+    background: #ff000000;
+    border-left: 1px solid #33333300; /* Тонкая разделительная линия для стиля */
+}
+
+/* 3. Широкий светящийся ползунок */
+::-webkit-scrollbar-thumb {
+    background: #00bbff; /* Цвет цианового неона */
+    border-radius: 8px; /* Скругление под стать ширине */
+    /* Мощное многослойное свечение */
+    box-shadow: 
+        inset 0 0 10px #ffffff,      /* Внутренний блик для объема */
+        0 0 15px #00f2ff,            /* Основное свечение */
+        0 0 30px #00f2ff;            /* Дальнее рассеивание */
+    
+    /* Отступы от краев дорожки, чтобы свечение "дышало" */
+    border: 3px solid #12121200;
+}
+
+/* 4. Состояние при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background: #0011ff; /* Переход в неоновый розовый */
+    box-shadow: 
+        inset 0 0 10px #ffffff,
+        0 0 20px #03fffb, 
+        0 0 40px #ff00ff;
+    cursor: pointer;
+}
+
+/* 5. Когда вы тянете скроллбар (активное состояние) */
+::-webkit-scrollbar-thumb:active {
+    background: #ffb300; /* Ярко-зеленый неон при нажатии */
+     box-shadow: 
+        inset 0 0 10px #ffffff,      /* Внутренний блик для объема */
+        0 0 15px #e5ff00,            /* Основное свечение */
+        0 0 30px #fff700;            /* Дальнее рассеивание */
+}
 
 .new-year {
   position: fixed;
