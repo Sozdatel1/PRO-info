@@ -6,6 +6,7 @@
     <title>Cursor.io</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="styles/chat.css">
     <link rel="icon" href="img/kursor.png" type="image/png">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,7 +99,18 @@
         <!-- <div style="display: flex; text-align: center; align-items: center; font-size: 20px; background-color: rgb(0, 217, 255); border-radius: 80px; width: 50%;">
       <img src="/img/img_stylez/esia(4).png" style="width: 170px;"><h1>Исходный код и связь</h1></div> -->
       <h2>Разработчик: <a href ="https://github.com/Sozdatel1">Sozdatel1</a>. Здесь можно посмотреть  <a href="https://github.com/Sozdatel1/Sozdatel1.github.io">исходный код</a>.<br>По вопросам обращаться к <a href ="https://lichess.org/@/shahmati23">разработчику</a></h2>
+
+      <div class="static-form-container">
+        <h2>Написать разработчику</h2>
+        <p>Что бы вы хотели увидеть на этом сайте?</p>
     
+        <form action="send_mail.php" method="POST" class="contact-form">
+          <div class="input-group">
+            <textarea name="message" placeholder="Введите ваше сообщение..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Отправить сообщение</button>
+        </form>
+      </div>
     <img src="img/Capibara.jpg" alt="ошибка загрузки изображения" width="400"></div>
     </div>
     <div class="notification" id="cookieAlert">
@@ -119,5 +131,45 @@
   <!-- <div class="fireflies-containerr">
     <img src="/img/christmas-lights-transparent-background-11-usagif.gif" />
   </div> -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[action="send_mail.php"]');
+    
+    if (form) {
+        form.onsubmit = async (e) => {
+            e.preventDefault(); // Останавливаем перезагрузку страницы
+            
+            const btn = form.querySelector('button');
+            const originalBtnText = btn.textContent;
+            
+            btn.textContent = 'Отправка...';
+            btn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('send_mail.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.text();
+
+                if (result.trim() === 'success') {
+                    // Заменяем форму красивым текстом
+                    form.innerHTML = '<div style="text-align:center; padding:20px; color:#007aff; font-weight:bold;">✅ Сообщение успешно отправлено!</div>';
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                alert('Произошла ошибка при отправке.');
+                btn.textContent = originalBtnText;
+                btn.disabled = false;
+            }
+        };
+    }
+});
+</script>
+
 </body>
 </html>

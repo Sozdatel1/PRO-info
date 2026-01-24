@@ -27,17 +27,23 @@ try {
     $mail->addAddress('chess-pocht@ya.ru'); // Куда вам должно прийти письмо
 
     // Контент письма
-    $user_msg = htmlspecialchars($_POST['message']);
-    $user_email = htmlspecialchars($_POST['email']);
-
+    $mail->Body = "<b>Новое сообщение из чата:</b><br><br>" . nl2br($user_msg);
     $mail->isHTML(false);
     $mail->Subject = 'Новое сообщение из чата';
     $mail->Body    = "От: $user_email\n\nТекст сообщения:\n$user_msg";
 
     $mail->send();
-    echo 'Сообщение успешно отправлено!';
+      // Красивое сообщение и редирект
+     echo "<div style='font-family: sans-serif; text-align: center; margin-top: 100px;'>
+            <h2 style='color: #007aff;'>✅ Отправлено!</h2>
+            <p>Сейчас вы вернетесь обратно на сайт...</p>
+          </div>";
+    
+    // Перенаправление на why.html через 3 секунды
+    header("refresh:3;url=why.html"); 
+    exit(); 
 } catch (Exception $e) {
-    echo "Ошибка отправки: {$mail->ErrorInfo}";
+    echo "Ошибка при отправке: {$mail->ErrorInfo}. <br><a href='why.html'>Вернуться назад и попробовать снова</a>";
 }
 ?>
 ```

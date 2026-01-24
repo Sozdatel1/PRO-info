@@ -1,0 +1,79 @@
+/* Контейнер всей формы */
+.static-form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    border: 1px solid #f0f0f0;
+}
+
+.static-form-container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+.static-form-container p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Поле ввода */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.contact-form textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    background: #f8fafc;
+    font-size: 16px;
+    color: #2d3748;
+    outline: none;
+    transition: all 0.3s ease;
+    resize: vertical;
+    box-sizing: border-box; /* Важно для правильной ширины */
+}
+
+.contact-form textarea:focus {
+    border-color: #007aff;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+}
+
+/* Кнопка */
+.submit-btn {
+    width: 100%;
+    background-color: #007aff;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .static-form-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
