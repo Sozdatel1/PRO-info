@@ -1,11 +1,13 @@
 <?php
+require 'vendor/autoload.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Пути к файлам библиотеки (зависит от того, куда вы их скачали)
-require '/scripts/Exception.php';
-require '/scripts/PHPMailer.php';
-require '/scripts/src/SMTP.php';
+// require '/scripts/Exception.php';
+// require '/scripts/PHPMailer.php';
+// require '/scripts/src/SMTP.php';
 
 $mail = new PHPMailer(true);
 
