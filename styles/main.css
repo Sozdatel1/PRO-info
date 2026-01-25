@@ -4,13 +4,13 @@ html {
     height: 100%;
 }
 body { 
-    /* background: linear-gradient(-4500000deg, #eeff00, #000000, #fff700, #76edff5f);
-    background-size: 700% 400%; */
-    background-image: url("/img/Background/images.jfif");
+    background: linear-gradient(-4500000deg, #eeff00, #000000, #fff700, #76edff5f);
+    background-size: 700% 400%;
+    
     /* animation: gradientAnimation 15s ease infinite; */
-    background-size: cover;      
-    background-repeat: no-repeat; 
-    background-position: center;  
+      
+    
+  
     background-attachment: fixed; 
     min-height: 100vh;
     padding: 0px;
@@ -93,7 +93,7 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
   top: 0;
   left: 0;
   align-items: center; /* Выравнивает элементы по вертикали по центру */
-  gap: 15px;/* Добавляет немного пространства между картинкой и текстом */
+  gap: 10px;/* Добавляет немного пространства между картинкой и текстом */
   /* background-color: #fcfbbde1; */
   /* background-color: hsla(0, 0%, 60%, .14); */
   background-color: hsla(62, 100%, 50%, 0.1);
