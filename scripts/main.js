@@ -95,11 +95,11 @@ window.onload = checkHoliday;
 // // Создавать снежинки регулярно
 // setInterval(createSnowflake, 30);
 
-window.addEventListener('load', function() {
-    setTimeout(function() {
-      document.getElementById('cookieAlert').style.display = 'block';
-    }, 3000);
-});
+// window.addEventListener('load', function() {
+//     setTimeout(function() {
+//       document.getElementById('cookieAlert').style.display = 'block';
+//     }, 3000);
+// });
 
 // Ждем загрузки DOM, чтобы скрипт точно нашел хедер
 document.addEventListener('DOMContentLoaded', () => {
