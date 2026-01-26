@@ -297,8 +297,28 @@
     </button>
     </div>
 
-<div style="padding: 10px; background: #000; color: #0f0; border-radius: 5px; font-family: monospace;">
-    ОНЛАЙН: <span id="online-counter">подключаюсь...</span>
+<div style="padding: 10px; 
+ position: fixed; /* или absolute, если нужен внутри определёного блка */
+    z-index: 9999; /* выше, чем у остального контента */
+    bottom: 0 ;             /* внизу */
+    left: 0;   
+    background-color: rgba(68, 78, 114, 0.89);
+  
+    border-radius: 15px 15px 2px 15px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
+    box-shadow: 0 10px 30px rgb(123, 123, 123) !important;
+    background: #0030b3;
+ color: rgb(0, 248, 0); 
+ border-radius: 5px; 
+ font-family: monospace;">
+    ОНЛАЙН: <span id="online-counter">
+                  <span class="spinner"></span> 
+            </span>
 </div>
 
 
@@ -323,7 +343,8 @@
 
     socket.on('connect_error', (error) => {
         console.log('Ошибка подключения:', error);
-        counterElement.innerText = 'пробуждаю сервер...';
+        // counterElement.innerText = 'пробуждаю сервер...';
+        counterElement.innerHTML = '<span class="spinner"></span>';
     });
 
     socket.on('connect', () => {
