@@ -297,34 +297,36 @@
     </button>
     </div>
 
-    <div style="padding: 10px; background: #000; color: #0f0; border-radius: 5px; font-family: monospace;">
+<div style="padding: 10px; background: #000; color: #0f0; border-radius: 5px; font-family: monospace;">
     ОНЛАЙН: <span id="online-counter">подключаюсь...</span>
 </div>
 
-<!-- Подключаем библиотеку для связи с сервером -->
+<!-- ИСПРАВЛЕНО: Полная ссылка на библиотеку -->
 <script src="https://cdn.socket.io"></script>
 
 <script>
-   // 1. Подключаем библиотеку сокетов (если еще не подключил)
+    const RENDER_URL = 'https://pro-info-api.onrender.com';
+    
+    // Подключаемся с настройками, чтобы быстрее работало через прокси
+    const socket = io(RENDER_URL, {
+        transports: ['websocket', 'polling']
+    });
 
-  // 2. Указываем адрес твоего бэкенда на Render
-const RENDER_URL = 'https://pro-info-api.onrender.com';
+    const counterElement = document.getElementById('online-counter');
 
-// 3. Подключаемся
-const socket = io(RENDER_URL);
+    socket.on('updateCount', (count) => {
+        counterElement.innerText = count;
+        console.log('Текущий онлайн:', count);
+    });
 
-const counterElement = document.getElementById('online-counter');
+    socket.on('connect_error', (error) => {
+        console.log('Ошибка подключения:', error);
+        counterElement.innerText = 'пробуждаю сервер...';
+    });
 
-socket.on('updateCount', (count) => {
-    counterElement.innerText = count;
-    console.log('Текущий онлайн:', count);
-});
-
-// Добавим обработку ошибки, чтобы знать, если сервер спит
-socket.on('connect_error', () => {
-    counterElement.innerText = 'пробуждаю сервер...';
-});
-
+    socket.on('connect', () => {
+        console.log('Успешно подключено к серверу!');
+    });
 </script>
 
 
