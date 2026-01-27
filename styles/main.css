@@ -20,8 +20,8 @@ body {
 }
 /* Стиль самого кольца загрузки */
 .spinner {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   border: 2px solid rgba(0, 255, 0, 0.1); /* Тусклый зеленый фон */
   border-top: 2px solid #0f0; /* Яркий неоновый верх */
   border-radius: 50%;
