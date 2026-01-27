@@ -23,19 +23,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106462068', 'ym');
-
-    ym(106462068, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106462068" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 
 
 
@@ -396,7 +383,34 @@
 
 
     <script src="/scripts/main.js"></script>
-      
+      <script type="text/javascript">
+    (function() {
+        const R_URL = 'https://pro-info-api.onrender.com';
+        const COUNTER_ID = 106462068;
+
+        window.ym = window.ym || function() { (window.ym.a = window.ym.a || []).push(arguments) };
+        window.ym.l = 1 * new Date();
+
+        const script = document.createElement("script");
+        script.async = true;
+        // Загружаем через ваш прокси на Render
+        script.src = R_URL + "/lib/metrika.js"; 
+
+        script.onload = function() {
+            ym(COUNTER_ID, "init", {
+                dest: R_URL + "/collect/watch",
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+        };
+
+        // Безопасная вставка в документ
+        (document.head || document.documentElement).appendChild(script);
+    })();
+</script>
+
 </body>
 
 </html>
