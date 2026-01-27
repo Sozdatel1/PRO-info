@@ -364,30 +364,25 @@
       <script type="text/javascript">
     (function() {
         const R_URL = 'https://pro-info-api.onrender.com';
-        const COUNTER_ID = 106462068;
+        // Вместо ym используем случайное имя, например, 'stat'
+        window.stat = window.stat || function() { (window.stat.a = window.stat.a || []).push(arguments) };
+        window.stat.l = 1 * new Date();
 
-        window.ym = window.ym || function() { (window.ym.a = window.ym.a || []).push(arguments) };
-        window.ym.l = 1 * new Date();
+        const s = document.createElement("script");
+        s.async = true;
+        s.src = R_URL + "/lib/metrika.js"; // Это теперь полный код Яндекса, а не загрузчик!
 
-        const script = document.createElement("script");
-        script.async = true;
-        // Загружаем через ваш прокси на Render
-        script.src = R_URL + "/lib/metrika.js"; 
-
-        script.onload = function() {
-            ym(COUNTER_ID, "init", {
+        s.onload = function() {
+            // Инициализация через замаскированную функцию
+            window.stat(106462068, "init", {
                 dest: R_URL + "/collect/watch",
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true
+                clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true
             });
         };
-
-        // Безопасная вставка в документ
-        (document.head || document.documentElement).appendChild(script);
+        document.head.appendChild(s);
     })();
 </script>
+
 
 </body>
 
