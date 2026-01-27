@@ -17,19 +17,29 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106476366', 'ym');
+  <script type="text/javascript">
+   const RENDER_BACKEND = 'https://pro-info-api.onrender.com'; // Ваш адрес
 
-    ym(106476366, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   k=e.createElement(t),a=e.getElementsByTagName(t),k.async=1,
+   
+   // Загружаем скрипт через Render
+   k.src = RENDER_BACKEND + "/lib/metrika.js", 
+   
+   a.parentNode.insertBefore(k,a)})
+   (window, document, "script", null, "ym");
+
+   ym(106462068, "init", {
+        // Отправляем данные через Render
+        dest: RENDER_BACKEND + "/collect/watch", 
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106476366" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+
   <div id="snow"></div>
   <body>
     <div class="progress-container">
