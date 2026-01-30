@@ -361,28 +361,7 @@
 
 
     <script src="/scripts/main.js"></script>
-     <script>
-(function() {
-    console.log('Попытка загрузки метрики...');
-    fetch('https://pro-info-api.onrender.com')
-    .then(r => r.text())
-    .then(code => {
-        if (code.includes('Сервер еще не готов')) {
-            console.log('⚠️ Сервер Render просыпается, подождите...');
-            return;
-        }
-        eval(code);
-        ym(106476366, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-        console.log('✅ Метрика успешно запущена!');
-    })
-    .catch(e => console.error('❌ Ошибка маскировки:', e));
-})();
-</script>
+
 
 
 
