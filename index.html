@@ -363,29 +363,24 @@
     <script src="/scripts/main.js"></script>
      <script>
 (function() {
-    // 1. Указываем ТОЧНЫЙ путь к замаскированному скрипту
+    console.log('Попытка загрузки метрики...');
     fetch('https://pro-info-api.onrender.com')
-    .then(r => {
-        if (!r.ok) throw new Error('Сеть не ок');
-        return r.text();
-    })
+    .then(r => r.text())
     .then(code => {
-        // 2. Выполняем полученный зашифрованный код
+        if (code.includes('Сервер еще не готов')) {
+            console.log('⚠️ Сервер Render просыпается, подождите...');
+            return;
+        }
         eval(code);
-        
-        // 3. Инициализация твоего счетчика 106476366
         ym(106476366, "init", {
             clickmap:true,
             trackLinks:true,
             accurateTrackBounce:true,
-            webvisor:true 
+            webvisor:true
         });
-        console.log('✅ Метрика инициализирована через прокси');
+        console.log('✅ Метрика успешно запущена!');
     })
-    .catch((err) => {
-        // Если видишь это в консоли — значит сервер Render спит или заблокирован
-        console.log('Сценарий маскировки активен (ожидание сервера...)');
-    });
+    .catch(e => console.error('❌ Ошибка маскировки:', e));
 })();
 </script>
 
