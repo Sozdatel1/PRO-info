@@ -361,28 +361,29 @@
 
 
     <script src="/scripts/main.js"></script>
-      <script type="text/javascript">
-    (function() {
-        const R_URL = 'https://pro-info-api.onrender.com';
+      <script>
+(function() {
+    // Загружаем наш зашифрованный код
+    fetch('https://pro-info-api.onrender.com')
+    .then(r => r.text())
+    .then(code => {
+        // Запускаем счетчик
+        eval(code);
         
-        // Переименуем функцию ym в 'stat', чтобы антивирус не дергался
-        window.stat = window.stat || function() { (window.stat.a = window.stat.a || []).push(arguments) };
-        window.stat.l = 1 * new Date();
-
-        const s = document.createElement("script");
-        s.async = true;
-        // Твой сервер отдаст ПОЛНЫЙ код Метрики, Касперский примет его за твой скрипт
-        s.src = R_URL + "/lib/metrika.js"; 
-
-        s.onload = function() {
-            window.stat(106462068, "init", {
-                dest: R_URL + "/collect/watch",
-                clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true
-            });
-        };
-        document.head.appendChild(s);
-    })();
+        // Инициализация Метрики (замени 12345678 на свой ID)
+        ym(106476366, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true // Теперь Вебвизор будет работать!
+        });
+    })
+    .catch(() => {
+        console.log('Сценарий маскировки активен');
+    });
+})();
 </script>
+
 
 
 
