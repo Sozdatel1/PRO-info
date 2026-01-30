@@ -18,6 +18,11 @@ body {
     cursor: url('/img/cursor.png') 0 0, pointer;
     
 }
+.error {
+  text-align: center;
+  align-items: center;
+}
+
 /* Стиль самого кольца загрузки */
 .spinner {
   width: 15px;

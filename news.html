@@ -71,6 +71,29 @@
       <img src="img/img_stylez/рюкзак2.png" alt="icon" id="vacation-icon">
       <div id="vacation-timer">Загрузка...</div>
     </div> -->
+    <div style="padding: 15px; 
+/* или absolute, если нужен внутри определёного блка */
+   /* выше, чем у остального контента */
+   
+    background-color: rgba(68, 78, 114, 0.89);
+  
+    border-radius: 15px 15px 2px 15px;
+    margin: 0px 0px 0px 60px;
+    right: 0px !important;
+    max-width: 600px;
+    /* margin: 0px; */
+    color: white;
+    font-family: Arial, sans-serif;
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
+    /* box-shadow: 0 10px 30px rgb(123, 123, 123) !important; */
+    background: #0030b3;
+    color: rgb(0, 248, 0); 
+    border-radius: 5px; 
+    font-family: Arial, Helvetica, sans-serif;">
+    Онлайн: <span id="online-counter">
+                  <span class="spinner"></span> 
+            </span> человек(а)
+</div>
 </header>
     <div class ="new-year">
       <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
@@ -87,10 +110,10 @@
 <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
 <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
 </div> 
-    <div class="school">
+    
       
       
-<h2 style="text-align: center; margin-top: 15px; color: #00b7ff">
+<!-- <h2 style="text-align: center; margin-top: 15px; color: #00b7ff">
         План дня &#128357;
       </h2>
       <div class="ramka">
@@ -256,7 +279,7 @@
         </tbody>
       </table></div>
       <img src="img/chaii.png" alt="" width="400" />
-    </div>
+    </div> -->
     <!-- <div class="notification" id="cookieAlert">
   <p>
     Уважаемый пользователь! Спасибо что пользуетесь нашим сайтом. 
@@ -266,32 +289,20 @@
     Ок
   </button>
   </div> -->
-  <div style="padding: 10px; 
- position: fixed; /* или absolute, если нужен внутри определёного блка */
-    z-index: 9999; /* выше, чем у остального контента */
-    bottom: 0 ;             /* внизу */
-    left: 0;   
-    background-color: rgba(68, 78, 114, 0.89);
-  
-    border-radius: 15px 15px 2px 15px;
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px;
-    color: white;
-    font-family: Arial, sans-serif;
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
-    box-shadow: 0 10px 30px rgb(123, 123, 123) !important;
-    background: #0030b3;
-    color: rgb(0, 248, 0); 
-    border-radius: 5px; 
-    font-family: monospace;">
-    ОНЛАЙН: <span id="online-counter">
-                  <span class="spinner"></span> 
-            </span>
+
+<div class="error">
+  <img src="/img/img_stylez/error.png">
+  <h2>Упс, что-то пошло не так...</h2>
+  <a href="/index.html"><div class="batton"style="color: rgb(0, 23, 173);  
+  border-radius: 20px; 
+  background-color: yellow; 
+  padding: 2px; 
+  margin: 30px auto; 
+  width: 20%;
+  border: 2px solid black;"><h3>Вернуться на главную</h3></div></a></div>
 </div>
 
-
-<!-- Правильная ссылка на библиотеку для 2026 года -->э
+<!-- Правильная ссылка на библиотеку для 2026 года -->
 <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
     <footer class="footer">
