@@ -357,6 +357,42 @@
         console.log('Успешно подключено к серверу!');
     });
 </script> -->
+<!-- Экран входа -->
+<!-- <div id="login-container" style="display:none;">
+    <input type="password" id="pass-input" placeholder="Пароль разработчика">
+    <button id="pass-btn">Войти как разработчик</button>
+</div> -->
+
+<!-- Экран чата -->
+<!-- <div id="chat-container" style="display:none;">
+    <div id="messages-box" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; margin-bottom: 10px;"></div>
+    <input type="text" id="chat-input" placeholder="Сообщение...">
+    <button onclick="sendMessage()">Отправить</button>
+    <br><br>
+    <button onclick="logout()" style="color: red;">Выйти</button>
+</div> -->
+
+
+<div id="admin-chat-section" style="max-width: 400px; border: 1px solid #ccc; padding: 10px;">
+    
+    <!-- Форма входа -->
+    <div id="login-ui">
+        <input type="password" id="pass-input" placeholder="Пароль админа">
+        <button onclick="login()">Войти в чат</button>
+    </div>
+
+    <!-- Сам чат (скрыт по умолчанию) -->
+    <div id="chat-ui" style="display: none;">
+        <div id="msg-box" style="height: 200px; overflow-y: auto; background: #f0f0f0; margin-bottom: 5px; padding: 5px;"></div>
+        <input type="text" id="msg-input" placeholder="Сообщение..." style="width: 70%">
+        <button onclick="send()">OK</button>
+        <button onclick="localStorage.clear(); location.reload()" style="font-size: 10px; color: red;">Выйти</button>
+    </div>
+
+</div>
+
+
+
 
 
 

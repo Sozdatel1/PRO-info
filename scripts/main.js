@@ -317,3 +317,61 @@ const swiper = new Swiper('.my-slider', {
     socket.on('connect', () => {
         console.log('Успешно подключено к серверу!');
     });
+
+
+
+
+
+
+
+const API_URL = "https://pro-info-api.onrender.com";
+let myPass = localStorage.getItem('chat_pass') || '';
+
+// Функция загрузки чата
+async function loadChat() {
+    if (!myPass) return; // Если пароля нет, ничего не делаем
+
+    const res = await fetch(`${API_URL}/get-msgs`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pass: myPass })
+    });
+
+    if (res.ok) {
+        const msgs = await res.json();
+        document.getElementById('login-ui').style.display = 'none';
+        document.getElementById('chat-ui').style.display = 'block';
+        
+        const box = document.getElementById('msg-box');
+        box.innerHTML = msgs.map(m => `<div><small>${m.time}</small> <b>Админ:</b> ${m.text}</div>`).join('');
+        box.scrollTop = box.scrollHeight;
+        localStorage.setItem('chat_pass', myPass);
+    } else {
+        if (myPass) alert("Неверный пароль!");
+        localStorage.removeItem('chat_pass');
+    }
+}
+
+// Отправка сообщения
+async function send() {
+    const ipt = document.getElementById('msg-input');
+    if (!ipt.value.trim()) return;
+
+    await fetch(`${API_URL}/add-msg`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pass: myPass, text: ipt.value })
+    });
+    ipt.value = '';
+    loadChat();
+}
+
+// Кнопка входа
+function login() {
+    myPass = document.getElementById('pass-input').value;
+    loadChat();
+}
+
+// Запуск при открытии страницы
+loadChat();
+
