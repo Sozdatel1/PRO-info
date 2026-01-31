@@ -367,10 +367,17 @@ async function send() {
 }
 
 // Кнопка входа
-function login() {
-    myPass = document.getElementById('pass-input').value;
-    loadChat();
+window.login = function() {
+    const input = document.getElementById('pass-input');
+    if (input) {
+        myPass = input.value.trim(); // Добавили trim, чтобы не было ошибок из-за пробелов
+        console.log("Пытаемся войти с паролем:", myPass);
+        loadChat();
+    } else {
+        console.error("Поле pass-input не найдено в HTML!");
+    }
 }
+
 
 // Запуск при открытии страницы
 loadChat();
