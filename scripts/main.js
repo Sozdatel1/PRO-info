@@ -343,7 +343,7 @@ async function loadChat() {
         document.getElementById('chat-ui').style.display = 'block';
         
         const box = document.getElementById('msg-box');
-        box.innerHTML = msgs.map(m => `<div><small>${m.time}</small> <b>Админ:</b> ${m.text}</div>`).join('');
+        box.innerHTML = msgs.map(m => `<div><small>${m.time}</small> <b>Разработчик:</b> ${m.text}</div>`).join('');
         box.scrollTop = box.scrollHeight;
         localStorage.setItem('chat_pass', myPass);
     } else {

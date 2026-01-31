@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/content.css">
     <link rel="stylesheet" href="styles/cards-glavnaya.css">
     <link rel="stylesheet" href="./swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/styles/chats.css" />
 <!-- 
     <link rel="icon" href="Лго (1).png" type="iage/png"> -->
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
@@ -299,6 +300,7 @@
          
 <h1>PRO-info - это только проверенная и достоверная информация  специально для вас.</h1>
 </div>
+
 </div>
     <!-- <div style="max-width: 900px; margin: 20px auto; padding: 20px; box-shadow: 0 4px 8px rgba(0, 217, 255, 0.479); border-radius: 10px; background: linear-gradient(to bottom, #59e9ff 21%,#27e2ff 49%,#59fff7 77%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 ;"><h1>Добро пожаловать на сайт!</h1>  
@@ -307,7 +309,33 @@
     <!-- <img src="img/welcom.jfif" alt="Ошибка загрузки изображения" width="400">--></div></div> 
    
 
+    <div id="admin-chat-section">
+    <div class="chat-header">Чат разработчиков</div>
     
+    <!-- Вход -->
+    <div id="login-ui">
+        <input type="password" id="pass-input" placeholder="Пароль разработчика">
+        <button class="login-btn" onclick="login()">Войти как разработчик</button>
+    </div>
+
+    <!-- Чат -->
+    <div id="chat-ui" style="display: none;">
+        <div id="msg-box"></div>
+        <div class="input-area">
+            <input type="text" id="msg-input" placeholder="Ваше сообщение...">
+            <button class="send-btn" onclick="send()">➤</button>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+            <a href="#" onclick="localStorage.clear(); location.reload()" style="color: #000000; font-size: 17px; 
+            text-decoration: none; 
+            background-color: #ff000053; 
+            padding: 10px;
+            border-radius: 20px;
+            margin: 100px ;
+            border: 2px solid black;">Выйти</a>
+        </div>
+    </div>
+</div>
 <!-- Футер -->
   <footer class="footer">
     <p>&copy; 2025 PRO-info.</p>
@@ -373,23 +401,28 @@
 </div> -->
 
 
-<div id="admin-chat-section" style="max-width: 400px; border: 1px solid #ccc; padding: 10px;">
+<!-- <div id="admin-chat-section" style="max-width: 300px;  padding: 10px;">
     
-    <!-- Форма входа -->
+   
     <div id="login-ui">
         <input type="password" id="pass-input" placeholder="Пароль">
         <button onclick="login()">Войти как разработчик</button>
     </div>
 
-    <!-- Сам чат (скрыт по умолчанию) -->
+   
     <div id="chat-ui" style="display: none;">
-        <div id="msg-box" style="height: 200px; overflow-y: auto; background: #f0f0f0; margin-bottom: 5px; padding: 5px;"></div>
-        <input type="text" id="msg-input" placeholder="Сообщение..." style="width: 70%">
-        <button onclick="send()">OK</button>
+        <div id="msg-box" style="height: 400px; overflow-y: auto; background: #ffffff; border-radius: 20px; margin-bottom: 5px; padding: 20px;"></div>
+        <input type="text" id="msg-input" placeholder="Сообщение..." style="width: 150px" >
+        <button onclick="send()"><img src="/img/img_stylez/отправить.png" width="15"></button>
         <button onclick="localStorage.clear(); location.reload()" style="font-size: 10px; color: red;">Выйти</button>
     </div>
 
-</div>
+</div> -->
+
+
+
+
+
 
 
 
