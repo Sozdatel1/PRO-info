@@ -343,16 +343,21 @@ async function loadChat() {
         document.getElementById('chat-ui').style.display = 'block';
         
         const box = document.getElementById('msg-box');
-        box.innerHTML = msgs.map(m => `<div class="message-item"><div class="msg-info"><b>${m.author || "Аноним"}</b><small>${m.time}</small>
+        box.innerHTML = msgs.map(m => {
+        const goldClass = m.author === "Главный разработчик" ? "gold-admin" : "";
+        return`
+        <div class="message-item">
+            <div class="msg-info">
+            <b class="${goldClass}">${m.author || "Аноним"}</b>
+            <small>${m.time}</small>
             <span class="tooltip">
-            <span class="delete-btn" onclick='deleteMsg(${JSON.stringify(m)})'>×
+                <span class="delete-btn" onclick='deleteMsg(${JSON.stringify(m)})'>×</span>
+                
             <span class="tooltiptext">УДАЛИТЬ</span>
-            </span>
-            
             </span>
             </div>
         <div class="msg-text">${m.text}</div>
-    </div>`).join('');
+    </div>`;}).join('');
         box.scrollTop = box.scrollHeight;
         localStorage.setItem('chat_pass', myPass);
     } else {
@@ -383,7 +388,7 @@ window.login = function() {
     const ninput = document.getElementById('name-input');
     if (pinput && ninput) {
         myPass = pinput.value.trim(); // Добавили trim, чтобы не было ошибок из-за пробелов
-        const name = ninput.value.trim() || "Разработчик";
+        const name = ninput.value.trim() || "Аноним:";
         localStorage.setItem('chat_pass', myPass);
         localStorage.setItem('chat_name', name); // Сохраняем имя отдельно
         console.log("Пытаемся войти с паролем:", myPass);

@@ -6,6 +6,7 @@
     <title>Факты | PRO-info</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="/styles/chats.css" />
     <link rel="icon" href="/img/Лого (1).png" type="image/png">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,28 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<script type="text/javascript">
-   const RENDER_BACKEND = 'https://pro-info-api.onrender.com'; // Ваш адрес
 
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   k=e.createElement(t),a=e.getElementsByTagName(t),k.async=1,
-   
-   // Загружаем скрипт через Render
-   k.src = RENDER_BACKEND + "/lib/metrika.js", 
-   
-   a.parentNode.insertBefore(k,a)})
-   (window, document, "script", null, "ym");
-
-   ym(106462068, "init", {
-        // Отправляем данные через Render
-        dest: RENDER_BACKEND + "/collect/watch", 
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
 
 
 
@@ -193,9 +173,43 @@
 
 
 
-<!-- Правильная ссылка на библиотеку для 2026 года -->э
+<!-- Правильная ссылка на библиотеку для 2026 года -->
 <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
+
+
+    <div id="admin-chat-section">
+    <div class="chat-header">Чат администраторов</div>
+    
+    <!-- Вход -->
+    <div id="login-ui">
+        <input type="text" id="name-input" placeholder="Ваш предпочитаемый ник">
+        <div class="pass-wrapper">
+        <input type="password" id="pass-input" placeholder="Пароль администратора">
+        <span id="toggle-pass" onclick="togglePass()">👁️</span>
+    </div>
+        <!-- <input type="password" id="pass-input" placeholder="Пароль администратора"> -->
+        <button class="login-btn" onclick="login()">Войти в чат администраторов</button>
+    </div>
+
+    <!-- Чат -->
+    <div id="chat-ui" style="display: none;">
+        <div id="msg-box"></div>
+        <div class="input-area">
+            <input type="text" id="msg-input" placeholder="Ваше сообщение...">
+            <button class="send-btn" onclick="send()">➤</button>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+            <a href="#" onclick="localStorage.clear(); location.reload()" style="color: #000000; font-size: 17px; 
+            text-decoration: none; 
+            background-color: #ff000053; 
+            padding: 10px;
+            border-radius: 20px;
+            margin: 100px ;
+            border: 2px solid black;">Выйти</a>
+        </div>
+    </div>
+</div>
     <footer class="footer">
       <p>&copy; 2025 PRO-info.</p>
       <a href="https://github.com/Sozdatel1/Sozdatel1.github.io"
