@@ -1,0 +1,42 @@
+body { 
+    font-family: sans-serif; 
+    background: #f0f2f5; 
+    display: flex; 
+    justify-content: center; 
+    padding: 20px; 
+}
+.dashboard { 
+    background: rgb(255, 255, 255); 
+    padding: 20px; 
+    border-radius: 15px;
+    width: 100%; 
+    max-width: 800px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+}
+.stat-card { 
+    border-bottom: 1px solid #eee; 
+    padding: 10px 0; 
+    display: flex; 
+    justify-content: space-between; 
+}
+#auth-screen { 
+    text-align: center;
+    margin-top: 50px; 
+}
+
+#dev-key-input {
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.button-input {
+    padding: 15px;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    background-color: #4ddd5b;
+}
+#auth-screen {
+    background-color: white;
+    padding: 120px;
+    border-radius: 30px;
+}

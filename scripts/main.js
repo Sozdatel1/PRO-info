@@ -345,6 +345,10 @@ async function loadChat() {
         const box = document.getElementById('msg-box');
         box.innerHTML = msgs.map(m => {
         const goldClass = m.author === "Главный разработчик" ? "gold-admin" : "";
+        const reactions = m.reactions || {};
+            const reactionsHtml = Object.entries(reactions)
+                .map(([emo, count]) => `<span class="reaction-badge">${emo} ${count}</span>`)
+                .join('');
         return`
         <div class="message-item">
             <div class="msg-info">
@@ -357,14 +361,16 @@ async function loadChat() {
             </span>
             </div>
         <div class="msg-text">${m.text}</div>
-    </div>`;}).join('');
-        box.scrollTop = box.scrollHeight;
-        localStorage.setItem('chat_pass', myPass);
-    } else {
-        if (myPass) alert("Неверный пароль!");
-        localStorage.removeItem('chat_pass');
+        
+        </div>`;}).join('');
+            box.scrollTop = box.scrollHeight;
+            localStorage.setItem('chat_pass', myPass);
+        } else {
+            if (myPass) alert("Неверный пароль!");
+            localStorage.removeItem('chat_pass');
     }
 }
+
 
 // Отправка сообщения
 async function send() {
@@ -433,4 +439,5 @@ window.togglePass = function() {
 
 // Запуск при открытии страницы
 loadChat();
+
 
