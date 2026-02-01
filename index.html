@@ -310,12 +310,17 @@
    
 
     <div id="admin-chat-section">
-    <div class="chat-header">Чат разработчиков</div>
+    <div class="chat-header">Чат администраторов</div>
     
     <!-- Вход -->
     <div id="login-ui">
-        <input type="password" id="pass-input" placeholder="Пароль разработчика">
-        <button class="login-btn" onclick="login()">Войти как разработчик</button>
+        <input type="text" id="name-input" placeholder="Ваш предпочитаемый ник">
+        <div class="pass-wrapper">
+        <input type="password" id="pass-input" placeholder="Пароль администратора">
+        <span id="toggle-pass" onclick="togglePass()">👁️</span>
+    </div>
+        <!-- <input type="password" id="pass-input" placeholder="Пароль администратора"> -->
+        <button class="login-btn" onclick="login()">Войти в чат администраторов</button>
     </div>
 
     <!-- Чат -->

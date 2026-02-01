@@ -343,7 +343,16 @@ async function loadChat() {
         document.getElementById('chat-ui').style.display = 'block';
         
         const box = document.getElementById('msg-box');
-        box.innerHTML = msgs.map(m => `<div><small>${m.time}</small> <b>Разработчик:</b> ${m.text}</div>`).join('');
+        box.innerHTML = msgs.map(m => `<div class="message-item"><div class="msg-info"><b>${m.author || "Аноним"}</b><small>${m.time}</small>
+            <span class="tooltip">
+            <span class="delete-btn" onclick='deleteMsg(${JSON.stringify(m)})'>×
+            <span class="tooltiptext">УДАЛИТЬ</span>
+            </span>
+            
+            </span>
+            </div>
+        <div class="msg-text">${m.text}</div>
+    </div>`).join('');
         box.scrollTop = box.scrollHeight;
         localStorage.setItem('chat_pass', myPass);
     } else {
@@ -360,7 +369,9 @@ async function send() {
     await fetch(`${API_URL}/add-msg`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pass: myPass, text: ipt.value })
+        body: JSON.stringify({ pass: myPass, text: ipt.value,
+        author: localStorage.getItem('chat_name') 
+         })
     });
     ipt.value = '';
     loadChat();
@@ -368,14 +379,50 @@ async function send() {
 
 // Кнопка входа
 window.login = function() {
-    const input = document.getElementById('pass-input');
-    if (input) {
-        myPass = input.value.trim(); // Добавили trim, чтобы не было ошибок из-за пробелов
+    const pinput = document.getElementById('pass-input');
+    const ninput = document.getElementById('name-input');
+    if (pinput && ninput) {
+        myPass = pinput.value.trim(); // Добавили trim, чтобы не было ошибок из-за пробелов
+        const name = ninput.value.trim() || "Разработчик";
+        localStorage.setItem('chat_pass', myPass);
+        localStorage.setItem('chat_name', name); // Сохраняем имя отдельно
         console.log("Пытаемся войти с паролем:", myPass);
         loadChat();
     } else {
         console.error("Поле pass-input не найдено в HTML!");
     }
+}
+
+window.deleteMsg = async function(msgData) {
+    if (!confirm("Удалить это сообщение?")) return;
+
+    const res = await fetch(`${API_URL}/delete-msg`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            pass: myPass, 
+            msgData: msgData 
+        })
+    });
+
+    if (res.ok) {
+        loadChat(); // Обновляем чат после удаления
+    } else {
+        alert("Ошибка при удалении");
+    }
+}
+window.togglePass = function() {
+    const passInput = document.getElementById('pass-input');
+    const toggleIcon = document.getElementById('toggle-pass');
+    
+    if (passInput.type === "password") {
+        passInput.type = "text";
+        toggleIcon.textContent = "🙈"; // Меняем иконку на закрытый замок или другой глаз
+    } else {
+        passInput.type = "password";
+        toggleIcon.textContent = "👁️";
+    }
+     passInput.focus();
 }
 
 

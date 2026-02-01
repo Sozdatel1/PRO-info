@@ -151,7 +151,7 @@
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     background-color: #03c0ff84;
-     background: linear-gradient(-550deg, #fffb00, #ff0000, #ff0000, #8d76ffab);
+     background: linear-gradient(-550deg, #fffb00, #ffffff, #ff0000, #8d76ffab);
     background-size: 700% 400%;
     color:#373737
 }
