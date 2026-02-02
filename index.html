@@ -133,7 +133,7 @@
 
 
 
-
+<a href="login.html"><button>Личный кабинет</button></a>
 </header>
   
     <div class ="new-year">
@@ -495,7 +495,46 @@ async function sendToBot() {
     <script src="/scripts/main.js"></script>
 
 
+    <script>
+   window.onload = function() {
+    // --- 1. ЛОГИКА ТЕХРАБОТ ---
+    async function checkStatus() {
+        try {
+            // ВАЖНО: добавь путь /api/public/status, если ты его делал на бэкенде
+            const res = await fetch('https://pro-info-api.onrender.com');
+            const data = await res.json();
+            if (data.isMaintenance) {
+                document.body.innerHTML = `<h1 style="text-align:center; margin-top:50px;">🛠 Техработы</h1>`;
+            }
+        } catch (e) {
+            console.log("Бэкенд еще спит...");
+        }
+    }
+    checkStatus();
 
+    // --- 2. ЛОГИКА КНОПКИ КАБИНЕТА ---
+    const cabinetBtn = document.getElementById('cabinetBtn');
+    if (cabinetBtn) {
+        cabinetBtn.onclick = async function() {
+            // Если кука есть в браузере
+            if (document.cookie.includes('access_pass')) {
+                // Проверяем её на бэкенде (путь /api/check)
+                const res = await fetch('https://pro-info-api.onrender.com', { 
+                    credentials: 'include' 
+                });
+
+                if (res.ok) {
+                    window.location.href = 'cabinet.html';
+                    return; // Выходим, чтобы не срабатывал код ниже
+                }
+            }
+            // Если куки нет или она невалидна — на логин
+            window.location.href = 'login.html';
+        };
+    }
+};
+
+    </script>
 
 
 
