@@ -264,6 +264,32 @@
       
     <p></p>     
 
+
+
+    <!-- index.html -->
+<div id="chat" style="height: 300px; overflow-y: scroll; border: 1px solid #ccc;"></div>
+<input type="text" id="userInput" placeholder="Спроси что-нибудь...">
+<button onclick="sendToBot()">Отправить</button>
+
+<script>
+  async function sendToBot() {
+    const input = document.getElementById('userInput');
+    const chat = document.getElementById('chat');
+    
+    chat.innerHTML += `<div><b>Ты:</b> ${input.value}</div>`;
+
+    const response = await fetch('https://pro-info-api.onrender.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: input.value })
+    });
+
+    const data = await response.json();
+    chat.innerHTML += `<div><b>Бот:</b> ${data.text}</div>`;
+    input.value = '';
+  }
+</script>
+
   <div class="ramka">
     
 <h2 style="text-align: center; margin-top: 15px; color: #00b7ff; margin: 30px 0px 0px 0px;">Информация о вкладках</h2>
