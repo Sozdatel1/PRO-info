@@ -454,7 +454,7 @@
     async function checkStatus() {
         try {
             // ВАЖНО: добавь путь /api/public/status, если ты его делал на бэкенде
-            const res = await fetch('https://pro-info-api.onrender.com /api/public/status');
+            const res = await fetch('https://pro-info-api.onrender.com/api/public/status');
             const data = await res.json();
             if (data.isMaintenance) {
                 document.body.innerHTML = `<h1 style="text-align:center; margin-top:50px;">🛠 Техработы</h1>`;
