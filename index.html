@@ -465,29 +465,41 @@
     }
     checkStatus();
 
-    // --- 2. ЛОГИКА КНОПКИ КАБИНЕТА ---
-    const cabinetBtn = document.getElementById('cabinetBtn');
-    if (cabinetBtn) {
-        cabinetBtn.onclick = async function() {
-            // Если кука есть в браузере
-            if (document.cookie.includes('access_pass')) {
-                // Проверяем её на бэкенде (путь /api/check)
-                const res = await fetch('https://pro-info-api.onrender.com/api/check', { 
-                    credentials: 'include' 
-                });
 
-                if (res.ok) {
-                    window.location.href = 'cabinet.html';
-                    return; // Выходим, чтобы не срабатывал код ниже
-                }
-            }
-            // Если куки нет или она невалидна — на логин
+
+
+    const cabinetBtn = document.getElementById('cabinetBtn');
+
+cabinetBtn.onclick = async function(e) {
+    e.preventDefault();
+    
+    // 1. Сразу даем понять, что процесс идет
+    const originalText = cabinetBtn.innerText;
+    cabinetBtn.innerText = "Проверка..."; 
+
+    try {
+        const res = await fetch('https://pro-info-api.onrender.com', { 
+            credentials: 'include' 
+        });
+
+        if (res.ok) {
+            // Кука жива — летим в кабинет
+            window.location.href = 'cabinet.html';
+        } else {
+            // Куки нет — на вход
             window.location.href = 'login.html';
-        };
+        }
+    } catch (err) {
+        // Если бэк спит (ошибка сети), лучше отправить на логин
+        console.error(err);
+        window.location.href = 'login.html';
+    } finally {
+        cabinetBtn.innerText = originalText;
     }
 };
-
+};
     </script>
+    
 
 
 
