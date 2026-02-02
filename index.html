@@ -273,37 +273,41 @@
 
 <script>
 async function sendToBot() {
-  const input = document.getElementById('userInput'); // проверь id своего инпута
-  const chat = document.getElementById('chat');      // проверь id окна чата
+  const input = document.getElementById('userInput'); // Проверь, что ID совпадает
+  const chat = document.getElementById('chat');      // Проверь, что ID совпадает
   const message = input.value;
 
   if (!message) return;
 
-  // Показываем сообщение пользователя
-  chat.innerHTML += `<div><b>Ты:</b> ${message}</div>`;
-  input.value = '';
+  // 1. Показываем твоё сообщение в чате
+  chat.innerHTML += `<div class="user-msg"><b>Ты:</b> ${message}</div>`;
+  input.value = ''; // Очищаем поле ввода
 
   try {
-    // ВАЖНО: Добавили /ask в конце ссылки
-    const response = await fetch('https://pro-info-api.onrender.com', {
+    // 2. ОТПРАВЛЯЕМ ЗАПРОС (Теперь адрес правильный!)
+    const response = await fetch('https://pro-info-api.onrender.com/ask', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json' 
+      },
       body: JSON.stringify({ message: message })
     });
 
+    // 3. Получаем ответ
     const data = await response.json();
     
-    // Показываем ответ бота
-    chat.innerHTML += `<div><b>Бот:</b> ${data.text}</div>`;
+    // 4. Показываем ответ бота
+    chat.innerHTML += `<div class="bot-msg"><b>Бот:</b> ${data.text}</div>`;
     
-    // Прокрутка вниз
+    // Авто-прокрутка вниз
     chat.scrollTop = chat.scrollHeight;
-    
+
   } catch (error) {
-    console.error("Ошибка:", error);
-    chat.innerHTML += `<div><b>Система:</b> Не удалось связаться с ботом :(</div>`;
+    console.error("Ошибка тут:", error);
+    chat.innerHTML += `<div style="color:red"><b>Система:</b> Ошибка связи с ботом :(</div>`;
   }
 }
+
 
 </script>
 
