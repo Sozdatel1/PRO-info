@@ -130,9 +130,21 @@ async function toggleSite(turnOn) {
 }
 
 async function logout() {
-    // Вместо удаления через document.cookie, просим сервер разлогинить нас
-    await fetch('https://pro-info-api.onrender.com', { credentials: 'include' });
-    window.location.href = 'login.html';
+    try {
+        // 1. Просим сервер стереть куку (добавь ПУТЬ /api/logout)
+        await fetch('https://pro-info-api.onrender.com/api/logout', { 
+            credentials: 'include' 
+        });
+    } catch (e) {
+        console.log("Сервер не ответил, но выходим принудительно");
+    }
+
+    // 2. Очищаем локальную метку (если ты её создавал)
+    localStorage.removeItem('isAuth'); 
+    // Если в login.html ты назвал её иначе, например 'logged_in', удаляй её.
+
+    // 3. Уходим на главную или страницу входа
+    window.location.href = 'index.html';
 }
 
 checkAccess();
