@@ -92,15 +92,16 @@ border-radius: 50px;">Выйти</button>
         <button id="workBtn" onclick="toggleSite(false)">Включить сайт</button>
 
 <script>
-async function toggleSite(status) {
-    await fetch('https://pro-info-api.onrender.com', {
+async function toggleSite(turnOn) {
+    const res = await fetch('https://pro-info-api.onrender.com/api/admin/toggle-maintenance', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status }),
+        body: JSON.stringify({ status: turnOn }),
         credentials: 'include'
     });
-    alert(status ? "Сайт выключен" : "Сайт работает");
+    if (res.ok) alert(turnOn ? "Сайт выключен (режим техработ)" : "Сайт включен");
 }
+
 </script>
 
     </div>
