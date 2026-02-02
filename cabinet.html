@@ -106,27 +106,36 @@ async function toggleSite(status) {
     </div>
 
     <script>
-        async function checkAccess() {
-            const res = await fetch('https://pro-info-api.onrender.com/api/check', { 
-                credentials: 'include' 
-            });
+      async function checkAccess() {
+    try {
+        const res = await fetch('https://pro-info-api.onrender.com/api/check', { 
+            credentials: 'include' 
+        });
 
-            if (res.ok) {
-                const data = await res.json();
-                document.getElementById('secretData').innerText = data.data;
-                document.getElementById('content').style.display = 'block';
-            } else {
-                // Если не авторизован — гоним на страницу входа
-                window.location.href = 'login.html';
-            }
-        }
-
-        function logout() {
-            document.cookie = "access_pass=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        if (res.ok) {
+            const result = await res.json();
+            // Выводим данные в консоль для теста
+            console.log("Ответ сервера:", result);
+            
+            // Заполняем поле data
+            document.getElementById('secretData').innerText = result.data || "Нет данных";
+            document.getElementById('content').style.display = 'block';
+        } else {
             window.location.href = 'login.html';
         }
+    } catch (err) {
+        console.error("Ошибка сети:", err);
+    }
+}
 
-        checkAccess();
+async function logout() {
+    // Вместо удаления через document.cookie, просим сервер разлогинить нас
+    await fetch('https://pro-info-api.onrender.com', { credentials: 'include' });
+    window.location.href = 'login.html';
+}
+
+checkAccess();
+
     </script>
 </body>
 </html>
