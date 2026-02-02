@@ -272,22 +272,39 @@
 <button onclick="sendToBot()">Отправить</button>
 
 <script>
-  async function sendToBot() {
-    const input = document.getElementById('userInput');
-    const chat = document.getElementById('chat');
-    
-    chat.innerHTML += `<div><b>Ты:</b> ${input.value}</div>`;
+async function sendToBot() {
+  const input = document.getElementById('userInput'); // проверь id своего инпута
+  const chat = document.getElementById('chat');      // проверь id окна чата
+  const message = input.value;
 
+  if (!message) return;
+
+  // Показываем сообщение пользователя
+  chat.innerHTML += `<div><b>Ты:</b> ${message}</div>`;
+  input.value = '';
+
+  try {
+    // ВАЖНО: Добавили /ask в конце ссылки
     const response = await fetch('https://pro-info-api.onrender.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: input.value })
+      body: JSON.stringify({ message: message })
     });
 
     const data = await response.json();
+    
+    // Показываем ответ бота
     chat.innerHTML += `<div><b>Бот:</b> ${data.text}</div>`;
-    input.value = '';
+    
+    // Прокрутка вниз
+    chat.scrollTop = chat.scrollHeight;
+    
+  } catch (error) {
+    console.error("Ошибка:", error);
+    chat.innerHTML += `<div><b>Система:</b> Не удалось связаться с ботом :(</div>`;
   }
+}
+
 </script>
 
   <div class="ramka">
