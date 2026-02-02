@@ -133,7 +133,10 @@
 
 
 <!-- Убери href="login.html" из тега <a>, либо замени на кнопку -->
-<a href="#" id="cabinetBtn">Личный кабинет</a>
+<a href="#" id="cabinetBtn" style="text-decoration: none; 
+background-color: #f1f1f1; 
+padding: 15px; 
+border-radius: 20px; font-family: Arial, Helvetica, sans-serif;">Кабинет разработчика</a>
 
 </header>
   
@@ -457,7 +460,8 @@
             const res = await fetch('https://pro-info-api.onrender.com/api/public/status');
             const data = await res.json();
             if (data.isMaintenance) {
-                document.body.innerHTML = `<h1 style="text-align:center; margin-top:50px;">🛠 Техработы</h1>`;
+                document.body.innerHTML = `<h1 style="text-align:center; margin-top:50px;">🛠 Техработы</h1>
+                <img src="/img/img_stylez/error.png">"`;
             }
         } catch (e) {
             console.log("Бэкенд еще спит...");
