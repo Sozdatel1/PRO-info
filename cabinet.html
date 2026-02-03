@@ -4,6 +4,10 @@
     <title>Личный кабинет</title>
     <link rel="stylesheet" href="/styles/dev.css">
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/chats.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header-content">
@@ -53,44 +57,114 @@
             <li><a href="why.html">О сайте</a></li>
         </ul>
     </nav>
-  <div style="padding: 15px; 
-/* или absolute, если нужен внутри определёного блка */
-   /* выше, чем у остального контента */
+  
+<button onclick="logout()" style="padding: 25px;
+background-color: rgba(255, 245, 245, 0);
+border-left: 2px solid black;
+border-top: 0px;
+border-bottom: 0px;
+border-right: 0px;
+margin-left: auto;">Выйти</button>
+</header>
 
+
+    <div id="content" style="display:none;">
+        <h1 id="secretData" style="margin-bottom: 60px;"></h1>
+
+        <div style=" padding: 10px; background-color: #f8f8f827; 
+        border-radius: 30px; 
+        border: 1px solid black;
+        margin-bottom: 70px;">
+        <h2>Данные сайта:</h2>
+        <div class="info">
+
+        <div style="padding: 30px; 
     background-color: rgba(68, 78, 114, 0.89);
-
     border-radius: 15px 15px 2px 15px;
-    margin: 0px 0px 0px 60px;
     right: 0px !important;
     max-width: 600px;
     /* margin: 0px; */
     color: white;
     font-family: Arial, sans-serif;
     /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
-    /* box-shadow: 0 10px 30px rgb(123, 123, 123) !important; */
-    background: #0030b3;
-    color: rgb(0, 248, 0); 
-    border-radius: 5px; 
+    box-shadow: 0 10px 30px rgba(123, 123, 123, 0.392) !important;
+    background: #f8f8f8;
+    color: rgb(0, 0, 0); 
+    border-radius: 20px; 
     font-family: Arial, Helvetica, sans-serif;">
-    Онлайн: <span id="online-counter">
+    Текущий онлайн: <span id="online-counter">
                 <span class="spinner"></span> 
             </span> человек(а)
-</div>
-<button onclick="logout()" style="padding: 15px;
-background-color: red;
-border-radius: 50px;">Выйти</button>
-</header>
+        </div>
 
+        </div>
+        </div>
 
-    <div id="content" style="display:none;">
-        <h1>Кабинет главного разработчика</h1>
-        <p id="secretData"></p>
-
+        <div style="padding: 10px; background-color: #f8f8f827; 
+        border-radius: 30px; 
+        border: 1px solid black;
+        margin-bottom: 70px">
         <h2>Управление доступностью</h2>
 
-        <button id="maintBtn" onclick="toggleSite(true)" style="padding: 15px; background-color: red; border-radius: 20px;">Выключить сайт для всех</button>
-        <button id="workBtn" onclick="toggleSite(false)" style="background-color: greenyellow;    padding: 15px; border-radius: 20px;">Включить сайт</button>
+       <!-- Глобальный выключатель -->
+<button onclick="togglePage('global', true)">ВЫКЛЮЧИТЬ ВЕСЬ САЙТ</button>
+<button onclick="togglePage('global', false)">Включить весь сайт</button>
 
+<hr>
+
+<!-- Постранично -->
+<p>О нас:</p>
+<button onclick="togglePage('/second.html', true)">Выключить "О нас"</button>
+<button onclick="togglePage('/second.html', false)">Включить "О нас"</button>
+
+<script>
+async function togglePage(path, status) {
+    await fetch('https://pro-info-api.onrender.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path, status }),
+        credentials: 'include'
+    });
+    alert('Статус обновлен!');
+}
+</script>
+
+</div>
+
+
+        <div id="admin-chat-section-why">
+    <div class="chat-header">Чат администраторов</div>
+    
+    <!-- Вход -->
+    <div id="login-ui">
+        <input type="text" id="name-input" placeholder="Ваш предпочитаемый ник">
+        <div class="pass-wrapper">
+        <input type="password" id="pass-input" placeholder="Пароль администратора">
+        <span id="toggle-pass" onclick="togglePass()">👁️</span>
+    </div>
+        <!-- <input type="password" id="pass-input" placeholder="Пароль администратора"> -->
+        <button class="login-btn" onclick="login()">Войти в чат администраторов</button>
+    </div>
+
+    <!-- Чат -->
+    <div id="chat-ui" style="display: none;">
+        <div id="msg-box"></div>
+        <div class="input-area">
+            <input type="text" id="msg-input" placeholder="Ваше сообщение...">
+            <button class="send-btn" onclick="send()">➤</button>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+            <a href="#" onclick="localStorage.clear(); location.reload()" style="color: #000000; font-size: 17px; 
+            text-decoration: none; 
+            background-color: #ff0000; 
+            padding: 10px;
+            border-radius: 20px;
+            margin: 100px ;
+            border: 2px solid black;">Выйти из чата</a>
+        </div>
+    </div>
+
+    </div>
 <script>
 async function toggleSite(turnOn) {
     const res = await fetch('https://pro-info-api.onrender.com/api/admin/toggle-maintenance', {
@@ -103,8 +177,7 @@ async function toggleSite(turnOn) {
 }
 
 </script>
-
-    </div>
+</div>
 
     <script>
       async function checkAccess() {
@@ -150,6 +223,7 @@ async function logout() {
 checkAccess();
 
     </script>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
     <script src="/scripts/main.js"></script>
 </body>
 </html>
