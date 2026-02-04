@@ -453,70 +453,9 @@ color: #000;">Кабинет разработчика</a>
 
 
 
-    <script src="/scripts/main.js"></script>
-
-
-    <script>
-   window.onload = function() {
-    // --- 1. ЛОГИКА ТЕХРАБОТ ---
-    // async function checkStatus() {
-    //     try {
-    //         // ВАЖНО: добавь путь /api/public/status, если ты его делал на бэкенде
-    //         const res = await fetch('https://pro-info-api.onrender.com/api/public/status');
-    //         const data = await res.json();
-    //         if (data.isMaintenance) {
-    //             document.body.innerHTML = `<div style="text-align: center">
-    //             <img src="/img/img_stylez/error.png">
-    //             <h1 style="text-align: center; 
-    //               margin-top: 50px;">🛠 Технические работы</h1>
-    //               <h3>Не расстраивайтесь, проблему скоро решат.</h3>
-    //             </div>`;
-    //         }
-    //     } catch (e) {
-    //         console.log("Бэкенд еще спит...");
-    //     }
-    // }
-    // checkStatus();
-
-
-
-
-    const cabinetBtn = document.getElementById('cabinetBtn');
-
-cabinetBtn.onclick = async function(e) {
-    e.preventDefault();
-    
-    // 1. Сразу даем понять, что процесс идет
-    const originalText = cabinetBtn.innerText;
-    cabinetBtn.innerText = "Проверка..."; 
-
-    try {
-        const res = await fetch('https://pro-info-api.onrender.com', { 
-            credentials: 'include' 
-        });
-
-        if (res.ok) {
-            // Кука жива — летим в кабинет
-            window.location.href = 'cabinet.html';
-        } else {
-            // Куки нет — на вход
-            window.location.href = 'login.html';
-        }
-    } catch (err) {
-        // Если бэк спит (ошибка сети), лучше отправить на логин
-        console.error(err);
-        window.location.href = 'login.html';
-    } finally {
-        cabinetBtn.innerText = originalText;
-    }
-};
-};
-    </script>
-    
-
-
-
+<script src="/scripts/main.js"></script>
 <script src="/scripts/error.js"></script>
+<script src="/scripts/cabinet.js"></script>
 
 </body>
 

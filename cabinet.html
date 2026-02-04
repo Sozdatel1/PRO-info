@@ -105,7 +105,7 @@ margin-left: auto;">Выйти</button>
         margin-bottom: 70px;
         ">
         
-
+<!-- 
 <button onclick="togglePage('global', true)" style="padding: 15px;
 border-radius: 30px; background-color: red;"><h2>ВЫКЛЮЧИТЬ ВЕСЬ САЙТ</h2></button>
 <button onclick="togglePage('global', false)" style="padding: 15px;
@@ -151,26 +151,9 @@ border-radius: 30px; background-color: greenyellow;">Включить "Праз�
 <button onclick="togglePage('/why.html', true)" style="padding: 15px;
 border-radius: 30px; background-color: red;">Выключить "О сайте"</button>
 <button onclick="togglePage('/why.html', false)" style="padding: 15px;
-border-radius: 30px; background-color: greenyellow;">Включить "О сайте"</button>
-<!-- <script>
-async function togglePage(path, status) {
-    await fetch('https://pro-info-api.onrender.com/api/admin/toggle-page', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ path, status }),
-        credentials: 'include'
-    });
-    alert('Статус обновлен!');
-}
-</script> -->
+border-radius: 30px; background-color: greenyellow;">Включить "О сайте"</button> -->
 
-
-
-
-
-<!-- Вставь это в Body там, где хочешь видеть пульт управления -->
 <div id="pagesControl" style="max-width: 600px; margin: 20px auto; font-family: sans-serif;">
-    <h2>Управление страницами</h2>
     <div id="pagesList">Загрузка статусов...</div>
 </div>
 
@@ -179,12 +162,11 @@ async function togglePage(path, status) {
 const myPages = [
     { name: "Главная", path: "/index.html" },
     { name: "Погода", path: "/two page.html" },
-    { name: "Новый год", path: "/second.html" },
+    { name: "Статьи", path: "/second.html" },
     { name: "Карты", path: "/carta.html" },
     { name: "Праздники", path: "/holiday.html" },
     { name: "Факты", path: "/fact.html" },
     { name: "О сайте", path: "/why.html" },
-    { name: "Новости", path: "/news.html" }
 ];
 
 async function updateDashboard() {
@@ -229,15 +211,11 @@ async function togglePage(path, status) {
         alert('Ошибка при изменении статуса');
     }
 }
-
-
 updateDashboard(); // Запуск при загрузке
 </script>
-
 </div>
 
-
-        <div id="admin-chat-section-why">
+<div id="admin-chat-section-why">
     <div class="chat-header">Чат администраторов</div>
     
     <!-- Вход -->

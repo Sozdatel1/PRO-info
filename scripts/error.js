@@ -69,7 +69,9 @@
 
 
     async function checkStatus() {
-    const res = await fetch('https://pro-info-api.onrender.com/api/public/status');
+    const res = await fetch('https://pro-info-api.onrender.com/api/public/status', {
+            cache: 'no-store' 
+        });
     const statuses = await res.json();
     
     const currentPath = window.location.pathname;
