@@ -119,7 +119,7 @@ margin-left: auto;">Выйти</button>
 
 <script>
 async function togglePage(path, status) {
-    await fetch('https://pro-info-api.onrender.com', {
+    await fetch('https://pro-info-api.onrender.com/api/admin/toggle-page', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ path, status }),
@@ -166,21 +166,21 @@ async function togglePage(path, status) {
 
     </div>
 <script>
-async function toggleSite(turnOn) {
-    const res = await fetch('https://pro-info-api.onrender.com/api/admin/toggle-maintenance', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status: turnOn }),
-        credentials: 'include'
-    });
-    if (res.ok) alert(turnOn ? "Сайт выключен (режим техработ)" : "Сайт включен");
-}
+// async function toggleSite(turnOn) {
+//     const res = await fetch('https://pro-info-api.onrender.com/api/admin/toggle-maintenance', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ status: turnOn }),
+//         credentials: 'include'
+//     });
+//     if (res.ok) alert(turnOn ? "Сайт выключен (режим техработ)" : "Сайт включен");
+// }
 
 </script>
 </div>
 
     <script>
-      async function checkAccess() {
+    async function checkAccess() {
     try {
         const res = await fetch('https://pro-info-api.onrender.com/api/check', { 
             credentials: 'include' 

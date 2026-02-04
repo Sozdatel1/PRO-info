@@ -68,8 +68,8 @@
 
 
 
-    async function checkAccess() {
-    const res = await fetch('https://pro-info-api.onrender.com');
+    async function checkStatus() {
+    const res = await fetch('https://pro-info-api.onrender.com/api/public/status');
     const statuses = await res.json();
     
     const currentPath = window.location.pathname;
@@ -78,8 +78,8 @@
     if (statuses.global || statuses[currentPath]) {
         document.body.innerHTML = `
             <header class="header-content">
-//     <div class="logo">
-//         <a href="index.html">
+    <div class="logo">
+            <a href="index.html">
 //             <img src="img/Логотип.png" alt="PRO-info" width="250">
 //         </a>
 //     </div>
@@ -133,4 +133,4 @@
 //                 </div>`;
     }
 }
-checkAccess();
+checkStatus();
