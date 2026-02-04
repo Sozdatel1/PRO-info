@@ -96,7 +96,6 @@ margin-left: auto;">Выйти</button>
                 <span class="spinner"></span> 
             </span> человек(а)
         </div>
-
         </div>
         </div>
 
@@ -106,13 +105,9 @@ margin-left: auto;">Выйти</button>
         margin-bottom: 70px">
         <h2>Управление доступностью</h2>
 
-       <!-- Глобальный выключатель -->
 <button onclick="togglePage('global', true)">ВЫКЛЮЧИТЬ ВЕСЬ САЙТ</button>
 <button onclick="togglePage('global', false)">Включить весь сайт</button>
-
 <hr>
-
-<!-- Постранично -->
 <p>Главная:</p>
 <button onclick="togglePage('/index.html', true)">Выключить "Главная"</button>
 <button onclick="togglePage('/index.html', false)">Включить "Главная"</button>
@@ -140,7 +135,6 @@ margin-left: auto;">Выйти</button>
 <p>О сайте</p>
 <button onclick="togglePage('/why.html', true)">Выключить "О сайте"</button>
 <button onclick="togglePage('/why.html', false)">Включить "О сайте"</button>
-
 <script>
 async function togglePage(path, status) {
     await fetch('https://pro-info-api.onrender.com/api/admin/toggle-page', {
@@ -189,65 +183,10 @@ async function togglePage(path, status) {
     </div>
 
     </div>
-<script>
-// async function toggleSite(turnOn) {
-//     const res = await fetch('https://pro-info-api.onrender.com/api/admin/toggle-maintenance', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ status: turnOn }),
-//         credentials: 'include'
-//     });
-//     if (res.ok) alert(turnOn ? "Сайт выключен (режим техработ)" : "Сайт включен");
-// }
-
-</script>
 </div>
 
-    <script>
-    async function checkAccess() {
-    try {
-        const res = await fetch('https://pro-info-api.onrender.com/api/check', { 
-            credentials: 'include' 
-        });
-
-        if (res.ok) {
-            const result = await res.json();
-            // Выводим данные в консоль для теста
-            console.log("Ответ сервера:", result);
-            
-            // Заполняем поле data
-            document.getElementById('secretData').innerText = result.data || "Нет данных";
-            document.getElementById('content').style.display = 'block';
-        } else {
-            window.location.href = 'login.html';
-        }
-    } catch (err) {
-        console.error("Ошибка сети:", err);
-    }
-}
-
-async function logout() {
-    try {
-        // 1. Просим сервер стереть куку (добавь ПУТЬ /api/logout)
-        await fetch('https://pro-info-api.onrender.com/api/logout', { 
-            credentials: 'include' 
-        });
-    } catch (e) {
-        console.log("Сервер не ответил, но выходим принудительно");
-    }
-
-    // 2. Очищаем локальную метку (если ты её создавал)
-    localStorage.removeItem('isAuth'); 
-    // Если в login.html ты назвал её иначе, например 'logged_in', удаляй её.
-
-    // 3. Уходим на главную или страницу входа
-    window.location.href = 'index.html';
-}
-
-checkAccess();
-
-    </script>
     <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
     <script src="/scripts/main.js"></script>
+    <script src="/scripts/checkAccess.js"></script>
 </body>
 </html>
