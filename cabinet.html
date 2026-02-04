@@ -98,44 +98,61 @@ margin-left: auto;">Выйти</button>
         </div>
         </div>
         </div>
-
+<h2>Управление доступностью</h2>
         <div style="padding: 10px; background-color: #f8f8f827; 
         border-radius: 30px; 
         border: 1px solid black;
-        margin-bottom: 70px">
-        <h2>Управление доступностью</h2>
+        margin-bottom: 70px;
+        ">
+        
 
-<button onclick="togglePage('global', true)">ВЫКЛЮЧИТЬ ВЕСЬ САЙТ</button>
-<button onclick="togglePage('global', false)">Включить весь сайт</button>
+<button onclick="togglePage('global', true)" style="padding: 15px;
+border-radius: 30px; background-color: red;"><h2>ВЫКЛЮЧИТЬ ВЕСЬ САЙТ</h2></button>
+<button onclick="togglePage('global', false)" style="padding: 15px;
+border-radius: 30px; background-color: greenyellow;"><h2>Включить весь сайт</h2></button>
 <hr>
-<p>Главная:</p>
-<button onclick="togglePage('/index.html', true)">Выключить "Главная"</button>
-<button onclick="togglePage('/index.html', false)">Включить "Главная"</button>
+<p style="text-align: center; margin-right: auto;">Главная:</p>
+<button onclick="togglePage('/index.html', true)" style="padding: 15px;
+border-radius: 30px; background-color: red;">Выключить "Главная"</button>
+<button onclick="togglePage('/index.html', false)" style="padding: 15px;
+border-radius: 30px; background-color: greenyellow;">Включить "Главная"</button>
 <hr>
 <p>Погода</p>
-<button onclick="togglePage('/two page.html', true)">Выключить "Погода"</button>
-<button onclick="togglePage('/two page.html', false)">Включить "Погода"</button>
+<button onclick="togglePage('/two page.html', true)" style="padding: 15px;
+border-radius: 30px; background-color: red;">Выключить "Погода"</button>
+<button onclick="togglePage('/two page.html', false)" style="padding: 15px;
+border-radius: 30px; background-color: greenyellow;">Включить "Погода"</button>
 <hr>
 <p>Статьи</p>
-<button onclick="togglePage('/second.html', true)">Выключить "Статьи"</button>
-<button onclick="togglePage('/second.html', false)">Включить "Статьи"</button>
+<button onclick="togglePage('/second.html', true)" style="padding: 15px;
+border-radius: 30px; background-color: red;">Выключить "Статьи"</button>
+<button onclick="togglePage('/second.html', false)" style="padding: 15px;
+border-radius: 30px; background-color: greenyellow;">Включить "Статьи"</button>
 <hr>
 <p>Карты</p>
-<button onclick="togglePage('/carta.html', true)">Выключить "Карты"</button>
-<button onclick="togglePage('/carta.html', false)">Включить "Карты"</button>
+<button onclick="togglePage('/carta.html', true)" style="padding: 15px;
+border-radius: 30px; background-color: red;">Выключить "Карты"</button>
+<button onclick="togglePage('/carta.html', false)" style="padding: 15px;
+border-radius: 30px; background-color: greenyellow;">Включить "Карты"</button>
 <hr>
 <p>Факты</p>
-<button onclick="togglePage('/fact.html', true)">Выключить "Факты"</button>
-<button onclick="togglePage('/fact.html', false)">Включить "Факты"</button>
+<button onclick="togglePage('/fact.html', true)" style="padding: 15px;
+border-radius: 30px; background-color: red;">Выключить "Факты"</button>
+<button onclick="togglePage('/fact.html', false)" style="padding: 15px;
+border-radius: 30px; background-color: greenyellow;">Включить "Факты"</button>
 <hr>
 <p>Праздники</p>
-<button onclick="togglePage('/holiday.html', true)">Выключить "Праздники"</button>
-<button onclick="togglePage('/holiday.html', false)">Включить "Праздники"</button>
+<button onclick="togglePage('/holiday.html', true)" style="padding: 15px;
+border-radius: 30px; background-color: red;">Выключить "Праздники"</button>
+<button onclick="togglePage('/holiday.html', false)" style="padding: 15px;
+border-radius: 30px; background-color: greenyellow;">Включить "Праздники"</button>
 <hr>
 <p>О сайте</p>
-<button onclick="togglePage('/why.html', true)">Выключить "О сайте"</button>
-<button onclick="togglePage('/why.html', false)">Включить "О сайте"</button>
-<script>
+<button onclick="togglePage('/why.html', true)" style="padding: 15px;
+border-radius: 30px; background-color: red;">Выключить "О сайте"</button>
+<button onclick="togglePage('/why.html', false)" style="padding: 15px;
+border-radius: 30px; background-color: greenyellow;">Включить "О сайте"</button>
+<!-- <script>
 async function togglePage(path, status) {
     await fetch('https://pro-info-api.onrender.com/api/admin/toggle-page', {
         method: 'POST',
@@ -145,6 +162,76 @@ async function togglePage(path, status) {
     });
     alert('Статус обновлен!');
 }
+</script> -->
+
+
+
+
+
+<!-- Вставь это в Body там, где хочешь видеть пульт управления -->
+<div id="pagesControl" style="max-width: 600px; margin: 20px auto; font-family: sans-serif;">
+    <h2>Управление страницами</h2>
+    <div id="pagesList">Загрузка статусов...</div>
+</div>
+
+<script>
+// Список твоих 8 страниц
+const myPages = [
+    { name: "Главная", path: "/index.html" },
+    { name: "Погода", path: "/two page.html" },
+    { name: "Новый год", path: "/second.html" },
+    { name: "Карты", path: "/carta.html" },
+    { name: "Праздники", path: "/holiday.html" },
+    { name: "Факты", path: "/fact.html" },
+    { name: "О сайте", path: "/why.html" },
+    { name: "Новости", path: "/news.html" }
+];
+
+async function updateDashboard() {
+    try {
+        const res = await fetch('https://pro-info-api.onrender.com/api/public/status');
+        const statuses = await res.json();
+        
+        const container = document.getElementById('pagesList');
+        container.innerHTML = ''; 
+
+        myPages.forEach(page => {
+            const isOff = statuses[page.path];
+            container.innerHTML += `
+                <div style="margin: 10px 0; padding: 15px; border: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; background: white;">
+                    <div><strong>${page.name}</strong></div>
+                    <div style="display: flex; align-items: center;">
+                        <span style="color: ${isOff ? '#ff4757' : '#2ed573'}; font-weight: bold; margin-right: 15px;">
+                            ${isOff ? '● ВЫКЛЮЧЕНА' : '● РАБОТАЕТ'}
+                        </span>
+                        <button onclick="togglePage('${page.path}', ${!isOff})" 
+                                style="background: ${isOff ? '#2ed573' : '#ff4757'}; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; width: 100px;">
+                            ${isOff ? 'Включить' : 'Выключить'}
+                        </button>
+                    </div>
+                </div>`;
+        });
+    } catch (e) { console.error("Ошибка загрузки статусов"); }
+}
+
+async function togglePage(path, status) {
+    const res = await fetch('https://pro-info-api.onrender.com/api/admin/toggle-page', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path, status }),
+        credentials: 'include'
+    });
+
+    if (res.ok) {
+        // ВАЖНО: вызываем обновление списка сразу после успеха
+        await updateDashboard(); 
+    } else {
+        alert('Ошибка при изменении статуса');
+    }
+}
+
+
+updateDashboard(); // Запуск при загрузке
 </script>
 
 </div>
