@@ -1,228 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Праздники | PRO-info</title>
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/content.css">
-    <link rel="stylesheet" href="styles/chats.css">
-    <link rel="icon" href="/img/Лого (1).png" type="image/png">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Праздники | PRO-info</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/chats.css">
+  <link rel="icon" href="/img/Лого (1).png" type="image/png">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap"
       rel="stylesheet" /> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">  
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
-  </head>
+</head>
 
-  <div id="snow"></div>
-  <body>
-    <header class="header-content">
-    <div class="logo">  
-        <a href="index.html">
-            <img src="img/Логотип.png" alt="PRO-info" width="250">
-        </a>
-    </div>
+<div id="snow"></div>
 
-    <!-- Кнопка бургер (появится на мобилках) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
-        <span></span>
-    </button>
-
-    <nav class="dropdown-menu" id="headerNav">
-        <ul>
-            <li><a href="index.html"><img src="/img/images (1)-Photoroom.png" width="21"></a></li>
-            
-            <li class="dropdown">
-                <div class="dropdown-link-wrapper">
-                    <a href="#">Меню</a>
-                   
-                </div>
-                <ul class="dropdown-content">
-                    <li><a href="two page.html">Погода</a></li>
-                    <li><a href="second.html">Про новый год</a></li>
-                    <!-- <li><a href="school.html">Расписание</a></li> -->
-                    <li><a href="carta.html">Карты</a></li>
-                </ul>
-            </li>
-
-            <li><a href="holiday.html">Праздник дня</a></li>
-            <li><a href="fact.html">Факты</a></li>
-
-            <li class="dropdown">
-                <div class="dropdown-link-wrapper">
-                    <a href="#">Разработчик</a>
-                    
-                </div>
-                <ul class="dropdown-content">
-                    <li><a href="https://lichess.org/@/shahmati23">Lichess</a></li>
-                    <li><a href="https://github.com/Sozdatel1">Github</a></li>
-                    <li><a href="https://github.com/Sozdatel1/Sozdatel1.github.io">Исходный код</a></li>
-                </ul>
-            </li>
-            <li><a href="why.html">О сайте</a></li>
-        </ul>
-    </nav>
-    
-    <!-- <img src="/img/ezgif.com-effects.gif" class="header-gif" width="40"> -->
-      <!-- <div id="vacation-container">
-      <img src="img/img_stylez/рюкзак2.png" alt="icon" id="vacation-icon">
-      <div id="vacation-timer">Загрузка...</div>
-    </div> -->
-    <div style="padding: 15px; 
-/* или absolute, если нужен внутри определёного блка */
-   /* выше, чем у остального контента */
-   
-    background-color: rgba(68, 78, 114, 0.89);
-  
-    border-radius: 15px 15px 2px 15px;
-    margin: 0px 0px 0px 60px;
-    right: 0px !important;
-    max-width: 600px;
-    /* margin: 0px; */
-    color: white;
-    font-family: Arial, sans-serif;
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
-    /* box-shadow: 0 10px 30px rgb(123, 123, 123) !important; */
-    background: #0030b3;
-    color: rgb(0, 248, 0); 
-    border-radius: 5px; 
-    font-family: Arial, Helvetica, sans-serif;">
-    Онлайн: <span id="online-counter">
-                  <span class="spinner"></span> 
-            </span> человек(а)
-</div>
-</header>
-    <div class ="new-year">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на первой позиции"  width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на второй позиции"  width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-</div> 
-    <div class="container-holiday">
-
-      
-      <div id="holiday"></div>
-      <div class="content-holiday">
-        
-        <img src="img/chaii.png" alt="" width="400" />
-        <h2><b>Вот список праздников которые отображаютя здесь&#10024;:</b></h2>
-              <div>1 января — Новый год</div>
-<div>7 января — Православное Рождество</div>
-<div>29 января — Лунный Новый год</div>
-<div>14 февраля — День святого Валентина</div>
-<div>23 февраля — День защитника Отечества</div>
-<div>8 марта — Международный женский день</div>
-<div>21 марта — Международный день лесов</div>
-<div>22 марта — Всемирный день воды</div>
-<div>24 марта — Всемирный день борьбы с туберкулёзом</div>
-<div>1 апреля — День смеха</div>
-<div>7 апреля — Всемирный день здоровья</div>
-<div>20 апреля — Пасха</div>
-<div>22 апреля — День Земли</div>
-<div>23 апреля — Всемирный день книжных магазинов</div>
-<div>1 мая — Праздник труда</div>
-<div>3 мая — День свободы прессы</div>
-<div>9 мая — День Победы</div>
-<div>15 мая — Международный день семьи</div>
-<div>1 июня — День защиты детей</div>
-<div>5 июня — Международный день охраны окружающей среды</div>
-<div>12 июня — День России</div>
-<div>21 июня — Летнее солнцестояние</div>
-<div>1 июля — День Канады</div>
-<div>11 июля — Международный день народонаселения</div>
-<div>18 июля — Международный день ЮНЕСКО</div>
-<div>12 августа — Международный день молодежи</div>
-<div>1 сентября — День знаний</div>
-<div>21 сентября — Международный день мира</div>
-<div>1 октября — День пожилых людей</div>
-<div>4 октября — День учителя</div>
-<div>10 октября — Всемирный день психического здоровья</div>
-<div>16 октября — Международный день окружающей среды</div>
-<div>1 ноября — День всеобщего тестирования</div>
-<div>20 ноября — Международный день действий за отказ от смертной казни</div>
-<div>10 декабря — Международный день прав человека</div>
-<div>12 декабря — День Конституции России</div>
-        <h3>Заходите сюда завтра)</h3>
-      </div>
-    </div>
-    </div>
-    <div class="notification" id="cookieAlert">
-  <p>
-    Уважаемый пользователь! Спасибо что пользуетесь нашим сайтом. 
-    Оставайтесь с нами.
-  </p>
-  <button class="accept-button" onclick="document.getElementById('cookieAlert').style.display='none'">
-    Ок
-  </button>
+<body>
+  <div id="header"></div>
+  <div class="new-year">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на первой позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на второй позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
   </div>
-  
-
-<!-- Правильная ссылка на библиотеку для 2026 года -->
-<script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
-    <script src="scripts/main.js"></script>
+  <div class="container-holiday">
 
 
-     <div id="admin-chat-section">
+    <div id="holiday"></div>
+    <div class="content-holiday">
+
+      <img src="img/chaii.png" alt="" width="400" />
+      <h2><b>Вот список праздников которые отображаютя здесь&#10024;:</b></h2>
+      <div>1 января — Новый год</div>
+      <div>7 января — Православное Рождество</div>
+      <div>29 января — Лунный Новый год</div>
+      <div>14 февраля — День святого Валентина</div>
+      <div>23 февраля — День защитника Отечества</div>
+      <div>8 марта — Международный женский день</div>
+      <div>21 марта — Международный день лесов</div>
+      <div>22 марта — Всемирный день воды</div>
+      <div>24 марта — Всемирный день борьбы с туберкулёзом</div>
+      <div>1 апреля — День смеха</div>
+      <div>7 апреля — Всемирный день здоровья</div>
+      <div>20 апреля — Пасха</div>
+      <div>22 апреля — День Земли</div>
+      <div>23 апреля — Всемирный день книжных магазинов</div>
+      <div>1 мая — Праздник труда</div>
+      <div>3 мая — День свободы прессы</div>
+      <div>9 мая — День Победы</div>
+      <div>15 мая — Международный день семьи</div>
+      <div>1 июня — День защиты детей</div>
+      <div>5 июня — Международный день охраны окружающей среды</div>
+      <div>12 июня — День России</div>
+      <div>21 июня — Летнее солнцестояние</div>
+      <div>1 июля — День Канады</div>
+      <div>11 июля — Международный день народонаселения</div>
+      <div>18 июля — Международный день ЮНЕСКО</div>
+      <div>12 августа — Международный день молодежи</div>
+      <div>1 сентября — День знаний</div>
+      <div>21 сентября — Международный день мира</div>
+      <div>1 октября — День пожилых людей</div>
+      <div>4 октября — День учителя</div>
+      <div>10 октября — Всемирный день психического здоровья</div>
+      <div>16 октября — Международный день окружающей среды</div>
+      <div>1 ноября — День всеобщего тестирования</div>
+      <div>20 ноября — Международный день действий за отказ от смертной казни</div>
+      <div>10 декабря — Международный день прав человека</div>
+      <div>12 декабря — День Конституции России</div>
+      <h3>Заходите сюда завтра)</h3>
+    </div>
+  </div>
+  </div>
+  <div class="notification" id="cookieAlert">
+    <p>
+      Уважаемый пользователь! Спасибо что пользуетесь нашим сайтом.
+      Оставайтесь с нами.
+    </p>
+    <button class="accept-button" onclick="document.getElementById('cookieAlert').style.display='none'">
+      Ок
+    </button>
+  </div>
+
+
+  <!-- Правильная ссылка на библиотеку для 2026 года -->
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
+  <script src="scripts/main.js"></script>
+
+
+  <div id="admin-chat-section">
     <div class="chat-header">Чат администраторов</div>
-    
+
     <!-- Вход -->
     <div id="login-ui">
-        <input type="text" id="name-input" placeholder="Ваш предпочитаемый ник">
-        <div class="pass-wrapper">
+      <input type="text" id="name-input" placeholder="Ваш предпочитаемый ник">
+      <div class="pass-wrapper">
         <input type="password" id="pass-input" placeholder="Пароль администратора">
         <span id="toggle-pass" onclick="togglePass()">👁️</span>
-    </div>
-        <!-- <input type="password" id="pass-input" placeholder="Пароль администратора"> -->
-        <button class="login-btn" onclick="login()">Войти в чат администраторов</button>
+      </div>
+      <!-- <input type="password" id="pass-input" placeholder="Пароль администратора"> -->
+      <button class="login-btn" onclick="login()">Войти в чат администраторов</button>
     </div>
 
     <!-- Чат -->
     <div id="chat-ui" style="display: none;">
-        <div id="msg-box"></div>
-        <div class="input-area">
-            <input type="text" id="msg-input" placeholder="Ваше сообщение...">
-            <button class="send-btn" onclick="send()">➤</button>
-        </div>
-        <div style="text-align: center; padding: 20px;">
-            <a href="#" onclick="localStorage.clear(); location.reload()" style="color: #000000; font-size: 17px; 
+      <div id="msg-box"></div>
+      <div class="input-area">
+        <input type="text" id="msg-input" placeholder="Ваше сообщение...">
+        <button class="send-btn" onclick="send()">➤</button>
+      </div>
+      <div style="text-align: center; padding: 20px;">
+        <a href="#" onclick="localStorage.clear(); location.reload()" style="color: #000000; font-size: 17px; 
             text-decoration: none; 
             background-color: #ff000053; 
             padding: 10px;
             border-radius: 20px;
             margin: 100px ;
             border: 2px solid black;">Выйти</a>
-        </div>
+      </div>
     </div>
-</div>
-    <footer class="footer">
-      <p>&copy; 2025 PRO-info.</p>
-      <a href="https://github.com/Sozdatel1/Sozdatel1.github.io"
-        ><img src="/img/Без названия-Photoroom.png" width="60"
-      /></a>
-    </footer>
-    <!-- <div class="fireflies-containerr">
+  </div>
+  <footer class="footer">
+    <p>&copy; 2025 PRO-info.</p>
+    <a href="https://github.com/Sozdatel1/Sozdatel1.github.io"><img src="/img/Без названия-Photoroom.png"
+        width="60" /></a>
+  </footer>
+  <!-- <div class="fireflies-containerr">
       <img
         src="/img/christmas-lights-transparent-background-11-usagif.gif"
         width="300"
       />
     </div> -->
-    <script src="/scripts/error.js"></script>
-  </body>
+  <script src="/scripts/error.js"></script>
+</body>
+
 </html>

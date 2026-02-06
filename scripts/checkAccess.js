@@ -31,13 +31,16 @@ async function logout() {
     } catch (e) {
         console.log("Сервер не ответил, но выходим принудительно");
     }
-
+    
     // 2. Очищаем локальную метку (если ты её создавал)
     localStorage.removeItem('isAuth'); 
     // Если в login.html ты назвал её иначе, например 'logged_in', удаляй её.
 
     // 3. Уходим на главную или страницу входа
     window.location.href = 'index.html';
+    
+
+ 
 }
 
 checkAccess();

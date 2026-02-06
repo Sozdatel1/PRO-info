@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,132 +12,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-  <div id="snow"></div>
+<div id="snow"></div>
+
 <body>
-  <header class="header-content">
-    <div class="logo">
-        <a href="index.html">
-            <img src="img/Логотип.png" alt="PRO-info" width="250">
-        </a>
+<div id="header"></div>
+    <div class="new-year">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на первой позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на второй позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+        <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    </div>
+    <div class="carta">
+        <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A51b851f0abedb25dacd141e0e1f3a706cb0fc3b3d1c7e36f16e250cf6b2a0980&amp;width=100%25&amp;height=352&amp;lang=ru_RU&amp;scroll=true"></script> -->
+        <script type="text/javascript" charset="utf-8" async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A87d1d96f7057f61c4034aee43bde407689ed8e3190620057cfb29975608a4cf1&amp;width=100%25&amp;height=365&amp;lang=ru_RU&amp;scroll=true"></script>
+
+    </div>
+    <div class="notification" id="cookieAlert">
+        <p>
+            Уважаемый пользователь! Спасибо что пользуетесь нашим сайтом.
+            Оставайтесь с нами.
+        </p>
+        <button class="accept-button" onclick="document.getElementById('cookieAlert').style.display='none'">
+            Ок
+        </button>
     </div>
 
-    <!-- Кнопка бургер (появится на мобилках) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
-        <span></span>
-    </button>
-
-    <nav class="dropdown-menu" id="headerNav">
-        <ul>
-            <li><a href="index.html"><img src="/img/images (1)-Photoroom.png" width="21"></a></li>
-            
-            <li class="dropdown">
-                <div class="dropdown-link-wrapper">
-                    <a href="#">Меню</a>
-                   
-                </div>
-                <ul class="dropdown-content">
-                    <li><a href="two page.html">Погода</a></li>
-                    <li><a href="second.html">Про новый год</a></li>
-                    <!-- <li><a href="school.html">Расписание</a></li> -->
-                    <li><a href="carta.html">Карты</a></li>
-                </ul>
-            </li>
-
-            <li><a href="holiday.html">Праздники</a></li>
-            <li><a href="fact.html">Факты</a></li>
-
-            <li class="dropdown">
-                <div class="dropdown-link-wrapper">
-                    <a href="#">Разработчик</a>
-                    
-                </div>
-                <ul class="dropdown-content">
-                    <li><a href="https://lichess.org/@/shahmati23">Lichess</a></li>
-                    <li><a href="https://github.com/Sozdatel1">Github</a></li>
-                    <li><a href="https://github.com/Sozdatel1/Sozdatel1.github.io">Исходный код</a></li>
-                </ul>
-            </li>
-            <li><a href="why.html">О сайте</a></li>
-        </ul>
-    </nav>
-    
-    <!-- <img src="/img/ezgif.com-effects.gif" class="header-gif" width="40"> -->
-      <!-- <div id="vacation-container">
-      <img src="img/img_stylez/рюкзак2.png" alt="icon" id="vacation-icon">
-      <div id="vacation-timer">Загрузка...</div>
-    </div> -->
-    <div style="padding: 15px; 
-/* или absolute, если нужен внутри определёного блка */
-   /* выше, чем у остального контента */
-   
-    background-color: rgba(68, 78, 114, 0.89);
-  
-    border-radius: 15px 15px 2px 15px;
-    margin: 0px 0px 0px 60px;
-    right: 0px !important;
-    max-width: 600px;
-    /* margin: 0px; */
-    color: white;
-    font-family: Arial, sans-serif;
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
-    /* box-shadow: 0 10px 30px rgb(123, 123, 123) !important; */
-    background: #0030b3;
-    color: rgb(0, 248, 0); 
-    border-radius: 5px; 
-    font-family: Arial, Helvetica, sans-serif;">
-    Онлайн: <span id="online-counter">
-                  <span class="spinner"></span> 
-            </span> человек(а)
-</div>
-</header>
-  <div class ="new-year">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на первой позиции"  width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на второй позиции"  width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-</div> 
-  <div class="carta">
-    <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A51b851f0abedb25dacd141e0e1f3a706cb0fc3b3d1c7e36f16e250cf6b2a0980&amp;width=100%25&amp;height=352&amp;lang=ru_RU&amp;scroll=true"></script> -->
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A87d1d96f7057f61c4034aee43bde407689ed8e3190620057cfb29975608a4cf1&amp;width=100%25&amp;height=365&amp;lang=ru_RU&amp;scroll=true"></script>
-
-</div>
-    <div class="notification" id="cookieAlert">
-  <p>
-    Уважаемый пользователь! Спасибо что пользуетесь нашим сайтом. 
-    Оставайтесь с нами.
-  </p>
-  <button class="accept-button" onclick="document.getElementById('cookieAlert').style.display='none'">
-    Ок
-  </button>
-  </div>
-
- 
 
 
-<!-- Правильная ссылка на библиотеку для 2026 года -->
-<script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
+
+    <!-- Правильная ссылка на библиотеку для 2026 года -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
 
     <script src="scripts/main.js"></script>
     <footer class="footer">
-    <p>&copy; 2025 PRO-info.</p>
-    <a href="https://github.com/Sozdatel1/Sozdatel1.github.io"><img src="/img/Без названия-Photoroom.png" width="60"></a>
+        <p>&copy; 2025 PRO-info.</p>
+        <a href="https://github.com/Sozdatel1/Sozdatel1.github.io"><img src="/img/Без названия-Photoroom.png"
+                width="60"></a>
     </footer>
-  <!-- <div class="fireflies-containerr">
+    <!-- <div class="fireflies-containerr">
     <img src="/img/christmas-lights-transparent-background-11-usagif.gif" />
   </div> -->
-  <script src="/scripts/error.js"></script>
+    <script src="/scripts/error.js"></script>
 </body>
+
 </html>

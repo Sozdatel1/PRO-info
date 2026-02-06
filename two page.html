@@ -1,164 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Погода | PRO-info</title>
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/content.css">
-    <link rel="stylesheet" href="/styles/chats.css" />
-    <link rel="icon" href="/img/Лого (1).png" type="image/png">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Погода | PRO-info</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="/styles/chats.css" />
+  <link rel="icon" href="/img/Лого (1).png" type="image/png">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap"
       rel="stylesheet"
     /> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
 
 
-  <div id="snow"></div>
-  <body>
-    <div class="progress-container">
+<div id="snow"></div>
+
+<body>
+  <div class="progress-container">
     <div class="progress-bar" id="myBar"></div>
   </div>
+  <div id="header"></div>
 
-    <header class="header-content">
-    <div class="logo">
-        <a href="index.html">
-            <img src="img/Логотип.png" alt="PRO-info" width="250">
-        </a>
+
+  <div class="new-year">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на первой позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на второй позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+    <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
+  </div>
+  <div class="container-one">
+
+    <div class="pogoda">
+      <a id="ms-informer-link-df0429a3f4b16f3017fa3d566df31475" class="ms-informer-link"
+        href="https://www.meteoservice.ru/weather/overview/dubna">Погода в Дубне</a>
+      <script class="ms-informer-script"
+        src="https://www.meteoservice.ru/informer/script/df0429a3f4b16f3017fa3d566df31475"></script>
+    </div>
+    <div class="pogoda-mobile">
+      <a id="ms-informer-link-2312b3bf0300f402069ab4ae4b940f7f" class="ms-informer-link"
+        href="https://www.meteoservice.ru/weather/overview/dubna">Погода в Дубне</a>
+      <script class="ms-informer-script"
+        src="https://www.meteoservice.ru/informer/script/2312b3bf0300f402069ab4ae4b940f7f"></script>
     </div>
 
-    <!-- Кнопка бургер (появится на мобилках) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
-        <span></span>
-    </button>
 
-    <nav class="dropdown-menu" id="headerNav">
-        <ul>
-            <li><a href="index.html"><img src="/img/images (1)-Photoroom.png" width="21"></a></li>
-            
-            <li class="dropdown">
-                <div class="dropdown-link-wrapper">
-                    <a href="#">Меню</a>
-                   
-                </div>
-                <ul class="dropdown-content">
-                    <li><a href="two page.html">Погода</a></li>
-                    <li><a href="second.html">Про новый год</a></li>
-                    <!-- <li><a href="school.html">Расписание</a></li> -->
-                    <li><a href="carta.html">Карты</a></li>
-                </ul>
-            </li>
+    <h1>Синоптик рассказал, какая погода ждет москвичей в Крещенскую ночь</h1>
+    <img
+      src="https://cdnn21.img.ria.ru/images/07e6/01/13/1768514289_0:0:3079:1732_1280x0_80_0_0_65f9a20c5d42f692345ac82e5284e32a.jpg.webp"
+      width="900">
 
-            <li><a href="holiday.html">Праздники</a></li>
-            <li><a href="fact.html">Факты</a></li>
+    <div class="content-one">
+      <p class="content-one-novosty"></p>
+      <p></p>
+      <p>
+        Температура воздуха в Крещенскую ночь в Москве опустится до минус 9 градусов, сообщил ведущий специалист центра
+        погоды "Фобос" Евгений Тишковец.
+      </p>
 
-            <li class="dropdown">
-                <div class="dropdown-link-wrapper">
-                    <a href="#">Разработчик</a>
-                    
-                </div>
-                <ul class="dropdown-content">
-                    <li><a href="https://lichess.org/@/shahmati23">Lichess</a></li>
-                    <li><a href="https://github.com/Sozdatel1">Github</a></li>
-                    <li><a href="https://github.com/Sozdatel1/Sozdatel1.github.io">Исходный код</a></li>
-                </ul>
-            </li>
-            <li><a href="why.html">О сайте</a></li>
-        </ul>
-    </nav>
-    
-    <!-- <img src="/img/ezgif.com-effects.gif" class="header-gif" width="40"> -->
-      <!-- <div id="vacation-container">
-      <img src="img/img_stylez/рюкзак2.png" alt="icon" id="vacation-icon">
-      <div id="vacation-timer">Загрузка...</div>
-    </div> -->
-    <div style="padding: 15px; 
-/* или absolute, если нужен внутри определёного блка */
-   /* выше, чем у остального контента */
-   
-    background-color: rgba(68, 78, 114, 0.89);
-  
-    border-radius: 15px 15px 2px 15px;
-    margin: 0px 0px 0px 60px;
-    right: 0px !important;
-    max-width: 600px;
-    /* margin: 0px; */
-    color: white;
-    font-family: Arial, sans-serif;
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
-    /* box-shadow: 0 10px 30px rgb(123, 123, 123) !important; */
-    background: #0030b3;
-    color: rgb(0, 248, 0); 
-    border-radius: 5px; 
-    font-family: Arial, Helvetica, sans-serif;">
-    Онлайн: <span id="online-counter">
-                  <span class="spinner"></span> 
-            </span> человек(а)
-</div>
-</header>
+      <p>
+        "На Крещение, под влиянием теплого атмосферного фронта прогнозируется пасмурная погода, местами возможен
+        небольшой снег. Ветер западный 3-8 метров в секунду. Температура воздуха в Москве ночью минус 6 - минус 9, по
+        области минус 6 - минус 11, днем в столице минус 3 - минус 6, в Подмосковье минус 2 - минус 7", - рассказал
+        Тишковец.
+      </p>
 
 
-    <div class ="new-year">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на первой позиции"  width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на второй позиции"  width="150">
-      <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-<img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции"  width="150">
-</div> 
-    <div class="container-one">
-      
-      <div class="pogoda">
-      <a id="ms-informer-link-df0429a3f4b16f3017fa3d566df31475" class="ms-informer-link" href="https://www.meteoservice.ru/weather/overview/dubna">Погода в Дубне</a>
-      <script class="ms-informer-script" src="https://www.meteoservice.ru/informer/script/df0429a3f4b16f3017fa3d566df31475"></script></div>
-      <div class="pogoda-mobile">
-        <a id="ms-informer-link-2312b3bf0300f402069ab4ae4b940f7f" class="ms-informer-link" href="https://www.meteoservice.ru/weather/overview/dubna">Погода в Дубне</a>
-         <script class="ms-informer-script" src="https://www.meteoservice.ru/informer/script/2312b3bf0300f402069ab4ae4b940f7f"></script>
-      </div>
-      
-       
-      <h1>Синоптик рассказал, какая погода ждет москвичей в Крещенскую ночь</h1>
-      <img src="https://cdnn21.img.ria.ru/images/07e6/01/13/1768514289_0:0:3079:1732_1280x0_80_0_0_65f9a20c5d42f692345ac82e5284e32a.jpg.webp" width="900" >
-      
-      <div class="content-one">
-        <p class="content-one-novosty"></p>
-        <p></p>
+      <div class="content-one-two">
+        <h2 style="color: blue; margin: 70px 0px 0px 0px;">Врач рассказал, кому нельзя окунаться в прорубь на Крещение
+        </h2>
+        <p> Людям с гипертонической болезнью, с заболеваниями сердца и астмой запрещено окунаться в прорубь на Крещение,
+          так как это может привести к сердечному приступу.</p>
         <p>
-          Температура воздуха в Крещенскую ночь в Москве опустится до минус 9 градусов, сообщил ведущий специалист центра погоды "Фобос" Евгений Тишковец.
+          "В состоянии выраженного алкогольного опьянения, пациентам с гипертонической болезнью, с заболеваниями сердца,
+          с астмой. Все это может привести к приступу".
         </p>
-
         <p>
-          "На Крещение, под влиянием теплого атмосферного фронта прогнозируется пасмурная погода, местами возможен небольшой снег. Ветер западный 3-8 метров в секунду. Температура воздуха в Москве ночью минус 6 - минус 9, по области минус 6 - минус 11, днем в столице минус 3 - минус 6, в Подмосковье минус 2 - минус 7", - рассказал Тишковец.
+          Врач отметил, что желающим поучаствовать в крещенских купаниях нужно быть осторожными и не окунаться в прорубь
+          при наличии проблем с давлением и противопоказаний со стороны сердечно-сосудистой системы. В противном случае
+          народная традиция может привести к ухудшению состояния и обострению заболевания.
         </p>
-
-
-        <div class="content-one-two">
-          <h2 style="color: blue; margin: 70px 0px 0px 0px;">Врач рассказал, кому нельзя окунаться в прорубь на Крещение</h2>
-          <p> Людям с гипертонической болезнью, с заболеваниями сердца и астмой запрещено окунаться в прорубь на Крещение, так как это может привести к сердечному приступу.</p>
-          <p>
-            "В состоянии выраженного алкогольного опьянения, пациентам с гипертонической болезнью, с заболеваниями сердца, с астмой. Все это может привести к приступу".
-          </p>
-          <p>
-            Врач отметил, что желающим поучаствовать в крещенских купаниях нужно быть осторожными и не окунаться в прорубь при наличии проблем с давлением и противопоказаний со стороны сердечно-сосудистой системы. В противном случае народная традиция может привести к ухудшению состояния и обострению заболевания.
-          </p>
-        </div>
-        <img src="img/chaii.png" alt="" width="400" />
       </div>
+      <img src="img/chaii.png" alt="" width="400" />
     </div>
-    <!-- <div class="notification" id="cookieAlert">
+  </div>
+  <!-- <div class="notification" id="cookieAlert">
   <p>
     Уважаемый пользователь! Спасибо что пользуетесь нашим сайтом. 
     Оставайтесь с нами.
@@ -167,55 +110,55 @@
     Ок
   </button>
   </div> -->
-  
 
 
-<!-- Правильная ссылка на библиотеку для 2026 года -->
-<script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
-    <script src="scripts/main.js"></script>
+
+  <!-- Правильная ссылка на библиотеку для 2026 года -->
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
+  <script src="scripts/main.js"></script>
 
 
-    <div id="admin-chat-section">
+  <div id="admin-chat-section">
     <div class="chat-header">Чат администраторов</div>
-    
+
     <!-- Вход -->
     <div id="login-ui">
-        <input type="text" id="name-input" placeholder="Ваш предпочитаемый ник">
-        <div class="pass-wrapper">
+      <input type="text" id="name-input" placeholder="Ваш предпочитаемый ник">
+      <div class="pass-wrapper">
         <input type="password" id="pass-input" placeholder="Пароль администратора">
         <span id="toggle-pass" onclick="togglePass()">👁️</span>
-    </div>
-        <!-- <input type="password" id="pass-input" placeholder="Пароль администратора"> -->
-        <button class="login-btn" onclick="login()">Войти в чат администраторов</button>
+      </div>
+      <!-- <input type="password" id="pass-input" placeholder="Пароль администратора"> -->
+      <button class="login-btn" onclick="login()">Войти в чат администраторов</button>
     </div>
 
     <!-- Чат -->
     <div id="chat-ui" style="display: none;">
-        <div id="msg-box"></div>
-        <div class="input-area">
-            <input type="text" id="msg-input" placeholder="Ваше сообщение...">
-            <button class="send-btn" onclick="send()">➤</button>
-        </div>
-        <div style="text-align: center; padding: 20px;">
-            <a href="#" onclick="localStorage.clear(); location.reload()" style="color: #000000; font-size: 17px; 
+      <div id="msg-box"></div>
+      <div class="input-area">
+        <input type="text" id="msg-input" placeholder="Ваше сообщение...">
+        <button class="send-btn" onclick="send()">➤</button>
+      </div>
+      <div style="text-align: center; padding: 20px;">
+        <a href="#" onclick="localStorage.clear(); location.reload()" style="color: #000000; font-size: 17px; 
             text-decoration: none; 
             background-color: #ff000053; 
             padding: 10px;
             border-radius: 20px;
             margin: 100px ;
             border: 2px solid black;">Выйти</a>
-        </div>
+      </div>
     </div>
-</div>
-    <footer class="footer">
-      <p>&copy; 2025 PRO-info.</p>
-      <a href="https://github.com/Sozdatel1/Sozdatel1.github.io"
-        ><img src="/img/Без названия-Photoroom.png" width="60"
-      /></a>
-    </footer>
-    <!-- <div class="fireflies-containerr">
+  </div>
+  <footer class="footer">
+    <p>&copy; 2025 PRO-info.</p>
+    <a href="https://github.com/Sozdatel1/Sozdatel1.github.io"><img src="/img/Без названия-Photoroom.png"
+        width="60" /></a>
+  </footer>
+  <!-- <div class="fireflies-containerr">
       <img src="/img/christmas-lights-transparent-background-11-usagif.gif" />
     </div> -->
-    <script src="/scripts/error.js"></script>
-  </body>
+  <script src="/scripts/error.js"></script>
+</body>
+
 </html>
