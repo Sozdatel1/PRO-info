@@ -1,63 +1,63 @@
 const holidays = {
 
-  
-  "01-01": "Новый год",
-  "01-07": "Православное Рождество",
-  "02-01": "Лунный Новый год", // дата меняется
-  "02-14": "День святого Валентина",
-  "02-23": "День защитника Отечества", /* Россия */
-  "03-08": "Международный женский день",
-  "03-21": "Международный день лесов",
-  "03-22": "Всемирный день воды",
-  "03-24": "Всемирный день борьбы с туберкулёзом",
-  "04-01": "День смеха",
-  "04-07": "Всемирный день здоровья",
-  "04-22": "День Земли",
-  "04-23": "Всемирный день книжных магазинов",
-  "04-22": "Пасха",
-  "05-01": "Праздник труда",
-  "05-03": "День свободы прессы",
-  "05-09": "День Победы",
-  "05-15": "Международный день семьи",
-  "06-01": "День защиты детей",
-  "06-05": "Международный день охраны окружающей среды",
-  "06-12": "День России",
-  "07-01": "День Канады",
-  "07-11": "Международный день народонаселения",
-  "07-18": "Международный день ЮНЕСКО",
-  "08-12": "Международный день молодежи",
-  "09-01": "День знаний",
-  "09-21": "Международный день мира",
-  "10-01": "День пожилых людей",
-  "10-04": "День учителя",
-  "10-10": "Всемирный день психического здоровья",
-  "10-16": "Международный день окружающей среды",
-  "11-01": "День всеобщего тестирования ",
-  "11-20": "Международный день действий за отказ от смертной казни",
-  "12-10": "Международный день прав человека",
-  "12-12": "День Конституции России",
-  "06-21": "Летнее солнцестояние"
 
-  
+    "01-01": "Новый год",
+    "01-07": "Православное Рождество",
+    "02-01": "Лунный Новый год", // дата меняется
+    "02-14": "День святого Валентина",
+    "02-23": "День защитника Отечества", /* Россия */
+    "03-08": "Международный женский день",
+    "03-21": "Международный день лесов",
+    "03-22": "Всемирный день воды",
+    "03-24": "Всемирный день борьбы с туберкулёзом",
+    "04-01": "День смеха",
+    "04-07": "Всемирный день здоровья",
+    "04-22": "День Земли",
+    "04-23": "Всемирный день книжных магазинов",
+    "04-22": "Пасха",
+    "05-01": "Праздник труда",
+    "05-03": "День свободы прессы",
+    "05-09": "День Победы",
+    "05-15": "Международный день семьи",
+    "06-01": "День защиты детей",
+    "06-05": "Международный день охраны окружающей среды",
+    "06-12": "День России",
+    "07-01": "День Канады",
+    "07-11": "Международный день народонаселения",
+    "07-18": "Международный день ЮНЕСКО",
+    "08-12": "Международный день молодежи",
+    "09-01": "День знаний",
+    "09-21": "Международный день мира",
+    "10-01": "День пожилых людей",
+    "10-04": "День учителя",
+    "10-10": "Всемирный день психического здоровья",
+    "10-16": "Международный день окружающей среды",
+    "11-01": "День всеобщего тестирования ",
+    "11-20": "Международный день действий за отказ от смертной казни",
+    "12-10": "Международный день прав человека",
+    "12-12": "День Конституции России",
+    "06-21": "Летнее солнцестояние"
+
+
 };
 
 function checkHoliday() {
-  const today = new Date();
-  const month = today.getMonth() + 1; // Месяцы с 1
-  const day = today.getDate();
+    const today = new Date();
+    const month = today.getMonth() + 1; // Месяцы с 1
+    const day = today.getDate();
 
-  const dateKey = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+    const dateKey = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 
-  const holidayName = holidays[dateKey];
-  const displayDiv = document.getElementById('holiday');
+    const holidayName = holidays[dateKey];
+    const displayDiv = document.getElementById('holiday');
 
-  if (displayDiv) {
-    if (holidayName) {
-      displayDiv.innerHTML = `<h2>Сегодня отмечают праздник : ${holidayName}</h2>`;
-    } else {
-      displayDiv.innerHTML = `<h2>Сегодня обычный день.</h2>`;
+    if (displayDiv) {
+        if (holidayName) {
+            displayDiv.innerHTML = `<h2>Сегодня отмечают праздник : ${holidayName}</h2>`;
+        } else {
+            displayDiv.innerHTML = `<h2>Сегодня обычный день.</h2>`;
+        }
     }
-  }
 }
 
 // Запускаем при загрузке страницы
@@ -105,7 +105,7 @@ window.onload = checkHoliday;
 // document.addEventListener('DOMContentLoaded', () => {
 //     let lastScrollTop = 0;
 //     const header = document.querySelector('.header-content');
-    
+
 //     // Порог срабатывания (через сколько пикселей скролла прятать хедер)
 //     const scrollThreshold = 50;
 
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.addEventListener('click', () => {
             const isOpen = menu.classList.toggle('is-open');
             burger.classList.toggle('is-active');
-            
+
             // Блокировка скролла body (как в оригинальном коде Добродела)
             if (isOpen) {
                 body.classList.add('menu-open');
@@ -162,9 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapper.addEventListener('click', (e) => {
             // Предотвращаем переход по ссылке #, чтобы сработало только раскрытие
             e.preventDefault();
-            
+
             const parent = wrapper.closest('.dropdown');
-            
+
             if (parent) {
                 // Закрываем другие открытые подменю для экономии места на экране
                 document.querySelectorAll('.dropdown').forEach(item => {
@@ -205,7 +205,7 @@ function updateVacationCountdown() {
     const diff = vacationDate - now;
 
     const timerElement = document.getElementById('vacation-timer');
-        if (!timerElement) return; 
+    if (!timerElement) return;
     if (diff > 0) {
         // Расчет единиц времени
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -263,38 +263,38 @@ updateVacationCountdown(); // Инициализация сразу
 
 // Инициализация Swiper
 const sliderElement = document.querySelector('.my-slider');
- if (sliderElement) {
-const swiper = new Swiper('.my-slider', {
-   
-  loop: true,
-  speed: 500,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-    // Настройки адаптивности
-  breakpoints: {
-    // Если экран шире 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10
-    },
-    // Если экран шире 1024px
-    1024: {
-      slidesPerView: 1,
-      spaceBetween: 0
-    }
-  }
-});
-}else {
+if (sliderElement) {
+    const swiper = new Swiper('.my-slider', {
+
+        loop: true,
+        speed: 500,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        // Настройки адаптивности
+        breakpoints: {
+            // Если экран шире 320px
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            // Если экран шире 1024px
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            }
+        }
+    });
+} else {
     console.log("Слайдера на этой странице нет, идем дальше...");
 }
 
-    
+
 
 
 
@@ -313,19 +313,22 @@ async function loadChat() {
         body: JSON.stringify({ pass: myPass })
     });
 
+
+    // ЕСЛИ ПАРОЛЬ ПРАВИЛЬНЫЙ ПРИ ВХОДЕ В ЧАТ
+    
     if (res.ok) {
         const msgs = await res.json();
         document.getElementById('login-ui').style.display = 'none';
         document.getElementById('chat-ui').style.display = 'block';
-        
+
         const box = document.getElementById('msg-box');
         box.innerHTML = msgs.map(m => {
-        const goldClass = m.author === "Главный разработчик" ? "gold-admin" : "";
-        const reactions = m.reactions || {};
+            const goldClass = m.author === "Главный разработчик" ? "gold-admin" : "";
+            const reactions = m.reactions || {};
             const reactionsHtml = Object.entries(reactions)
                 .map(([emo, count]) => `<span class="reaction-badge">${emo} ${count}</span>`)
                 .join('');
-        return`
+            return `
         <div class="message-item">
             <div class="msg-info">
             <b class="${goldClass}">${m.author || "Аноним"}</b>
@@ -338,16 +341,21 @@ async function loadChat() {
             </div>
         <div class="msg-text">${m.text}</div>
         
-        </div>`;}).join('');
-            box.scrollTop = box.scrollHeight;
-            localStorage.setItem('chat_pass', myPass);
-        } else {
-            if (myPass)   Swal.fire({
-  title: "Неправильный пароль!",
-  icon: "error",
-  draggable: true
-});
-            localStorage.removeItem('chat_pass');
+        </div>`;
+        }).join('');
+        box.scrollTop = box.scrollHeight;
+        localStorage.setItem('chat_pass', myPass);
+
+
+        // ЕСЛИ ПАРОЛЬ НЕПРАВИЛЬНЫЙ
+
+    } else {
+        if (myPass) Swal.fire({
+            title: "Неправильный пароль!",
+            icon: "error",
+            draggable: true
+        });
+        localStorage.removeItem('chat_pass');
     }
 }
 
@@ -360,16 +368,17 @@ async function send() {
     await fetch(`${API_URL}/add-msg`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pass: myPass, text: ipt.value,
-        author: localStorage.getItem('chat_name') 
-         })
+        body: JSON.stringify({
+            pass: myPass, text: ipt.value,
+            author: localStorage.getItem('chat_name')
+        })
     });
     ipt.value = '';
     loadChat();
 }
 
 // Кнопка входа
-window.login = function() {
+window.login = function () {
     const pinput = document.getElementById('pass-input');
     const ninput = document.getElementById('name-input');
     if (pinput && ninput) {
@@ -384,15 +393,15 @@ window.login = function() {
     }
 }
 
-window.deleteMsg = async function(msgData) {
+window.deleteMsg = async function (msgData) {
     if (!confirm("Удалить это сообщение?")) return;
 
     const res = await fetch(`${API_URL}/delete-msg`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            pass: myPass, 
-            msgData: msgData 
+        body: JSON.stringify({
+            pass: myPass,
+            msgData: msgData
         })
     });
 
@@ -402,10 +411,14 @@ window.deleteMsg = async function(msgData) {
         alert("Ошибка при удалении");
     }
 }
-window.togglePass = function() {
+
+
+// СКРЫТИЕ И ПОКАЗ ПАРОЛЯ ПРИ ВВОДЕ В ВХОДЕ В ЧАТ
+
+window.togglePass = function () {
     const passInput = document.getElementById('pass-input');
     const toggleIcon = document.getElementById('toggle-pass');
-    
+
     if (passInput.type === "password") {
         passInput.type = "text";
         toggleIcon.textContent = "🙈"; // Меняем иконку на закрытый замок или другой глаз
@@ -413,11 +426,67 @@ window.togglePass = function() {
         passInput.type = "password";
         toggleIcon.textContent = "👁️";
     }
-     passInput.focus();
+    passInput.focus();
 }
 
 
 // Запуск при открытии страницы
 loadChat();
+
+
+// УБИРАНИЕ ХЕДЕРА ПРИ СКРОЛЛЕ
+
+document.addEventListener('DOMContentLoaded', () => {
+    let lastScrollTop = 0;
+    const header = document.querySelector('.header-content');
+
+    // Порог срабатывания (через сколько пикселей скролла прятать хедер)
+    const scrollThreshold = 50;
+
+    window.addEventListener('scroll', () => {
+        // Текущее расстояние от верха страницы
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Логика направления
+        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            // Скролл вниз — добавляем класс скрытия
+            header.classList.add('header--hidden');
+        } else {
+            // Скролл вверх — убираем класс скрытия
+            header.classList.remove('header--hidden');
+        }
+
+        // Запоминаем позицию для следующего шага
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true }); // passive: true повышает плавность скролла
+});
+
+
+// СЧЁТЧИК ОНЛАЙНА
+
+const RENDER_URL = 'https://pro-info-api.onrender.com';
+
+// Подключаемся с настройками, чтобы быстрее работало через прокси
+const socket = io(RENDER_URL, {
+    transports: ['websocket', 'polling']
+});
+
+const counterElement = document.getElementById('online-counter');
+
+socket.on('updateCount', (count) => {
+    counterElement.innerText = count;
+    console.log('Текущий онлайн:', count);
+});
+
+socket.on('connect_error', (error) => {
+    console.log('Ошибка подключения:', error);
+    // counterElement.innerText = 'пробуждаю сервер...';
+    counterElement.innerHTML = '<span class="spinner"></span>';
+});
+
+socket.on('connect', () => {
+    console.log('Успешно подключено к серверу!');
+});
+
 
 

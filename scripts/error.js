@@ -20,11 +20,11 @@
 //     <nav class="dropdown-menu" id="headerNav">
 //         <ul>
 //             <li><a href="index.html"><img src="/img/images (1)-Photoroom.png" width="21"></a></li>
-            
+
 //             <li class="dropdown">
 //                 <div class="dropdown-link-wrapper">
 //                     <a href="#">Меню</a>
-                  
+
 //                 </div>
 //                 <ul class="dropdown-content">
 //                     <li><a href="two page.html">Погода</a></li>
@@ -41,10 +41,10 @@
 //             <li class="dropdown">
 //                 <div class="dropdown-link-wrapper">
 //                     <a href="#">Разработчик</a>
-                    
+
 //                 </div>
 //                 <ul class="dropdown-content">
-                    
+
 //                     <li><a href="https://github.com/Sozdatel1">Github</a></li>
 //                     <li><a href="https://github.com/Sozdatel1/Sozdatel1.github.io">Исходный код</a></li>
 //                 </ul>
@@ -68,12 +68,15 @@
 
 
 
-    async function checkStatus() {
+
+// ФУНКЦИЯ ПРОВЕРКИ, ВЫКЛЮЧЕНА ЛИ СТРАНИЦА
+
+async function checkStatus() {
     const res = await fetch('https://pro-info-api.onrender.com/api/public/status', {
-            cache: 'no-store' 
-        });
+        cache: 'no-store'
+    });
     const statuses = await res.json();
-    
+
     const currentPath = window.location.pathname;
 
     // Если включен общий рубильник ИЛИ выключена текущая страница

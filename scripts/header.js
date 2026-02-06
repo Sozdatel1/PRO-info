@@ -102,21 +102,15 @@ header.innerHTML = `
 
 
 
-<!-- Убери href="login.html" из тега <a>, либо замени на кнопку -->
-<a href="#" id="cabinetBtn" style="text-decoration: none; 
-background-color: #27272700; 
-padding: 15px; 
-font-family: Arial, Helvetica, sans-serif;
-margin-left: auto;
-border-left: 2px solid black;
-color: #000;">Кабинет разработчика</a>
+
+
 
 </header>
 `
 document.addEventListener('DOMContentLoaded', () => {
     let lastScrollTop = 0;
     const header = document.querySelector('.header-content');
-    
+
     // Порог срабатывания (через сколько пикселей скролла прятать хедер)
     const scrollThreshold = 50;
 
@@ -140,27 +134,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // СЧЁТЧИК ОНЛАЙНА
 const RENDER_URL = 'https://pro-info-api.onrender.com';
-    
-    // Подключаемся с настройками, чтобы быстрее работало через прокси
-    const socket = io(RENDER_URL, {
-        transports: ['websocket', 'polling']
-    });
 
-    const counterElement = document.getElementById('online-counter');
+// Подключаемся с настройками, чтобы быстрее работало через прокси
+const socket = io(RENDER_URL, {
+    transports: ['websocket', 'polling']
+});
 
-    socket.on('updateCount', (count) => {
-        counterElement.innerText = count;
-        console.log('Текущий онлайн:', count);
-    });
+const counterElement = document.getElementById('online-counter');
 
-    socket.on('connect_error', (error) => {
-        console.log('Ошибка подключения:', error);
-        // counterElement.innerText = 'пробуждаю сервер...';
-        counterElement.innerHTML = '<span class="spinner"></span>';
-    });
+socket.on('updateCount', (count) => {
+    counterElement.innerText = count;
+    console.log('Текущий онлайн:', count);
+});
 
-    socket.on('connect', () => {
-        console.log('Успешно подключено к серверу!');
-    });
+socket.on('connect_error', (error) => {
+    console.log('Ошибка подключения:', error);
+    // counterElement.innerText = 'пробуждаю сервер...';
+    counterElement.innerHTML = '<span class="spinner"></span>';
+});
+
+socket.on('connect', () => {
+    console.log('Успешно подключено к серверу!');
+});
 
 
