@@ -2,7 +2,7 @@
 
 window.onload = function() {
 const cabinetBtn = document.getElementById('cabinetBtn');
-
+if (cabinetBtn) {
 cabinetBtn.onclick = async function(e) {
     e.preventDefault();
     
@@ -30,4 +30,6 @@ cabinetBtn.onclick = async function(e) {
         cabinetBtn.innerText = originalText;
     }
 };
-};
+}
+
+}

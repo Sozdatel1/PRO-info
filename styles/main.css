@@ -15,15 +15,9 @@ body {
     min-height: 100vh;
     padding: 0px;
     margin: 0;
-    cursor: url('/img/cursor.png') 0 0, pointer;
+    
     
 }
-.error {
-  text-align: center;
-  align-items: center;
-}
-
-/* Стиль самого кольца загрузки */
 .spinner {
   width: 15px;
   height: 15px;
@@ -42,9 +36,9 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-a, button, .clickable,  img, .fireflies-containerr, td, th {
+/* a, button, .clickable,  img, .fireflies-containerr, td, th {
     cursor: url('/img/cursor-perchatka.png') 0 0, pointer !important;
-}
+} */
 
 
 /* 1. Общая ширина скроллбара */
@@ -130,7 +124,7 @@ a, button, .clickable,  img, .fireflies-containerr, td, th {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   z-index: 20000000000;
         }  
-        /* @keyframes hideHeader-content {
+  /* @keyframes hideHeader-content {
   from { transform: translateY(0); }
   to { transform: translateY(-100%); } */
   /* @container scroll-state(scroll-direction: down) {
@@ -435,10 +429,6 @@ left: 0;
     max-width: 90%;
     text-decoration: none !important;
 }
-.video {
-  text-align: right !important;
-  margin: 200;
-}
 .logo {
   transition: transform 0.9s ease;
     position: relative;          /* Нужно для позиционирования подсказки */
@@ -448,14 +438,10 @@ left: 0;
   padding: 5px;
     
 }
-
-
 #vacation-icon {
     width: 28px;  /* Размер иконки */
-   
-}
-
-.logo:hover {
+  
+}.logo:hover {
   background-color: #00e5ff70 !important;
   transition: transform 0.3s ease;
   transform: scale(1.05);
@@ -464,10 +450,6 @@ left: 0;
   padding: 5px;
   margin: 0px;
 }
-
-
-
-
 .dropdown-menu ul {
     list-style-type: none; /* Убираем маркеры списка */
     margin: 0;
@@ -487,11 +469,10 @@ left: 0;
     box-shadow: #0400ff;
    
 }
-
 .dropdown-menu li {
     float: left; /* Размещаем пункты меню горизонтально */
     background-color: #f45c5c00;
-    color: #000;
+    color: #000000;
      /* font-family: "LXGW WenKai Mono TC", monospace; */
      font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
@@ -501,9 +482,6 @@ left: 0;
     transition: transform 0.3s ease;
    
 }
-
-
-
 .dropdown-menu li a {
     display: flex;
     align-items: center; 
@@ -523,7 +501,6 @@ left: 0;
   font-variation-settings: "wdth" 300;
      transition: transform 0.3s ease;
 }
-
 .dropdown-menu li a:hover:not(.active) {
     background-color: #fcfa86;
     border-radius: 50px;
@@ -546,7 +523,6 @@ left: 0;
     border-color:#000;
     
 }
-
 .dropdown-content li {
     float: none; /* Размещаем элементы выпадающего списка вертикально */
     color: rgb(177, 9, 255);
@@ -557,24 +533,18 @@ left: 0;
    
     
 }
-
 .dropdown-content li a {
     color: rgb(0, 38, 255);
     padding: 12px;
     text-align: left;
     min-width: 100px;
 }
-
 .dropdown-content li a:hover {
     background-color: #fffb00a5 !important;
 }
-
-/* Показываем выпадающее содержимое при наведении курсора на родительски элемент */
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-
 .notification {
     display: none; /* скрываем изначально */
     position: fixed; /* или absolute, если нужен внутри определёного блка */
@@ -806,4 +776,22 @@ img {
   cursor: pointer;
   font-weight: bold;
 } */
+}
+.tema {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  background-color: #ffffff00;
+  padding: 20px;
+  border-radius: 0px;
+  gap: 10px;
+  
+  color: #000000;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 0px solid black;
+  border-bottom: 0px solid black;
+  align-items: center;
+  margin-left:  auto;
+  box-shadow: 0 10px 30px  rgba(24, 24, 24, 0.363); 
 }

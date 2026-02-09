@@ -436,57 +436,57 @@ loadChat();
 
 // УБИРАНИЕ ХЕДЕРА ПРИ СКРОЛЛЕ
 
-document.addEventListener('DOMContentLoaded', () => {
-    let lastScrollTop = 0;
-    const header = document.querySelector('.header-content');
+// document.addEventListener('DOMContentLoaded', () => {
+//     let lastScrollTop = 0;
+//     const header = document.querySelector('.header-content');
 
-    // Порог срабатывания (через сколько пикселей скролла прятать хедер)
-    const scrollThreshold = 50;
+//     // Порог срабатывания (через сколько пикселей скролла прятать хедер)
+//     const scrollThreshold = 50;
 
-    window.addEventListener('scroll', () => {
-        // Текущее расстояние от верха страницы
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     window.addEventListener('scroll', () => {
+//         // Текущее расстояние от верха страницы
+//         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Логика направления
-        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-            // Скролл вниз — добавляем класс скрытия
-            header.classList.add('header--hidden');
-        } else {
-            // Скролл вверх — убираем класс скрытия
-            header.classList.remove('header--hidden');
-        }
+//         // Логика направления
+//         if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+//             // Скролл вниз — добавляем класс скрытия
+//             header.classList.add('header--hidden');
+//         } else {
+//             // Скролл вверх — убираем класс скрытия
+//             header.classList.remove('header--hidden');
+//         }
 
-        // Запоминаем позицию для следующего шага
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }, { passive: true }); // passive: true повышает плавность скролла
-});
+//         // Запоминаем позицию для следующего шага
+//         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+//     }, { passive: true }); // passive: true повышает плавность скролла
+// });
 
 
-// СЧЁТЧИК ОНЛАЙНА
+// // СЧЁТЧИК ОНЛАЙНА
 
-const RENDER_URL = 'https://pro-info-api.onrender.com';
+// const RENDER_URL = 'https://pro-info-api.onrender.com';
 
-// Подключаемся с настройками, чтобы быстрее работало через прокси
-const socket = io(RENDER_URL, {
-    transports: ['websocket', 'polling']
-});
+// // Подключаемся с настройками, чтобы быстрее работало через прокси
+// const socket = io(RENDER_URL, {
+//     transports: ['websocket', 'polling']
+// });
 
-const counterElement = document.getElementById('online-counter');
+// const counterElement = document.getElementById('online-counter');
 
-socket.on('updateCount', (count) => {
-    counterElement.innerText = count;
-    console.log('Текущий онлайн:', count);
-});
+// socket.on('updateCount', (count) => {
+//     counterElement.innerText = count;
+//     console.log('Текущий онлайн:', count);
+// });
 
-socket.on('connect_error', (error) => {
-    console.log('Ошибка подключения:', error);
-    // counterElement.innerText = 'пробуждаю сервер...';
-    counterElement.innerHTML = '<span class="spinner"></span>';
-});
+// socket.on('connect_error', (error) => {
+//     console.log('Ошибка подключения:', error);
+//     // counterElement.innerText = 'пробуждаю сервер...';
+//     counterElement.innerHTML = '<span class="spinner"></span>';
+// });
 
-socket.on('connect', () => {
-    console.log('Успешно подключено к серверу!');
-});
+// socket.on('connect', () => {
+//     console.log('Успешно подключено к серверу!');
+// });
 
 
 

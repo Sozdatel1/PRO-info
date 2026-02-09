@@ -1,4 +1,5 @@
 const header = document.getElementById('header')
+if (header) {
 header.innerHTML = `
 
 <header class="header-content">
@@ -27,7 +28,7 @@ header.innerHTML = `
                     <li><a href="second.html">Про новый год</a></li>
                     <!-- <li><a href="school.html">Расписание</a></li> -->
                     <li><a href="carta.html">Карты</a></li>
-                    <li><a href="news.html">Ошибка</a></li>
+                    
                 </ul>
             </li>
 
@@ -50,63 +51,20 @@ header.innerHTML = `
        
 
     </nav>
-    <!-- <img src="/img/ezgif.com-effects.gif" class="header-gif" width="40"> -->
-    <!-- <div id="vacation-container">
-      <img src="img/img_stylez/рюкзак2.png" alt="icon" id="vacation-icon">
-      <div id="vacation-timer">Загрузка...</div>
-    </div> -->
 
-  <!-- <div id="school-header-final">
-    <div class="header-segment">👋 Добро пожаловать!</div>
-    
-    <div class="header-divider"></div>
 
-    <div class="header-segment">
-        📅 До лета: <span id="summer-timer"><img src="/img/img_stylez/"</span>
-    </div>
 
-    <div class="header-divider"></div>
-  
-    <div class="header-segment">
-        <div id="weather-dubna-box">
-            <a href="https://www.meteoservice.ru" target="_blank" style="text-decoration:none; color:#333;">
-                🌡️ Дубна: <span id="manual-temp">+1</span>°C
-            </a>
-        </div>
-    </div>
-</div> -->
 
-<div style="padding: 15px; 
-/* или absolute, если нужен внутри определёного блка */
-   /* выше, чем у остального контента */
-   
-    background-color: rgba(68, 78, 114, 0.89);
-  
-    border-radius: 15px 15px 2px 15px;
-    margin: 0px 0px 0px 60px;
-    right: 0px !important;
-    max-width: 600px;
-    /* margin: 0px; */
-    color: white;
-    font-family: Arial, sans-serif;
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
-    /* box-shadow: 0 10px 30px rgb(123, 123, 123) !important; */
-    background: #0030b3;
-    color: rgb(0, 248, 0); 
-    border-radius: 5px; 
-    font-family: Arial, Helvetica, sans-serif;">
-    Онлайн: <span id="online-counter">
-                  <span class="spinner"></span> 
-            </span> человек(а)
+<div class="tema">
+<p>Тёмная тема</p>
+<label class="switch">
+<input type="checkbox" class="theme-checkbox">
+<span class="slider"></span>
+</label>
 </div>
-
-
-
-
-
-
 </header>
 `
+}
 document.addEventListener('DOMContentLoaded', () => {
     let lastScrollTop = 0;
     const header = document.querySelector('.header-content');
@@ -142,10 +100,12 @@ const socket = io(RENDER_URL, {
 
 const counterElement = document.getElementById('online-counter');
 
+if (counterElement) {
 socket.on('updateCount', (count) => {
     counterElement.innerText = count;
     console.log('Текущий онлайн:', count);
 });
+}
 
 socket.on('connect_error', (error) => {
     console.log('Ошибка подключения:', error);

@@ -1,0 +1,149 @@
+body {
+    background-color: #060606 !important;
+}
+.header-content {
+    background-color: #575757 !important;
+}
+.logo {
+    background-color: rgb(125, 125, 125) !important;
+}
+.dropdown-menu li a {
+    display: flex;
+    align-items: center; 
+    color: rgb(255, 255, 255) !important;
+    text-align: center;
+    padding: 24px 16px;
+    margin: 0px 0px 0px 0px;
+    text-decoration: none; /* Убираем подчеркивание сылок */
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 300;
+    transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+    .menu-toggle { 
+        display: block; 
+    }
+        .dropdown-menu {
+        position: fixed;
+        top: 0; 
+        left: 0; 
+        width: 100vw; /* Используем vw для полной ширины */
+        height: 100dvh; /* Dynamic VH для мобильных браузеров 2026 */
+        background: #060606 !important; 
+        z-index: 1000;
+        transform: translateX(-100%); 
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding-top: 80px; 
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+}
+.dropdown-menu li a:hover:not(.active) {
+    background-color: #8c8c8c !important;
+    border-radius: 50px;
+}
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #454545 !important ;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgb(99, 99, 99) !important;
+    color: #000;
+    border-color:#000;
+}
+.dropdown-content li a {
+    color: rgb(0, 0, 0) !important;
+    padding: 12px;
+    text-align: left;
+    min-width: 100px;
+}
+.container-glavnaya {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Times, serif, Arial, sans-serif, sans-serif;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;          /* Центрирует контейнер по горизонтали */
+    padding: 100px 0px 10px 0px !important;
+    text-align: center;      /* Центрирует текст и изображение внутри */
+    box-sizing: border-box;
+    /* background-color: #ffffffdb !important; */
+    background-color: hsla(0, 8%, 22%, 0);
+    backdrop-filter: blur(0px);
+}
+.content-glavnaya {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    width: 90%;
+    max-width: 1100px;
+    margin:0 auto ;          /* Центрирует контейнер по горизонтали */
+    padding: 0px;
+    text-align: center;      /* Центрирует текст и изображение внутри */
+    box-sizing: border-box;
+    background-color: #696f1b00;
+    color:#121415
+}
+.gov-service-container {
+    background-color: #404040 !important;
+    color: #ffffff;
+    box-shadow: 0 10px 30px  rgb(255, 252, 252) !important;
+}
+.swiper {
+    background-color: #9a9a9a !important;
+}
+.ramka {
+    background-color: #999999 !important;
+}
+#admin-chat-section {
+    background-color: #8c8c8c !important;
+}
+.footer {
+    background-color: #8c8c8c !important;
+}
+@media(max-width: 800px) {
+ .container-glavnaya {
+  padding: 70px 0px 0px 0px !important;
+}
+.container {
+  padding: 30px 0px 0px 0px;
+}
+.container-fact {
+  padding: 70px 10px 10px 10px;
+ 
+
+}
+.container-fact p {
+  font-size: 17px;
+  text-align: left;
+  
+}
+.container-fact h1 {
+  font-size: 20px;
+  
+}
+.container-one {
+  padding: 70px 0px 0px 0px;
+}
+.container-second {
+  padding: 70px 0px 0px 0px;
+}
+.content-second {
+  font-size: 14px;
+}
+.school {
+  padding: 67px 0px 0px 0px;
+}
+.container-holiday {
+  padding: 70px 0px 0px 0px;
+}
+.container-why {
+  padding: 70px 0px 0px 0px;
+  
+}
+.content-why {
+  text-align: left;
+  font-size: 12px;
+}
+
+
+}
