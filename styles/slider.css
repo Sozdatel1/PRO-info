@@ -93,7 +93,7 @@
 @media(max-width: 800px) {
     .swiper {
         height: 300px;
-        width: 90%;
+        width: 100%;
         display: grid;
         place-items: center; 
         padding: 0px;
