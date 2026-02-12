@@ -61,14 +61,16 @@ body {
     min-width: 100px;
 }
 .container-glavnaya {
-   
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Times, serif, Arial, sans-serif, sans-serif;
+    width: 90%;
+    max-width: 1100px;
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
     padding: 100px 0px 10px 0px !important;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     /* background-color: #ffffffdb !important; */
-     background-color: hsla(0, 0%, 100%, 0);
-  backdrop-filter: blur(0px);
+    background-color: hsla(0, 0%, 100%, 0);
+    backdrop-filter: blur(0px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
     border: 1px solid #37373700;
     /* Пример "свежего" градиента 2026 */
@@ -163,3 +165,9 @@ table title{
 
 
 } */
+@media(max-width: 800px) {
+  .container-glavnaya {
+  padding: 70px 0px 0px 0px !important;
+  width: 100%;
+}
+}
