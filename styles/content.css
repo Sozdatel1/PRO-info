@@ -17,11 +17,11 @@
     
 }
 .content-glavnaya {
-     display: flex;
+    display: flex;
     flex-direction: column; /* Элементы будут идти друг под другом */
     align-items: center;    /* Центрирует все вложенные блоки по горизонтали */
     width: 90%;
-    gap: 20px;         
+    gap: 40px;         
 
     font-family: 'Times New Roman', Times, serif, sans-serif;
     

@@ -353,8 +353,10 @@ body.menu-open {
 img {
   max-width: 100%;
 }
-
-@media (max-width: 800px) {
+.pogoda-mobile {
+  display: none;
+}
+@media (max-width: 1020px) {
   .container-glavnaya {
    
     overflow-x: hidden;
@@ -395,58 +397,25 @@ img {
     margin: 0px 0px 0px 0px;
   }
 
-  .pogoda {
+  .tema {
+    padding: 1px !important;
+  }
+}
+@media(max-width: 800px) {
+   .pogoda {
     display: none;
   }
 
   .pogoda-mobile {
     display: block;
   }
-
-  /* .swiper {
-    height: auto;
-    min-height: 400px;
 }
-
-.swiper-slide {
-  font-family: Arial, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-.content {
-  flex-direction: column;
-  gap: 15px;
-  display: flex;
-  padding: 10px;
-  
-}
-
-.content h1 { 
-  display: none;
-  margin: 0 0 10px 0; 
-  font-size: 1.5rem; }
-.content p { margin: 0 0 15px 0; font-size: 1rem; }
-.content button {
-  background: #ffc107;
-  color: #333;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-} */
-}
-
 .tema {
 
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   background-color: #ffffff00;
-  padding: 20px;
+  padding: 15px;
   border-radius: 0px;
   gap: 10px;
 

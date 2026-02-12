@@ -3,7 +3,7 @@
         position: fixed !important;
         bottom: 0;
         right: 0;
-        max-width: 283px;
+        max-width: 280px;
         margin: 5px;
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         background: #ffffff;
@@ -205,15 +205,18 @@
         font-weight: bold;
     }
 
-    @media (max-width: 800px){
+    @media (max-width: 1500px){
         #admin-chat-section {
             position: relative !important; 
-            max-width: 400px;
+            max-width: 80% !important;
             bottom: 0 !important;
-           
             align-items: center;
+            align-items: center;
+            text-align: center;
+            width: 80% !important;
+            margin: 10px auto;
             
-            margin: 5px auto;
+           
         }
     }
 

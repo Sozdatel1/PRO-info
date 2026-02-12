@@ -61,25 +61,37 @@ body {
     min-width: 100px;
 }
 .container-glavnaya {
-    font-family: Verdana, Geneva, Tahoma, sans-serif, Times, serif, Arial, sans-serif, sans-serif;
-    width: 90%;
-    max-width: 1100px;
+   
     margin: 0 auto;          /* Центрирует контейнер по горизонтали */
     padding: 100px 0px 10px 0px !important;
     text-align: center;      /* Центрирует текст и изображение внутри */
     box-sizing: border-box;
     /* background-color: #ffffffdb !important; */
-    background-color: hsla(0, 8%, 22%, 0);
-    backdrop-filter: blur(0px);
+     background-color: hsla(0, 0%, 100%, 0);
+  backdrop-filter: blur(0px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+    border: 1px solid #37373700;
+    /* Пример "свежего" градиента 2026 */
+    color: #03a3ff;
+
+    
 }
 .content-glavnaya {
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: #696f1b00;
+    color:#121415;
+    display: flex;
+    flex-direction: column; /* Элементы будут идти друг под другом */
+    align-items: center;    /* Центрирует все вложенные блоки по горизонтали */
     width: 90%;
+    gap: 40px;         
+
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    
     max-width: 1100px;
     margin:0 auto ;          /* Центрирует контейнер по горизонтали */
     padding: 0px;
     text-align: center;      /* Центрирует текст и изображение внутри */
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     background-color: #696f1b00;
     color:#121415
 }
@@ -90,6 +102,7 @@ body {
 }
 .swiper {
     background-color: #9a9a9a !important;
+    border: 2px solid rgb(0, 0, 0) !important;
 }
 .ramka {
     background-color: #999999 !important;
@@ -100,7 +113,10 @@ body {
 .footer {
     background-color: #8c8c8c !important;
 }
-@media(max-width: 800px) {
+table title{
+  color:  black !important;
+}
+/* @media(max-width: 800px) {
  .container-glavnaya {
   padding: 70px 0px 0px 0px !important;
 }
@@ -146,4 +162,4 @@ body {
 }
 
 
-}
+} */

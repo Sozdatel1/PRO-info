@@ -269,7 +269,7 @@ if (sliderElement) {
         loop: true,
         speed: 500,
         autoplay: {
-            delay: 5000,
+            delay: 50000,
             disableOnInteraction: false,
         },
         pagination: {
@@ -279,14 +279,14 @@ if (sliderElement) {
         // Настройки адаптивности
         breakpoints: {
             // Если экран шире 320px
-            320: {
+            100: {
                 slidesPerView: 1,
-                spaceBetween: 10
+                spaceBetween: 100
             },
             // Если экран шире 1024px
-            1024: {
+            1020: {
                 slidesPerView: 1,
-                spaceBetween: 0
+                spaceBetween: 10
             }
         }
     });

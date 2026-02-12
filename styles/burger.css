@@ -54,7 +54,7 @@ left: 0;
 /* КОНЕЦ НАСТРОЕК КРЕСТИКА */
 
 /* Адаптивность для мобильных */
-@media (max-width: 768px) {
+@media (max-width: 1020px) {
     .menu-toggle { 
         display: block; 
     }
