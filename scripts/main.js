@@ -95,37 +95,7 @@ window.onload = checkHoliday;
 // // Создавать снежинки регулярно
 // setInterval(createSnowflake, 30);
 
-// window.addEventListener('load', function() {
-//     setTimeout(function() {
-//       document.getElementById('cookieAlert').style.display = 'block';
-//     }, 3000);
-// });
 
-// Ждем загрузки DOM, чтобы скрипт точно нашел хедер
-// document.addEventListener('DOMContentLoaded', () => {
-//     let lastScrollTop = 0;
-//     const header = document.querySelector('.header-content');
-
-//     // Порог срабатывания (через сколько пикселей скролла прятать хедер)
-//     const scrollThreshold = 50;
-
-//     window.addEventListener('scroll', () => {
-//         // Текущее расстояние от верха страницы
-//         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-//         // Логика направления
-//         if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-//             // Скролл вниз — добавляем класс скрытия
-//             header.classList.add('header--hidden');
-//         } else {
-//             // Скролл вверх — убираем класс скрытия
-//             header.classList.remove('header--hidden');
-//         }
-
-//         // Запоминаем позицию для следующего шага
-//         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-//     }, { passive: true }); // passive: true повышает плавность скролла
-// });
 document.addEventListener('DOMContentLoaded', () => {
     const burger = document.getElementById('menuToggle');
     const menu = document.getElementById('headerNav');
@@ -198,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 function updateVacationCountdown() {
     // Укажите дату начала каникул: Год, Месяц (0-11), Число, Часы, Минуты
     const vacationDate = new Date(2026, 6, 1, 0, 0); // 23 марта 2026, 09:00
@@ -236,30 +207,7 @@ function getNoun(number, one, two, five) {
 
 // Запускаем каждую секунду (1000 мс)
 setInterval(updateVacationCountdown, 1000);
-updateVacationCountdown(); // Инициализация сразу
-// function startHeaderSystem() {
-//     // 1. Таймер до 1 июня 2026
-//     const targetDate = new Date('June 1, 2026 00:00:00').getTime();
-
-//     function updateTime() {
-//         const now = new Date().getTime();
-//         const diff = targetDate - now;
-
-//         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-//         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-//         document.getElementById('summer-timer').innerText = `${d}д. ${h}ч. ${m}м.`;
-//     }
-
-//     setInterval(updateTime, 60000);
-//     updateTime();
-
-//     // 2. Резервный метод погоды (если API не работают)
-//     // Если через 2 секунды погода не подгрузится, останется значение по умолчанию
-//     // Можно заменить "1" на текущую температуру в Дубне вручную, если сеть блокирует всё
-// }
-
+updateVacationCountdown();
 
 // Инициализация Swiper
 const sliderElement = document.querySelector('.my-slider');
@@ -297,196 +245,6 @@ if (sliderElement) {
 
 
 
-
-
-
-const API_URL = "https://pro-info-api.onrender.com";
-let myPass = localStorage.getItem('chat_pass') || '';
-
-// Функция загрузки чата
-async function loadChat() {
-    if (!myPass) return; // Если пароля нет, ничего не делаем
-
-    const res = await fetch(`${API_URL}/get-msgs`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pass: myPass })
-    });
-
-
-    // ЕСЛИ ПАРОЛЬ ПРАВИЛЬНЫЙ ПРИ ВХОДЕ В ЧАТ
-    
-    if (res.ok) {
-        const msgs = await res.json();
-        document.getElementById('login-ui').style.display = 'none';
-        document.getElementById('chat-ui').style.display = 'block';
-
-        const box = document.getElementById('msg-box');
-        box.innerHTML = msgs.map(m => {
-            const goldClass = m.author === "Главный разработчик" ? "gold-admin" : "";
-            const reactions = m.reactions || {};
-            const reactionsHtml = Object.entries(reactions)
-                .map(([emo, count]) => `<span class="reaction-badge">${emo} ${count}</span>`)
-                .join('');
-            return `
-        <div class="message-item">
-            <div class="msg-info">
-            <b class="${goldClass}">${m.author || "Аноним"}</b>
-            <small>${m.time}</small>
-            <span class="tooltip">
-                <span class="delete-btn" onclick='deleteMsg(${JSON.stringify(m)})'>×</span>
-                
-            <span class="tooltiptext">УДАЛИТЬ</span>
-            </span>
-            </div>
-        <div class="msg-text">${m.text}</div>
-        
-        </div>`;
-        }).join('');
-        box.scrollTop = box.scrollHeight;
-        localStorage.setItem('chat_pass', myPass);
-
-
-        // ЕСЛИ ПАРОЛЬ НЕПРАВИЛЬНЫЙ
-
-    } else {
-        if (myPass) Swal.fire({
-            title: "Неправильный пароль!",
-            icon: "error",
-            draggable: true
-        });
-        localStorage.removeItem('chat_pass');
-    }
-}
-
-
-// Отправка сообщения
-async function send() {
-    const ipt = document.getElementById('msg-input');
-    if (!ipt.value.trim()) return;
-
-    await fetch(`${API_URL}/add-msg`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            pass: myPass, text: ipt.value,
-            author: localStorage.getItem('chat_name')
-        })
-    });
-    ipt.value = '';
-    loadChat();
-}
-
-// Кнопка входа
-window.login = function () {
-    const pinput = document.getElementById('pass-input');
-    const ninput = document.getElementById('name-input');
-    if (pinput && ninput) {
-        myPass = pinput.value.trim(); // Добавили trim, чтобы не было ошибок из-за пробелов
-        const name = ninput.value.trim() || "Аноним:";
-        localStorage.setItem('chat_pass', myPass);
-        localStorage.setItem('chat_name', name); // Сохраняем имя отдельно
-        console.log("Пытаемся войти с паролем:", myPass);
-        loadChat();
-    } else {
-        console.error("Поле pass-input не найдено в HTML!");
-    }
-}
-
-window.deleteMsg = async function (msgData) {
-    if (!confirm("Удалить это сообщение?")) return;
-
-    const res = await fetch(`${API_URL}/delete-msg`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            pass: myPass,
-            msgData: msgData
-        })
-    });
-
-    if (res.ok) {
-        loadChat(); // Обновляем чат после удаления
-    } else {
-        alert("Ошибка при удалении");
-    }
-}
-
-
-// СКРЫТИЕ И ПОКАЗ ПАРОЛЯ ПРИ ВВОДЕ В ВХОДЕ В ЧАТ
-
-window.togglePass = function () {
-    const passInput = document.getElementById('pass-input');
-    const toggleIcon = document.getElementById('toggle-pass');
-
-    if (passInput.type === "password") {
-        passInput.type = "text";
-        toggleIcon.textContent = "🙈"; // Меняем иконку на закрытый замок или другой глаз
-    } else {
-        passInput.type = "password";
-        toggleIcon.textContent = "👁️";
-    }
-    passInput.focus();
-}
-
-
-// Запуск при открытии страницы
-loadChat();
-
-
-// УБИРАНИЕ ХЕДЕРА ПРИ СКРОЛЛЕ
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     let lastScrollTop = 0;
-//     const header = document.querySelector('.header-content');
-
-//     // Порог срабатывания (через сколько пикселей скролла прятать хедер)
-//     const scrollThreshold = 50;
-
-//     window.addEventListener('scroll', () => {
-//         // Текущее расстояние от верха страницы
-//         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-//         // Логика направления
-//         if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-//             // Скролл вниз — добавляем класс скрытия
-//             header.classList.add('header--hidden');
-//         } else {
-//             // Скролл вверх — убираем класс скрытия
-//             header.classList.remove('header--hidden');
-//         }
-
-//         // Запоминаем позицию для следующего шага
-//         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-//     }, { passive: true }); // passive: true повышает плавность скролла
-// });
-
-
-// // СЧЁТЧИК ОНЛАЙНА
-
-// const RENDER_URL = 'https://pro-info-api.onrender.com';
-
-// // Подключаемся с настройками, чтобы быстрее работало через прокси
-// const socket = io(RENDER_URL, {
-//     transports: ['websocket', 'polling']
-// });
-
-// const counterElement = document.getElementById('online-counter');
-
-// socket.on('updateCount', (count) => {
-//     counterElement.innerText = count;
-//     console.log('Текущий онлайн:', count);
-// });
-
-// socket.on('connect_error', (error) => {
-//     console.log('Ошибка подключения:', error);
-//     // counterElement.innerText = 'пробуждаю сервер...';
-//     counterElement.innerHTML = '<span class="spinner"></span>';
-// });
-
-// socket.on('connect', () => {
-//     console.log('Успешно подключено к серверу!');
-// });
 
 
 
