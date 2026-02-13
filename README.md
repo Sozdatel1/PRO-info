@@ -12,12 +12,5 @@
 
 ## 🚀 Технологии
 В проекте использовались:
-*   **Frontend:** HTML5, CSS3, JavaScript (или React/Vue)
-*   **API:** OpenWeatherMap (погода), Google Maps API (карты)
-*   **Backend:** Node.js / Python (если есть)
-
-## 📦 Установка и запуск
-
-1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com
+*   **Frontend:** HTML5, CSS3, JavaScript.
+*   **Backend:** Node.js
