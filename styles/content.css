@@ -131,30 +131,40 @@
 
 .container-second {
   font-family: Verdana, Geneva, Tahoma, sans-serif, Times, serif, Arial, sans-serif, sans-serif;
-  width: 90%;
-  max-width: 1000px;
+  width: 100%;
+  
   margin: 0 auto;
   /* Центрирует контейнер по горизонтали */
   padding: 100px 0px 0px 0px;
   text-align: center;
   /* Центрирует текст и изображение внутри */
   box-sizing: border-box;
-  background-color: #ffffffdb;
+  background-color: #ffffff00;
   color: #00a9f2
 }
 
 .content-second {
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+
+  flex-direction: column;
+  /* Элементы будут идти друг под другом */
+
+  align-items: center;
+  /* Центрирует все вложенные блоки по горизонтали */
   width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
+  gap: 40px;
+
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+
+
+ margin: 0 auto;
   /* Центрирует контейнер по горизонтали */
   padding: 0px;
   text-align: center;
   /* Центрирует текст и изображение внутри */
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   background-color: #696f1b00;
-  color: #7f8182
+  color: #121415
 }
 
 .container-why {
@@ -350,4 +360,31 @@
     font-size: 12px;
   }
 
+}
+@media(max-width: 1350px) {
+  .content-second {
+    width: 100%;
+    margin: 0 auto !important;
+  }
+  .container-glavnaya {
+    width: 100%;
+  }
+}
+@media(max-width: 1260px) {
+  .content-second {
+    width: 80%;
+  }
+  .container-second {
+    width: 100%;
+  }
+}
+@media(max-width: 1050px) {
+  .content-second {
+    width: 90%;
+  }
+}
+@media(max-width: 930px) {
+  .content-second {
+    width: 100%;
+  }
 }
