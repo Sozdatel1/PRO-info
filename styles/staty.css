@@ -104,12 +104,12 @@
    }
 @media(max-width: 560px) {
   .news-card {
-    width: 70% !important;
+    width: 70%;
   }
 }
 @media(max-width: 660px) {
   .news-card {
-    width: 60% !important;
+    width: 90% !important;
   }
 }
    @media (max-width: 870px) {
@@ -155,7 +155,7 @@
 
 
      .news-card {
-       width: 90% ;
+       width: 60% ;
        padding: 8px !important;
        margin: 0 auto !important;
        text-align: center !important;
