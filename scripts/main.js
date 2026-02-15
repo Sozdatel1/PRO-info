@@ -224,6 +224,10 @@ if (sliderElement) {
             el: '.swiper-pagination',
             clickable: true,
         },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         // Настройки адаптивности
         breakpoints: {
             // Если экран шире 320px
