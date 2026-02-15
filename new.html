@@ -25,7 +25,7 @@
   <link rel="icon" href="/img/Лого (1).png" type="image/png">
 
 
-
+ <script src="https://cdn.jsdelivr.net"></script>
 
 </head>
 
@@ -34,6 +34,7 @@
 
 <body>
   <div id="header"></div>
+
   <div class="new-year">
     <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда" width="150">
     <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на первой позиции" width="150">
@@ -50,6 +51,33 @@
     <img src="https://zdrav.mosreg.ru/garland.f3ba2c89d21567e6.svg" alt="Гирлянда на третьей позиции" width="150">
   </div>
   <div class="container-second">
+ <div class="card">
+        <h1>Pro-Info System</h1>
+        <div id="user-status">Проверка авторизации...</div>
+    </div>
+
+    <!-- БЛОК ВХОДА (Запоминание юзера) -->
+    <div id="auth-ui" class="card">
+        <h3>Вход / Регистрация</h3>
+        <input type="email" id="email" placeholder="Ваш Email">
+        <input type="password" id="pass" placeholder="Пароль">
+        <button onclick="handleLogin()">Войти или Создать аккаунт</button>
+    </div>
+
+    <!-- БЛОК СОЗДАНИЯ СТАТЬИ (Узнает по User ID) -->
+    <div id="post-ui" class="card hidden">
+        <h3>Написать статью</h3>
+        <input type="text" id="title" placeholder="Заголовок статьи">
+        <textarea id="content" rows="4" placeholder="Текст статьи..."></textarea>
+        <button onclick="handlePublish()">Опубликовать</button>
+        <button class="logout-btn" onclick="handleLogout()">Выйти (Забыть меня)</button>
+    </div>
+
+    <!-- СПИСОК СТАТЕЙ -->
+    <div class="card">
+        <h3>Лента статей</h3>
+        <div id="articles-list">Загрузка ленты...</div>
+    </div>
 
 
     <div class="content-second">
@@ -186,6 +214,7 @@
                   </div> -->
   <script src="/scripts/error.js"></script>
   <script src="/scripts/header.js"></script>
+  <script src="/scripts/stat.js"></script>
 </body>
 
 </html>

@@ -251,7 +251,10 @@ const newSlider = document.querySelector('.swiper-news');
 if (newSlider) {
     new Swiper('.swiper-news', {
         slidesPerView: 1, // Если здесь отображается два — проверь этот параметр!
-      
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         pagination: { el: '.swiper-news .swiper-pagination', clickable: true }
     });
 }
