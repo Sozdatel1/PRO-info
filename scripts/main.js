@@ -255,9 +255,26 @@ if (newSlider) {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        pagination: { el: '.swiper-news .swiper-pagination', clickable: true }
+        pagination: { 
+            el: '.swiper-news .swiper-pagination', 
+            clickable: true,
+
+         },
+        breakpoints: {
+            // Если экран шире 320px
+            100: {
+                slidesPerView: 1,
+                spaceBetween: 100
+            },
+            // Если экран шире 1024px
+            1020: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
     });
 }
+
 
 
 

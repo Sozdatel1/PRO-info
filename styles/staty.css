@@ -72,7 +72,10 @@
      text-decoration: none !important;
      overflow: hidden;
    }
-
+   .news-card:hover {
+    border: 1px solid red;
+    border-radius: 10px;
+   }
    .news-card-like {
      background: #ffffff;
      box-shadow: 0 1px 9px rgb(180, 180, 180);
@@ -100,7 +103,7 @@
      font-family: Arial, Helvetica, sans-serif;
      text-decoration: none;
    }
-
+  
    .news-card p {
 
 
@@ -113,7 +116,9 @@
 
      text-decoration: none;
    }
-
+   .news-card p:hover {
+    color: red !important;
+   }
 
 
    .card-icon img {
