@@ -212,8 +212,9 @@ updateVacationCountdown();
 // Инициализация Swiper
 const sliderElement = document.querySelector('.my-slider');
 if (sliderElement) {
-    const swiper = new Swiper('.my-slider', {
-
+    const swiper = new Swiper('.my-slider',{
+        slidesPerView: 1, // ВСЕГДА ПОКАЗЫВАТЬ ТОЛЬКО ОДИН
+        spaceBetween: 0, 
         loop: true,
         speed: 500,
         autoplay: {
@@ -244,6 +245,15 @@ if (sliderElement) {
     });
 } else {
     console.log("Слайдера на этой странице нет, идем дальше...");
+}
+
+const newSlider = document.querySelector('.swiper-news');
+if (newSlider) {
+    new Swiper('.swiper-news', {
+        slidesPerView: 1, // Если здесь отображается два — проверь этот параметр!
+      
+        pagination: { el: '.swiper-news .swiper-pagination', clickable: true }
+    });
 }
 
 

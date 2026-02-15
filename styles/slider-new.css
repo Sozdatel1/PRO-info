@@ -1,0 +1,89 @@
+.news {
+    position: absolute;
+    top: 370px !important;
+    width: 20%; /* Было 20px — это всё ломало */
+    max-width: 800px; /* Ограничь по вкусу */
+    left: 0;
+}
+
+.swiper-news {
+    width: 100%;
+    height: 400px; /* Обязательно задай высоту */
+    background-color: #fff;
+    border-radius: 14px;
+    overflow: hidden; /* Чтобы картинки не вылезали за скругление */
+    border: 2px solid #9b9b9b;
+}
+
+/* Изменяем селектор, чтобы Swiper его подхватил или используй стандартный */
+.swiper-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.main-img {
+    max-width: 45%;
+    /* Картинка не больше половины блока */
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.slide-text-overlay {
+  position: absolute;
+  bottom: 0; /* Прижимаем к низу */
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); /* Градиент, чтобы текст читался */
+  color: white;
+  box-sizing: border-box;
+}
+
+.slide-text-overlay h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: #00ffcc; /* Твой фирменный неоновый цвет */
+}
+
+
+
+
+
+@media(max-width: 800px) {
+    .swiper {
+        height: 300px;
+        padding: 0px;
+      
+        
+    }
+
+    .content-slide-new {
+        display: block;
+        /* flex-direction: column; Элементы в колонку */
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        min-height: 90%;
+        
+    
+    }
+
+    .content-slide-two img {
+        width: 130px;
+    }
+
+
+
+
+
+}
