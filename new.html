@@ -61,7 +61,7 @@
         <div class="news-layout">
           <!-- ЛЕВАЯ ПОЛОВИНА: Сетка карточек -->
           <div class="card-grid" id="dynamic-cards">
-            <!-- <a href="stat1.html">
+            <a href="stat1.html">
               <div class="news-card">
                 <div class="card-icon">
                   <img src="/img/лапша.jpg">
@@ -126,7 +126,7 @@
                   Статья для сайта
                 </p>
               </div>
-            </a> -->
+            </a>
           </div>
         </div>
       </div>
@@ -172,37 +172,8 @@
 
   <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
   <script src="scripts/main.js"></script>
-<script>
-  const RENDER_API = 'https://pro-info-api.onrender.com';
 
-  async function loadArticles() {
-    try {
-      const response = await fetch(`${RENDER_API}/all`);
-      const articles = await response.json();
-      
-      const grid = document.getElementById('dynamic-cards');
-      
-      // Генерируем карточки в твоём стиле
-      grid.innerHTML = articles.map(post => `
-        <a href="${RENDER_API}/view/${post.id}">
-          <div class="news-card">
-            <div class="card-icon">
-              <!-- Если у тебя нет картинки в базе, ставим трактор по умолчанию -->
-              <img src="${post.imageUrl || '/img/трактор.jpg'}">
-            </div>
-            <p>${post.title}</p>
-          </div>
-        </a>
-      `).join('');
-      
-    } catch (err) {
-      console.error('Ошибка:', err);
-      document.getElementById('dynamic-cards').innerHTML = '<p style="color:white">Не удалось загрузить статьи :(</p>';
-    }
-  }
-
-  loadArticles();
-</script>
+ 
 
 
   <footer class="footer">
