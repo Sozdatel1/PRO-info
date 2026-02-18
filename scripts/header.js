@@ -55,6 +55,7 @@ if (header) {
 
 
 
+
 <div class="tema">
 <p>Тёмная тема</p>
 <label class="switch">
@@ -90,7 +91,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true }); // passive: true повышает плавность скролла
 });
 
-// СЧЁТЧИК ОНЛАЙНА
+// Массив с твоими личными "баффами"
+const phrases = [
+    "Твой код чище, чем совесть отличника! 💻",
+    "Ошибка 404: Грусть не найдена. Работаем дальше! 🚀",
+    "Даже самый сложный баг фиксится, если не сдаваться!",
+];
+
+function showSupport() {
+    // Выбираем случайную фразу
+    const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+    
+    // Выводим через SweetAlert2
+    Swal.fire({
+        title: 'Сигнал от системы:',
+        text: randomPhrase,
+        icon: 'info',
+        confirmButtonText: 'Понял, принял!',
+        confirmButtonColor: '#3085d6',
+        backdrop: `
+        rgba(0,0,123,0.4)
+          url("https://media.giphy.com")
+          left top
+          no-repeat
+        ` // Добавил немного магии с гифкой на фоне
+    });
+}
 
 
 

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/styles/checkbox.css">
     <link rel="stylesheet" href="/styles/burger.css">
     <link rel="stylesheet" href="/styles/slider.css">
+    <link rel="stylesheet" href="/styles/top.css">
     <link rel="stylesheet" href="/styles/staty.css">
     <link rel="icon" href="/img/Лого (1).png" type="image/png">
 </head>
@@ -211,18 +212,19 @@
             категорий, так что если вы исключите её из своей диеты, то ничего не потеряете.
         </p>
 
-        <div class="news-container">
+        <!-- <div class="news-container">
             <div class="news-title">
                 Вам может понравиться
             </div>
 
             <div class="news-layout">
-                <!-- ЛЕВАЯ ПОЛОВИНА: Сетка карточек -->
+                
                 <div class="card-grid-like">
                     <a href="fact.html">
                         <div class="news-card-like">
                             <div class="card-icon-like">
-                                <img src="https://cdn.lifehacker.ru/wp-content/uploads/2020/02/2173232853_1675799239-1170x585.jpg">
+                                <img
+                                    src="https://cdn.lifehacker.ru/wp-content/uploads/2020/02/2173232853_1675799239-1170x585.jpg">
                             </div>
                             <p>
                                 Статья для сайта
@@ -244,11 +246,13 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </div>
-
+    <button id="toTopBtn" onclick="scrollToTop()">
+        <img src="/img/img_stylez/keyboard_double_arrow_up_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg">
+    </button>
     <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
 
@@ -262,9 +266,10 @@
     </footer>
     <!-- <div class="fireflies-containerr">
                     <img src="/img/christmas-lights-transparent-background-11-usagif.gif" />
-                  </div> -->
+                </div> -->
     <script src="/scripts/error.js"></script>
     <script src="/scripts/header.js"></script>
+    <script src="/scripts/top.js"></script>
 </body>
 
 </html>
