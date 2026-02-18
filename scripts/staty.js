@@ -31,7 +31,7 @@ async function publishPost() {
 
 
 async function loadPosts() {
-    const grid = document.getElementById('dynamic-cards'); // Берем твою сетку
+    const grid = document.getElementById('dynamic-cards'); // Берем твоюсетку
     if (!grid) return;
 
     try {
