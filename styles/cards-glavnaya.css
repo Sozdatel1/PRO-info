@@ -6,7 +6,7 @@
     padding: 15px !important;
   }
 
-  .card-grid {
+  .card-grid-gl {
     grid-template-columns: 1fr !important;
     align-items: center;
     text-align: center;
@@ -70,7 +70,7 @@
   text-decoration: none !important;
 }
 
-.card-grid {
+.card-grid-gl {
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* Сетка 2x2 внутри левой части */
@@ -124,7 +124,7 @@
 
 }
 
-.card-icon {
+.card-icon-gl {
   font-size: 24px;
   margin-bottom: 10px;
   background: #ffe5e000;
