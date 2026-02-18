@@ -217,7 +217,7 @@
 .content-stat p {
   font-size: 20px;
   text-align: left;
-  font-family: monospace;
+  font-family: arial;
   font-weight: 1 !important;
 }
 
@@ -426,6 +426,14 @@
   .content-stat {
     width: 80%;
   }
+  .content-stat h1 {
+    font-size: 20px; 
+  }
+  .content-stat p {
+    font-size: 15px; 
+}
+.content-stat h2 {
+  font-size: 18px;
 }
 
 @media(max-width: 1350px) {
@@ -459,4 +467,5 @@
   .content-second {
     width: 100%;
   }
+}
 }
