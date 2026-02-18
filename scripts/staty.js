@@ -72,7 +72,7 @@ async function loadFullArticle() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id'); // Получаем ID из ссылки
     
-    const res = await fetch(`https://raw.githubusercontent.com{Date.now()}`);
+    const res = await fetch(`https://raw.githubusercontent.com/Sozdatel1/PRO-info/main/posts.json?v=${Date.now()}`);
     const posts = await res.json();
     
     const article = posts.find(p => p.id == id); // Ищем статью по ID
