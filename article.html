@@ -9,7 +9,7 @@
     <link rel="icon" href="/img/Лого (1).png" type="image/png">
 </head>
 <div class="content-stat">
-    <img src="/img/лапша.jpg" id="artImage">
+    <img id="artImage" src="" alt="photo" style="display: none; width: 100%; border-radius: 10px; margin-bottom: 20px;">
     <h1 id="artTitle">Загрузка...</h1>
     <hr>
     <div id="artText" style="color: #fff; line-height: 1.6; font-family: Inter, sans-serif;">
@@ -32,7 +32,15 @@ async function loadFullArticle() {
         document.getElementById('artTitle').innerText = article.title;
         // Чтобы абзацы отображались корректно, заменяем переносы строк на <br>
         document.getElementById('artText').innerHTML = article.text.replace(/\n/g, '<br>');
+                // --- ДОБАВЬ ЭТИ СТРОКИ НИЖЕ ---
+        const imgTag = document.getElementById('artImage'); // Твой ID из HTML
+        if (article.image && imgTag) {
+            imgTag.src = article.image;
+            imgTag.style.display = 'block'; // Показываем картинку, если она есть
+        }
+
     }
 }
 loadFullArticle();
 </script>
+<script src="/scripts/staty.js"></script>

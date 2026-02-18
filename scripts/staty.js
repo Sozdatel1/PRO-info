@@ -43,10 +43,25 @@ async function loadPosts() {
         // grid.innerHTML = ''; 
 
         // Генерируем HTML для новых постов
-   const postsHtml = posts.map(post => `
+    const postsHtml = posts.map(post => `
     <a href="article.html?id=${post.id}" style="text-decoration: none; color: inherit;">
         <div class="news-card">
-            <div class="card-icon"><img src="/img/лапша.jpg"></div>
+            <div class="card-icon">
+            ${post.image ? `<img src="${post.image}" alt="icon" style="margin-bottom: 10px;
+     background: #ffe5e000;
+     width: 100%;
+
+     border-radius: 5px;
+     display: flex;
+     text-align: center;
+     align-items: center;
+     justify-content: center;
+     color: #ff5733;
+
+     height: 50%;
+     
+     object-fit: cover;">` : ''}
+            </div>
             <p>
                 <strong>${post.title}</strong><br>
                 <span style="font-size: 10px; opacity: 0.5;">Читать статью...</span>
