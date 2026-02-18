@@ -9,7 +9,7 @@
     transform: translateY(100px);
     pointer-events: none; /* Чтобы нельзя было нажать, пока она скрыта */
     
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Эффект "пружины" */
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Эффект "пружины" */
     
     border: 1px solid #00e1ff;
     background-color: rgba(255, 255, 255, 0.9);
@@ -23,7 +23,7 @@
 
 /* Класс, который мы будем добавлять через JS */
 #toTopBtn.show {
-    opacity: 1;
+    opacity: 10;
     transform: translateY(0);
     pointer-events: auto;
 }
