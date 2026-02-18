@@ -1,0 +1,28 @@
+<div class="content-stat">
+    <img src="/img/лапша.jpg" id="artImage">
+    <h1 id="artTitle">Загрузка...</h1>
+    <hr>
+    <div id="artText" style="color: #fff; line-height: 1.6; font-family: Inter, sans-serif;">
+        <!-- Сюда попадет текст из JSON -->
+    </div>
+</div>
+
+<script>
+    
+async function loadFullArticle() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id'); // Получаем ID из ссылки
+    
+    const res = await fetch(`https://raw.githubusercontent.com{Date.now()}`);
+    const posts = await res.json();
+    
+    const article = posts.find(p => p.id == id); // Ищем статью по ID
+    
+    if (article) {
+        document.getElementById('artTitle').innerText = article.title;
+        // Чтобы абзацы отображались корректно, заменяем переносы строк на <br>
+        document.getElementById('artText').innerHTML = article.text.replace(/\n/g, '<br>');
+    }
+}
+loadFullArticle();
+</script>
