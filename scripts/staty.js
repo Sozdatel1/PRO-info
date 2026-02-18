@@ -5,7 +5,12 @@ async function publishPost() {
     const image = document.getElementById('postImage').value; // Ссылка на фото
 
     // Простая проверка перед отправкой
-    if (!title || !text) return alert("Заполни заголовок и текст!");
+    if (!title || !text) return  Swal.fire({
+  icon: "error",
+  title: "Ошибка!",
+  text: "Заполните все поля!",
+  
+});
 
     const response = await fetch('https://pro-info-api.onrender.com/publish', {
         method: 'POST',
@@ -19,7 +24,12 @@ async function publishPost() {
     });
 
     if (response.ok) {
-        alert("Статья успешно опубликована!");
+        // alert("Статья успешно опубликована!");
+        Swal.fire({
+  title: "Опубликовано!",
+  text: "Ваша статья появится в ленте через 5 минут",
+  icon: "success"
+});
         // Очищаем поля
         document.getElementById('postTitle').value = "";
         document.getElementById('postInput').value = "";

@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="/styles/burger.css">
   <link rel="stylesheet" href="/styles/slider.css">
   <link rel="stylesheet" href="/styles/staty.css">
+  <link rel="stylesheet" href="/styles/post-stat.css">
+  <link rel="stylesheet" href="/styles/sweetalert2.min.css">
   <link rel="icon" href="/img/Лого (1).png" type="image/png">
 
 
@@ -59,17 +61,17 @@
         </div>
         <!-- Панель управления -->
         <div class="admin-zone">
-          <!-- Новое поле для заголовка -->
-           <input type="text" id="postImage" placeholder="Ссылка на картинку (URL)..." style="width: 100%; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 10px; margin-bottom: 10px; outline: none;">
+          <h1>Напишите свою статью!</h1>
+          <input type="text" id="postImage" placeholder="Ссылка на картинку статьи (URL)..." style="padding: 10px; border-radius: 30px;">
 
-          <input type="text" id="postTitle" placeholder="Заголовок статьи"
-            style="width: 100%; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 10px; margin-bottom: 10px; outline: none; font-family: Inter, sans-serif;">
+          <input type="text" id="postTitle" placeholder="Заголовок статьи" style="padding: 10px; border-radius: 30px;">
 
           <textarea id="postInput" placeholder="Текст статьи..."
-            style="width: 100%; height: 120px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 10px; outline: none; font-family: Inter, sans-serif; resize: none;"></textarea>
+            style="padding: 30px; border-radius: 10px;"></textarea>
 
-          <button onclick="publishPost()">ОПУБЛИКОВАТЬ</button>
-          <div id="status">Система готова</div>
+          <button onclick="publishPost()" style="padding: 10px; width: 30%; text-align: center; margin: 0 auto; border-radius: 20px; background-color: aquamarine;"><b>ОПУБЛИКОВАТЬ</b></button>
+          <!-- <div id="status">Система готова</div> -->
+          
         </div>
         <!-- Лента, где появятся статьи -->
         <div id="feed" style="display: flex; flex-direction: column; gap: 20px;"></div>
@@ -85,62 +87,6 @@
                 </div>
                 <p>
                   Правда ли, что лапша быстрого приготовления вредит здоровью?
-                </p>
-              </div>
-            </a>
-
-            <a href="fact.html">
-              <div class="news-card">
-                <div class="card-icon">
-                  <img src="/img/трактор.jpg">
-                </div>
-                <p>
-                  Статья для сайта
-                </p>
-              </div>
-            </a>
-
-
-            <a href="fact.html">
-              <div class="news-card">
-                <div class="card-icon">
-                  <img src="/img/трактор.jpg">
-                </div>
-                <p>
-                  Статья для сайта
-                </p>
-              </div>
-            </a>
-
-            <a href="fact.html">
-              <div class="news-card">
-                <div class="card-icon">
-                  <img src="/img/трактор.jpg">
-                </div>
-                <p>
-                  Статья для сайта
-                </p>
-              </div>
-            </a>
-
-            <a href="fact.html">
-              <div class="news-card">
-                <div class="card-icon">
-                  <img src="/img/трактор.jpg">
-                </div>
-                <p>
-                  Статья для сайта
-                </p>
-              </div>
-            </a>
-
-            <a href="fact.html">
-              <div class="news-card">
-                <div class="card-icon">
-                  <img src="/img/трактор.jpg">
-                </div>
-                <p>
-                  Статья для сайта
                 </p>
               </div>
             </a>
@@ -204,6 +150,7 @@
   <script src="/scripts/error.js"></script>
   <script src="/scripts/header.js"></script>
   <script src="/scripts/staty.js"></script>
+  <script src="/scripts/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
