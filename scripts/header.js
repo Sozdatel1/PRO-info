@@ -63,7 +63,9 @@ if (header) {
 <span class="slider"></span>
 </label>
 </div>
+<div id="scrollProgress"></div>
 </header>
+
 `
 }
 document.addEventListener('DOMContentLoaded', () => {
