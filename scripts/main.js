@@ -216,12 +216,13 @@ updateVacationCountdown();
 const sliderElement = document.querySelector('.my-slider');
 if (sliderElement) {
   const swiper = new Swiper('.my-slider', {
+
     slidesPerView: 1, // ВСЕГДА ПОКАЗЫВАТЬ ТОЛЬКО ОДИН
     spaceBetween: 0,
     loop: true,
-    speed: 500,
+    speed: 900,
     autoplay: {
-      delay: 50000,
+      delay: 5000,
       disableOnInteraction: false,
     },
     pagination: {
