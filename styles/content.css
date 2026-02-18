@@ -197,7 +197,7 @@
   /* Центрирует текст и изображение внутри */
   /* box-sizing: border-box; */
   background-color: #ffffff;
-  color: #121415
+  color: #121415;
 }
 
 .content-stat h1 {

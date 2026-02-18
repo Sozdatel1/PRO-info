@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="styles/content.css" id="theme">
     <link rel="stylesheet" href="styles/chats.css">
     <link rel="stylesheet" href="/styles/checkbox.css">
     <link rel="stylesheet" href="/styles/burger.css">
@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/styles/staty.css">
     <link rel="icon" href="/img/Лого (1).png" type="image/png">
 </head>
+<div id="header"></div>
 <div class="content-stat">
     <img id="artImage" src="" alt="photo" style="display: none; width: 100%; border-radius: 10px; margin-bottom: 20px;">
     <h1 id="artTitle">Загрузка...</h1>
     <hr>
-    <div id="artText" style="color: #fff; line-height: 1.6; font-family: Inter, sans-serif;">
+    <div id="artText" style=" font-size: 20px;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 1 !important;">
         <!-- Сюда попадет текст из JSON -->
     </div>
 </div>
@@ -44,3 +48,5 @@ async function loadFullArticle() {
 loadFullArticle();
 </script>
 <script src="/scripts/staty.js"></script>
+<script src="/scripts/theme.js"></script>
+<script src="/scripts/header.js"></script>
