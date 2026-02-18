@@ -1,5 +1,5 @@
 const CONFIG = {
-    TOKEN: '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', 
+    TOKEN: '', 
     REPO: 'Sozdatel1/PRO-info',
     PATH: 'posts.json'
 };
