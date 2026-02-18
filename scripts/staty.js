@@ -1,5 +1,5 @@
 const CONFIG = {
-    TOKEN: '', 
+    TOKEN: process.env.NEXT_PUBLIC_GITHUB_TOKEN, 
     REPO: 'Sozdatel1/PRO-info',
     PATH: 'posts.json'
 };
