@@ -253,12 +253,25 @@ if (sliderElement) {
 const newSlider = document.querySelector('.swiper-news');
 if (newSlider) {
   new Swiper('.swiper-news', {
+     direction: 'vertical', 
+       effect: 'cube', // Включаем режим куба
+  grabCursor: true, // Курсор-ручка, чтобы «хватать» грань
+ 
+  cubeEffect: {
+    shadow: true, // Тень под кубом (дает объем)
+    slideShadows: true, // Тени на боковых гранях при повороте
+    shadowOffset: 2000,
+    shadowScale: 0.94,
+   
+  },
+  // Чтобы всё работало плавно, добавь мышку
+  mousewheel: true, 
     slidesPerView: 1,
    spaceBetween: 0,
     loop: true,
-    speed: 2000,
+    speed: 3000,
         autoplay: {
-      delay: 1500,
+      delay: 2000,
       disableOnInteraction: false,
     },
     
