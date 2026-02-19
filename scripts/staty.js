@@ -111,25 +111,57 @@ document.addEventListener('DOMContentLoaded', loadPosts);
 // loadFullArticle();
 
 async function likePost(id, event) {
+    // Находим кнопку (если кликнули по иконке внутри неё — берем родителя)
+    const likeBtn = event?.currentTarget || document.querySelector(`[onclick*="${id}"]`);
+    
+    // Защита от спам-кликов, пока идет запрос
+    if (likeBtn && (likeBtn.disabled || likeBtn.dataset.loading === "true")) return;
+
     if (event) {
-        event.preventDefault(); // Чтобы страница не прыгала
-        event.stopPropagation(); // Чтобы не открывалась статья при клике на лайк
+        event.preventDefault();
+        event.stopPropagation();
     }
+
+    const likeCountSpan = document.getElementById(`likes-${id}`);
+    if (!likeCountSpan) return;
+
+    // Сохраняем состояние для отката
+    const originalLikes = parseInt(likeCountSpan.innerText) || 0;
+    
+    // Блокируем кнопку и обновляем UI (Оптимистично)
+    if (likeBtn) {
+        likeBtn.dataset.loading = "true";
+        likeBtn.style.opacity = "0.5";
+    }
+    likeCountSpan.innerText = originalLikes + 1;
 
     try {
         const response = await fetch(`https://pro-info-api.onrender.com/like/${id}`, {
             method: 'POST'
         });
-        const data = await response.json();
+
+        // Пытаемся распарсить JSON
+        const data = await response.json().catch(() => ({ success: false }));
 
         if (data.success) {
-            // Обновляем цифру лайков на странице без перезагрузки
-            const likeCountSpan = document.getElementById(`likes-${id}`);
-            if (likeCountSpan) {
-                likeCountSpan.innerText = data.likes;
-            }
+            // Синхронизируем число лайков с ответом сервера
+            likeCountSpan.innerText = data.likes;
+        } else {
+            throw new Error("Server error");
         }
+
     } catch (err) {
         console.error("Ошибка при лайке:", err);
+        // Откат при любой ошибке
+        likeCountSpan.innerText = originalLikes;
+        alert("Не удалось сохранить лайк. Попробуйте позже.");
+    } finally {
+        // Разблокируем кнопку
+        if (likeBtn) {
+            delete likeBtn.dataset.loading;
+            likeBtn.style.opacity = "1";
+        }
     }
 }
+
+
