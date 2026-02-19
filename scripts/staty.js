@@ -122,7 +122,7 @@ async function likePost(id, event) {
         event.stopPropagation();
     }
 
-    const likeCountSpan = document.getElementById(`likes-${id}`);
+    const likeCountSpan = document.getElementById('artLikes');
     if (!likeCountSpan) return;
 
     // Сохраняем состояние для отката
