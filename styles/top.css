@@ -3,14 +3,16 @@
     bottom: 30px;
     left: 30px;
     z-index: 99;
-    
+
     /* Начальное состояние: невидима и опущена вниз */
     opacity: 0;
     transform: translateY(100px);
-    pointer-events: none; /* Чтобы нельзя было нажать, пока она скрыта */
-    
-    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Эффект "пружины" */
-    
+    pointer-events: none;
+    /* Чтобы нельзя было нажать, пока она скрыта */
+
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Эффект "пружины" */
+
     border: 1px solid #00e1ff;
     background-color: rgba(255, 255, 255, 0.9);
     color: #00ff41;

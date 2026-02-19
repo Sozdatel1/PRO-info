@@ -1,3 +1,5 @@
+// ФУНКИЦЯ КОТОРАЯ ОТПРАВЛЯЕТ НА СЕРВЕР ТЕКСТ, КАРТИНКУ, И ЗАГОЛОВОГ СТАТЬИ
+
 async function publishPost() {
     // 1. Собираем данные из ВСЕХ инпутов
     const title = document.getElementById('postTitle').value;
@@ -5,31 +7,31 @@ async function publishPost() {
     const image = document.getElementById('postImage').value; // Ссылка на фото
 
     // Простая проверка перед отправкой
-    if (!title || !text) return  Swal.fire({
-  icon: "error",
-  title: "Ошибка!",
-  text: "Заполните все поля!",
-  
-});
+    if (!title || !text) return Swal.fire({
+        icon: "error",
+        title: "Ошибка!",
+        text: "Заполните все поля!",
+
+    });
 
     const response = await fetch('https://pro-info-api.onrender.com/publish', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         // 2. Отправляем полный объект, который ждет сервер
-        body: JSON.stringify({ 
-            title: title, 
-            text: text, 
-            image: image 
+        body: JSON.stringify({
+            title: title,
+            text: text,
+            image: image
         })
     });
 
     if (response.ok) {
         // alert("Статья успешно опубликована!");
         Swal.fire({
-  title: "Опубликовано!",
-  text: "Ваша статья появится в ленте через 5 минут",
-  icon: "success"
-});
+            title: "Опубликовано!",
+            text: "Ваша статья появится в ленте через 5 минут",
+            icon: "success"
+        });
         // Очищаем поля
         document.getElementById('postTitle').value = "";
         document.getElementById('postInput').value = "";
@@ -39,6 +41,8 @@ async function publishPost() {
     }
 }
 
+
+// ФУНКЦИЯ КОТОРАЯ БЕРЕТ ИЗ ФАЙЛА ЗАГОЛОВОК И ИЗОБРАЖЕНИЕ КОТОРЫЕ БЫЛИ ПОЛУЧЕНЫ С СЕРВЕРА И ВСТАВЛЯЕТ ИХ В ТАБЛИЦУ СО СТАТЬЯМИ
 
 async function loadPosts() {
     const grid = document.getElementById('dynamic-cards'); // Берем твоюсетку
@@ -53,7 +57,7 @@ async function loadPosts() {
         // grid.innerHTML = ''; 
 
         // Генерируем HTML для новых постов
-    const postsHtml = posts.map(post => `
+        const postsHtml = posts.map(post => `
     <a href="article.html?id=${post.id}" style="text-decoration: none; color: inherit;">
         <div class="news-card">
             <div class="card-icon">
@@ -83,7 +87,7 @@ async function loadPosts() {
 
         // Вставляем новые посты в начало сетки
         grid.insertAdjacentHTML('afterbegin', postsHtml);
-        
+
     } catch (err) {
         console.error("Ошибка загрузки:", err);
     }
@@ -93,27 +97,48 @@ async function loadPosts() {
 document.addEventListener('DOMContentLoaded', loadPosts);
 
 
-// async function loadFullArticle() {
-//     const params = new URLSearchParams(window.location.search);
-//     const id = params.get('id'); // Получаем ID из ссылки
-    
-//     const res = await fetch(`https://raw.githubusercontent.com/Sozdatel1/PRO-info/main/posts.json?v=${Date.now()}`);
-//     const posts = await res.json();
-   
-//     const article = posts.find(p => p.id == id); // Ищем статью по ID
-    
-//     if (article) {
-//         document.getElementById('artTitle').innerText = article.title;
-//         // Чтобы абзацы отображались корректно, заменяем переносы строк на <br>
-//         document.getElementById('artText').innerHTML = article.text.replace(/\n/g, '<br>');
-//     }
-// }
-// loadFullArticle();
+// ФУНКЦИЯ КОТОРАЯ БЕРЕТ ИЗ ФАЙЛА ТЕКСТ, КАРТИНКУ И ЗАГОЛОВОК, ЛАЙКИ И ОТОБРАЖАЕТ ИХ НА СТАТЬЕ С СОБСТВЕННЫМ ID
+
+async function loadFullArticle() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id'); // Получаем ID из ссылки
+
+    const res = await fetch(`https://raw.githubusercontent.com/Sozdatel1/PRO-info/main/posts.json?v=${Date.now()}`);
+    const posts = await res.json();
+
+    const article = posts.find(p => p.id == id); // Ищем статью по ID
+
+    if (article) {
+        document.getElementById('artTitle').innerText = article.title;
+        // Чтобы абзацы отображались корректно, заменяем переносы строк на <br>
+        document.getElementById('artText').innerHTML = article.text.replace(/\n/g, '<br>');
+        // --- ДОБАВЬ ЭТИ СТРОКИ НИЖЕ ---
+
+        const likeSpan = document.getElementById('artLikes');
+        const likeBtn = document.getElementById('likeBtn');
+
+        if (likeSpan) likeSpan.innerText = article.likes || 0;
+
+        // Привязываем функцию лайка к кнопке
+        if (likeBtn) {
+            likeBtn.onclick = (event) => likePost(id, event);
+        }
+        const imgTag = document.getElementById('artImage'); // Твой ID из HTML
+        if (article.image && imgTag) {
+            imgTag.src = article.image;
+            imgTag.style.display = 'block'; // Показываем картинку, если она есть
+        }
+
+    }
+}
+loadFullArticle();
+
+// ФУНКЦИЯ КОТОРАЯ ОТПРАВЛЯЕТ КОЛ ВО ЛАЙКОВ НА СЕРВЕР
 
 async function likePost(id, event) {
     // Находим кнопку (если кликнули по иконке внутри неё — берем родителя)
     const likeBtn = event?.currentTarget || document.querySelector(`[onclick*="${id}"]`);
-    
+
     // Защита от спам-кликов, пока идет запрос
     if (likeBtn && (likeBtn.disabled || likeBtn.dataset.loading === "true")) return;
 
@@ -127,7 +152,7 @@ async function likePost(id, event) {
 
     // Сохраняем состояние для отката
     const originalLikes = parseInt(likeCountSpan.innerText) || 0;
-    
+
     // Блокируем кнопку и обновляем UI (Оптимистично)
     if (likeBtn) {
         likeBtn.dataset.loading = "true";
@@ -164,4 +189,4 @@ async function likePost(id, event) {
     }
 }
 
-
+// СНАЧАЛА МЫ ПОСЫЛАЕМ ДАННЫЕ НА СЕРВЕР, ОН ПОСЫЛЕТ ИХ В РЕПО ГИТХАБ С ПОМОЩЬЮ ТОКЕНА ГИТХАБ, А ПОТОМ МЫ ЗАПРАШИВАЕМ ДАННЫЕ ИЗ ФАЙЛА

@@ -46,39 +46,7 @@ margin-right: 30px; background-color: #ff8000;">
 
 <script>
 
-    async function loadFullArticle() {
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id'); // Получаем ID из ссылки
-
-        const res = await fetch(`https://raw.githubusercontent.com/Sozdatel1/PRO-info/main/posts.json?v=${Date.now()}`);
-        const posts = await res.json();
-
-        const article = posts.find(p => p.id == id); // Ищем статью по ID
-
-        if (article) {
-            document.getElementById('artTitle').innerText = article.title;
-            // Чтобы абзацы отображались корректно, заменяем переносы строк на <br>
-            document.getElementById('artText').innerHTML = article.text.replace(/\n/g, '<br>');
-            // --- ДОБАВЬ ЭТИ СТРОКИ НИЖЕ ---
-
-            const likeSpan = document.getElementById('artLikes');
-            const likeBtn = document.getElementById('likeBtn');
-
-            if (likeSpan) likeSpan.innerText = article.likes || 0;
-
-            // Привязываем функцию лайка к кнопке
-            if (likeBtn) {
-                likeBtn.onclick = (event) => likePost(id, event);
-            }
-            const imgTag = document.getElementById('artImage'); // Твой ID из HTML
-            if (article.image && imgTag) {
-                imgTag.src = article.image;
-                imgTag.style.display = 'block'; // Показываем картинку, если она есть
-            }
-
-        }
-    }
-    loadFullArticle();
+    
 </script>
 <button id="toTopBtn" onclick="scrollToTop()">
     <img src="/img/img_stylez/keyboard_double_arrow_up_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg">
