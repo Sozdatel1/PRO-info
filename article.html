@@ -23,6 +23,11 @@
   font-weight: 1 !important;">
         <!-- Сюда попадет текст из JSON -->
     </div>
+
+<div id="likeBtn" style="cursor: pointer; color: #ff4d4d; font-weight: bold; margin-top: 20px; font-size: 24px;">
+        ❤️ <span id="artLikes">0</span>
+    </div>
+
 </div>
 
 <script>
@@ -41,6 +46,16 @@ async function loadFullArticle() {
         // Чтобы абзацы отображались корректно, заменяем переносы строк на <br>
         document.getElementById('artText').innerHTML = article.text.replace(/\n/g, '<br>');
                 // --- ДОБАВЬ ЭТИ СТРОКИ НИЖЕ ---
+
+        const likeSpan = document.getElementById('artLikes');
+        const likeBtn = document.getElementById('likeBtn');
+        
+        if (likeSpan) likeSpan.innerText = article.likes || 0;
+        
+        // Привязываем функцию лайка к кнопке
+        if (likeBtn) {
+            likeBtn.onclick = (event) => likePost(id, event);
+        }
         const imgTag = document.getElementById('artImage'); // Твой ID из HTML
         if (article.image && imgTag) {
             imgTag.src = article.image;

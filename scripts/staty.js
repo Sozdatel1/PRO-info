@@ -93,19 +93,43 @@ async function loadPosts() {
 document.addEventListener('DOMContentLoaded', loadPosts);
 
 
-async function loadFullArticle() {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id'); // Получаем ID из ссылки
+// async function loadFullArticle() {
+//     const params = new URLSearchParams(window.location.search);
+//     const id = params.get('id'); // Получаем ID из ссылки
     
-    const res = await fetch(`https://raw.githubusercontent.com/Sozdatel1/PRO-info/main/posts.json?v=${Date.now()}`);
-    const posts = await res.json();
+//     const res = await fetch(`https://raw.githubusercontent.com/Sozdatel1/PRO-info/main/posts.json?v=${Date.now()}`);
+//     const posts = await res.json();
+   
+//     const article = posts.find(p => p.id == id); // Ищем статью по ID
     
-    const article = posts.find(p => p.id == id); // Ищем статью по ID
-    
-    if (article) {
-        document.getElementById('artTitle').innerText = article.title;
-        // Чтобы абзацы отображались корректно, заменяем переносы строк на <br>
-        document.getElementById('artText').innerHTML = article.text.replace(/\n/g, '<br>');
+//     if (article) {
+//         document.getElementById('artTitle').innerText = article.title;
+//         // Чтобы абзацы отображались корректно, заменяем переносы строк на <br>
+//         document.getElementById('artText').innerHTML = article.text.replace(/\n/g, '<br>');
+//     }
+// }
+// loadFullArticle();
+
+async function likePost(id, event) {
+    if (event) {
+        event.preventDefault(); // Чтобы страница не прыгала
+        event.stopPropagation(); // Чтобы не открывалась статья при клике на лайк
+    }
+
+    try {
+        const response = await fetch(`https://pro-info-api.onrender.com/like/${id}`, {
+            method: 'POST'
+        });
+        const data = await response.json();
+
+        if (data.success) {
+            // Обновляем цифру лайков на странице без перезагрузки
+            const likeCountSpan = document.getElementById(`likes-${id}`);
+            if (likeCountSpan) {
+                likeCountSpan.innerText = data.likes;
+            }
+        }
+    } catch (err) {
+        console.error("Ошибка при лайке:", err);
     }
 }
-loadFullArticle();
